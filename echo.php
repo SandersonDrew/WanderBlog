@@ -16,5 +16,6 @@ foreach($provisionedActivity as $x) {
     print "<p>$x</p>";
 }
 
+echo date("d");
 
 ?>
