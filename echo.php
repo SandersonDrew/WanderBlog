@@ -6,10 +6,8 @@
  * Time: 14:55
  */
 
-echo "I get printed";
-
 $myname = "Andrew";
 $myage = 19;
-echo "My name is" . $myname . "and I am " . $myage;
+echo "My name is " . $myname . " and I am " . $myage . ".";
 
 ?>
