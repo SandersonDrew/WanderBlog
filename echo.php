@@ -10,6 +10,8 @@ $provisionedActivity = array("specs", "drugs", "rocknroll"); // declares the arr
 
 $provisionedActivity[1] =  "hugs";
 
+unset($provisionedActivity[2]); // removes the array in position 2
+
 foreach($provisionedActivity as $x) {
     print "<p>$x</p>";
 }
