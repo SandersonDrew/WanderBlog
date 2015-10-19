@@ -8,4 +8,8 @@
 
 echo "I get printed";
 
+$myname = "Andrew";
+$myage = 17+2;
+echo "My name is" . $myname . "and I am " . $myage;
+
 ?>
