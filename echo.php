@@ -6,8 +6,13 @@
  * Time: 14:55
  */
 
-$myname = "Andrew";
-$myage = 19;
-echo "My name is " . $myname . " and I am " . $myage . ".";
+$provisionedActivity = array("specs", "drugs", "rocknroll"); // declares the array
+
+$myarray[1] =  "hugs";
+
+foreach($provisionedActivity as $x) {
+    print "<p>$x</p>";
+}
+
 
 ?>
