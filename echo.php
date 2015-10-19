@@ -8,7 +8,7 @@
 
 $provisionedActivity = array("specs", "drugs", "rocknroll"); // declares the array
 
-$myarray[1] =  "hugs";
+$provisionedActivity[1] =  "hugs";
 
 foreach($provisionedActivity as $x) {
     print "<p>$x</p>";
