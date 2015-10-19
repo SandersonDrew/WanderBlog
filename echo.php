@@ -9,7 +9,7 @@
 echo "I get printed";
 
 $myname = "Andrew";
-$myage = 17+2;
+$myage = 19;
 echo "My name is" . $myname . "and I am " . $myage;
 
 ?>
