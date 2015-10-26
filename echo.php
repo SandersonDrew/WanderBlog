@@ -49,6 +49,6 @@ switch(date("d")){
 }
 
 
-echo date("d");
+echo ". ", date("d");
 
 ?>
