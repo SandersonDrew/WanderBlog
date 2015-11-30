@@ -91,7 +91,7 @@ function genDivs($numNewUsers)
             <img src="http://placehold.it/60x60">
         </div>
         <div class="col-md-5" style="height: 62px; border:1px solid #000;">
-            <h6> New User'. ($i+1) . ' </h6>
+            <h6> New User' . ($i+1) . ' </h6>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="Yes">
