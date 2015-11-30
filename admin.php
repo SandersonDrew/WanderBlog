@@ -32,50 +32,53 @@
         <div class="col-md-2"></div>
     </div>
 </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8" style="border:1px solid #000;">
-                <p><h4>Author Name goes here</h4>
-            </div>
-            <div class="col-md-2"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="border:1px solid #000;">
+            <p><h4>Author Name goes here</h4>
         </div>
-
-        <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8" style="border:1px solid #000;">
-                <p><h4>Update Settings</h4>
-                <p><h5>Update Name</h5>
-                <form action="updatesettings.php">
-                    <h6>Name: </h6> <input type="text" name="name">
-                    <input type="submit" value="Submit">
-                </form>
-                <p><h5>Update Email</h5>
-                <form action="updatesettings.php">
-                    <h6>Email: </h6><input type="text" name="email">
-                    <input type="submit" value="Submit">
-                </form>
-                <p><h5>Update Password</h5>
-                <form action="updatesettings.php">
-                    <h6>Password: </h6><input type="text" name="pword">
-                    <input type="submit" value="Submit">
-                </form>
-                <br>
-            </div>
-            <div class="col-md-2"></div>
-        </div>
+        <div class="col-md-2"></div>
     </div>
 
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="border:1px solid #000;">
+            <p><h4>Update Settings</h4>
 
+            <p><h5>Update Name</h5>
 
-<div class="container">
+            <form action="updatesettings.php">
+                <h6>Name: </h6> <input type="text" name="name">
+                <input type="submit" value="Submit">
+            </form>
+            <p><h5>Update Email</h5>
+
+            <form action="updatesettings.php">
+                <h6>Email: </h6><input type="text" name="email">
+                <input type="submit" value="Submit">
+            </form>
+            <p><h5>Update Password</h5>
+
+            <form action="updatesettings.php">
+                <h6>Password: </h6><input type="text" name="pword">
+                <input type="submit" value="Submit">
+            </form>
+            <br>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<?php
+for ($i = 0; $i < 6; $i++) {
+    echo '<div class="container">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60">
         </div>
         <div class="col-md-5" style="height: 62px; border:1px solid #000;">
-            <h6>New User 1</h6>
+            <h6> New User 1 </h6>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="Yes">
@@ -85,10 +88,9 @@
         </div>
         <div class="col-md-2"></div>
     </div>
-</div>
-<?php echo 'hello world';?>
-
-
+</div>';
+}
+?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
