@@ -70,8 +70,10 @@
     </div>
 </div>
 <?php
-for ($i = 0; $i < 6; $i++) {
-    echo '<div class="container">
+function genDivs($numNewUsers)
+{
+    for ($i = 0; $i < $numNewUsers; $i++) {
+        echo '<div class="container">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-1" style="border:1px solid #000;">
@@ -89,7 +91,9 @@ for ($i = 0; $i < 6; $i++) {
         <div class="col-md-2"></div>
     </div>
 </div>';
+    }
 }
+genDivs(5);
 ?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
