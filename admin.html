@@ -33,11 +33,20 @@
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;"><p><h5>Update Settings</h5></p>
             <p><h6>Update Name</h6></p>
-            <p><input type="submit">Update Name</input></p>
+            <form action="updatesettings.php">
+                Name: <input type="text" name="name"><br>
+                <input type="submit" value="Submit">
+            </form>
             <p><h6>Update Email</h6></p>
-            <p><input type="submit">Update Email</input></p>
+            <form action="updatesettings.php">
+                Email: <input type="text" name="email"><br>
+                <input type="submit" value="Submit">
+            </form>
             <p><h6>Update Password</h6></p>
-            <p><input type="submit">Update Password</input></p>
+            <form action="updatesettings.php">
+                Password: <input type="text" name="pword"><br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
         <div class="col-md-2"></div>
     </div>
