@@ -19,7 +19,7 @@
     <![endif]-->
 </head>
 
-<div>
+<body>
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
@@ -44,8 +44,8 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="border:1px solid #000;">
-                <p><h4>Update Settings</h4>
-                <p><h5>Update Name</h5>
+                <p><h4>Update Settings</h4></p>
+                <p><h5>Update Name</h5></p>
                 <form action="updatesettings.php">
                     <h6>Name: </h6> <input type="text" name="name">
                     <input type="submit" value="Submit">
@@ -69,7 +69,7 @@
 <script>
     function genDiv($number){
         for($i = 0; $i < $number; $i++){
-            echo"<div></div>";
+            echo "<div></div>";
         }
     }
 </script>
