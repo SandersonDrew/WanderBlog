@@ -25,7 +25,8 @@
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
             <div>
-                <img src="http://placehold.it/150x150" style="max-width: 100%; max-height: 100%; display:block; margin:auto;"/>
+                <img src="http://placehold.it/150x150"
+                     style="max-width: 100%; max-height: 100%; display:block; margin:auto;" alt="ProfilePic"/>
             </div>
         </div>
         <div class="col-md-2"></div>
@@ -65,7 +66,11 @@
         <div class="col-md-2"></div>
     </div>
 </div>
-<div class="container">
+$newUsers(3);
+<?php
+function newUsers(var numNewUsers){
+for (var i; i<numNewUsers; i++){
+    <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-1" style="border:1px solid #000;">
@@ -82,10 +87,16 @@
         </div>
         <div class="col-md-2"></div>
     </div>
-</div>
+    </div>
+}
+}
+?>
+
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 </body>
+
 </html>
