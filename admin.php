@@ -38,7 +38,7 @@
         <div class="col-md-8" style="border:1px solid #000;">
             <div>
                 <form action="updatesettings.php">
-                    <input type="submit" value="Update Profile Picture">
+                    <input type="submit" value="Update Profile Picture" align="center">
                 </form>
             </div>
         </div>
