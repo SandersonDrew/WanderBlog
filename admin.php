@@ -104,7 +104,7 @@ function genDivs($numNewUsers)
 </div>';
     }
 }
-genDivs(5);
+genDivs(12);
 ?>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
