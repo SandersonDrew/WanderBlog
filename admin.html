@@ -19,7 +19,7 @@
     <![endif]-->
 </head>
 
-<body>
+<div>
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
@@ -32,45 +32,48 @@
         <div class="col-md-2"></div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="border:1px solid #000;">
-            <p><h4>Author Name goes here</h4></p>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="border:1px solid #000;">
-            <p><h4>Update Settings</h4></p>
-            <p><h5>Update Name</h5></p>
-            <form action="updatesettings.php">
-                <h6>Name: </h6> <input type="text" name="name">
-                <input type="submit" value="Submit">
-            </form>
-            <p><h5>Update Email</h5></p>
-            <form action="updatesettings.php">
-                <h6>Email: </h6><input type="text" name="email">
-                <input type="submit" value="Submit">
-            </form>
-            <p><h5>Update Password</h5></p>
-            <form action="updatesettings.php">
-                <h6>Password: </h6><input type="text" name="pword">
-                <input type="submit" value="Submit">
-            </form>
-            <br>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-</div>
-$newUsers(3);
-
-function newUsers(var numNewUsers){
-for (var i; i < numNewUsers; i++){
     <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" style="border:1px solid #000;">
+                <p><h4>Author Name goes here</h4></p>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8" style="border:1px solid #000;">
+                <p><h4>Update Settings</h4></p>
+                <p><h5>Update Name</h5></p>
+                <form action="updatesettings.php">
+                    <h6>Name: </h6> <input type="text" name="name">
+                    <input type="submit" value="Submit">
+                </form>
+                <p><h5>Update Email</h5></p>
+                <form action="updatesettings.php">
+                    <h6>Email: </h6><input type="text" name="email">
+                    <input type="submit" value="Submit">
+                </form>
+                <p><h5>Update Password</h5></p>
+                <form action="updatesettings.php">
+                    <h6>Password: </h6><input type="text" name="pword">
+                    <input type="submit" value="Submit">
+                </form>
+                <br>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+    <?php
+$elem = "<div></div>";
+$count = "6";
+foreach( range(1,$count)) as $item{
+    echo $elem;
+?>
+
+<div class="container">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-1" style="border:1px solid #000;">
@@ -87,9 +90,8 @@ for (var i; i < numNewUsers; i++){
         </div>
         <div class="col-md-2"></div>
     </div>
-    </div>
-}
-}
+</div>
+
 
 
 
