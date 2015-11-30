@@ -34,15 +34,15 @@
 </div>
 <div class="container">
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="border:1px solid #000;">
+        <div class="col-md-6"></div>
+        <div class="col-md-2" style="border:1px solid #000;">
             <div>
                 <form action="updatesettings.php">
                     <input type="submit" value="Update Profile Picture" align="center">
                 </form>
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-6"></div>
     </div>
 </div>
 <div class="container">
