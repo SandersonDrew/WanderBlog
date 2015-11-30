@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="border:1px solid #000;">
-                <p><h4>Author Name goes here</h4><
+                <p><h4>Author Name goes here</h4>
             </div>
             <div class="col-md-2"></div>
         </div>
@@ -44,18 +44,18 @@
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8" style="border:1px solid #000;">
-                <p><h4>Update Settings</h4></p>
-                <p><h5>Update Name</h5></p>
+                <p><h4>Update Settings</h4>
+                <p><h5>Update Name</h5>
                 <form action="updatesettings.php">
                     <h6>Name: </h6> <input type="text" name="name">
                     <input type="submit" value="Submit">
                 </form>
-                <p><h5>Update Email</h5></p>
+                <p><h5>Update Email</h5>
                 <form action="updatesettings.php">
                     <h6>Email: </h6><input type="text" name="email">
                     <input type="submit" value="Submit">
                 </form>
-                <p><h5>Update Password</h5></p>
+                <p><h5>Update Password</h5>
                 <form action="updatesettings.php">
                     <h6>Password: </h6><input type="text" name="pword">
                     <input type="submit" value="Submit">
@@ -97,10 +97,3 @@
 </body>
 
 </html>
-
-<?php
-$numNewUsers = 6;
-for($i = 0; $i<$numNewUsers; $i++){
-    echo "<div>bacon</div>
-}
-?>
