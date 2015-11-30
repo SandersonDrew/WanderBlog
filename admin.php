@@ -36,6 +36,19 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
+            <div>
+                <form action="updatesettings.php">
+                    <input type="submit" value="Update Profile Picture">
+                </form>
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="border:1px solid #000;">
             <p><h4>Author Name goes here</h4>
         </div>
         <div class="col-md-2"></div>
