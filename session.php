@@ -9,7 +9,7 @@ $ses_sql=mysqli_query($connection, "select username from users where username='$
 $row = mysqli_fetch_assoc($ses_sql);
 $login_session =$row['username'];
 if(!isset($login_session)){
-    $connection->close($connection); // Closing Connection
+    $connection->close(); // Closing Connection
     header('Location: index.php'); // Redirecting To Home Page
 }
 ?>
