@@ -16,10 +16,10 @@ if (isset($_POST['submit'])) {
 // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
         $password = stripslashes($password);
-        $username = mysql_real_escape_string($username);
-        $password = mysql_real_escape_string($password);
+        //$username = mysql_real_escape_string($username);
+       // $password = mysql_real_escape_string($password);
 // SQL query to fetch information of registered users and finds user match.
-        $query = mysql_query("select * from login where password='$password' AND username='$username'", $connection);
+        $query = mysqli_query($connection,"select * from login where password='$password' AND username='$username'");
         $rows = mysql_num_rows($query);
         if ($rows == 1) {
             $_SESSION['login_user']=$username; // Initializing Session
