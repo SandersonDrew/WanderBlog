@@ -18,7 +18,7 @@ if (isset($_POST['submit'])) {
         $username = mysql_real_escape_string($username);
         $password = mysql_real_escape_string($password);
 // Selecting Database
-        $db = mysql_select_db("company", $connection);
+        $db = mysql_select_db("wb1306507", $connection);
 // SQL query to fetch information of registerd users and finds user match.
         $query = mysql_query("select * from login where password='$password' AND username='$username'", $connection);
         $rows = mysql_num_rows($query);
