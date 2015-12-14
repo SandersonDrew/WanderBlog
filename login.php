@@ -16,8 +16,6 @@ if (isset($_POST['submit'])) {
 // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
         $password = stripslashes($password);
-        echo $username;
-        echo $password;
         //$username = mysql_real_escape_string($username);
        // $password = mysql_real_escape_string($password);
 // SQL query to fetch information of registered users and finds user match.
