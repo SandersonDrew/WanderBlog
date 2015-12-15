@@ -9,7 +9,7 @@ if (isset($_POST['submit'])) {
         $password = $_POST['password'];
         $email = $_POST['email'];
         echo "Before sql";
-        $query = mysqli_query($connection, "UPDATE users SET `username`='$newUsername' WHERE username='$username'");
+        $query = mysqli_query($connection, "UPDATE users SET `username`='$newUsername' WHERE `username`='$username'");
         echo "After sql";
         $result = mysqli_num_rows($query);
         if ($result == 1) {
