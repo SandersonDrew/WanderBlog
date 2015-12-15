@@ -23,13 +23,8 @@ if (isset($_POST['submit'])) {
         // $password = mysql_real_escape_string($password);
 // SQL query to fetch information of registered users and finds user match.
         $query = mysqli_query($connection,"INSERT INTO users $username,$password,0");
-        $result = mysqli_num_rows($query);
-        if ($result == 1) {
-            $_SESSION['login_user']=$username; // Initializing Session
-            header("location: profiletest.php"); // Redirecting To Other Page
-        } else {
-            $error = "Username or Password is invalid";
-        }
+        $_SESSION['login_user']=$username; // Initializing Session
+        header("location: profiletest.php"); // Redirecting To Other Page
         $connection->close(); // Closing Connection
     }
 }
