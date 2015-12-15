@@ -21,10 +21,12 @@ if (isset($_POST['submit'])) {
 // SQL query to fetch information of registered users and finds user match.
         $query = mysqli_query($connection,"SELECT * FROM users WHERE password='$password' AND username='$username'");
         $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
+        $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
         $result = mysqli_num_rows($query);
         if ($result == 1) {
             $_SESSION['login_user']=$username; // Initializing Session
             $_SESSION['userid'] = $userid;
+            $_SESSION['displayName'] = $displayName;
             header("location: profiletest.php"); // Redirecting To Other Page
         } else {
             $error = "Username or Password is invalid";

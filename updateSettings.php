@@ -11,9 +11,8 @@ echo $userid;
     $newUsername = $_POST['name'];
     $password = $_POST['pword'];
     $email = $_POST['email'];
-    $query = "UPDATE users SET username='$newUsername', password = '$password', email = '$email' WHERE userid = $userid";
+    $query = "UPDATE users SET displayName='$newUsername', password = '$password', email = '$email' WHERE userid = $userid";
     $connection->query($query);
-    $_SESSION['login_user']=$newUsername; // Initializing Session
-
+    $_SESSION['displayName']=$newUsername; // Initializing Session
 header("location: admin.php"); // Redirecting To Other Page
     $connection->close(); // Closing Connection
