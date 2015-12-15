@@ -1,4 +1,6 @@
-<?php $name = $_SESSION['login_user'];
+<?php
+include('session.php');
+$userid = $_SESSION['login_user'];
 ?>
 
 <!DOCTYPE html>
