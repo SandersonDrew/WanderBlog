@@ -8,7 +8,7 @@ echo $userid;
         die("Connection failed: " . $connection->connect_error);
     }
     echo "Connected successfully";
-    $newUsername = $_POST['username'];
+    $newUsername = $_POST['name'];
 //    $password = $_POST['password'];
 //    $email = $_POST['email'];
 //    $query = "UPDATE users SET username='Fred' WHERE userid = $userid";
