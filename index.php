@@ -2,7 +2,7 @@
 include('login.php'); // Includes Login Script
 
 if(isset($_SESSION['login_user'])){
-    header("profile.php");
+    header("location: profile.php");
 }
 ?>
 <!DOCTYPE html>
@@ -16,7 +16,7 @@ if(isset($_SESSION['login_user'])){
     <h1>PHP Login Session Example</h1>
     <div id="login">
         <h2>Login Form</h2>
-        <form action="login.php" method="post">
+        <form action="" method="post">
             <label>UserName :</label>
             <input id="name" name="username" placeholder="username" type="text">
             <label>Password :</label>
