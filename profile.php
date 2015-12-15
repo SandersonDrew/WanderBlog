@@ -54,7 +54,7 @@
     <div class="row">
         <div class="span4"></div>
         <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
-        <div class="span4"><h1 class = "center-block">Name</h1></div>
+        <div class="span4"><h1 id="userName">Name</h1></div>
         <div class="span4"></div>
     </div>
 </div>
