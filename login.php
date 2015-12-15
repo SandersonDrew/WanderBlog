@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
         //$username = mysql_real_escape_string($username);
        // $password = mysql_real_escape_string($password);
 // SQL query to fetch information of registered users and finds user match.
+        $query = mysqli_query($connection,"SELECT * FROM users WHERE password='$password' AND username='$username'");
         $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
         $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
         $email = getval($connection,"SELECT email FROM users WHERE userid='$userid'");
