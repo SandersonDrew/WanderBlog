@@ -1,5 +1,5 @@
 <?php
-include('http://wb1306507.azurewebsites.net/login.php'); // Includes Login Script
+include('login.php'); // Includes Login Script
 
 if(isset($_SESSION['login_user'])){
     header("location: http://wb1306507.azurewebsites.net/profile.php");
