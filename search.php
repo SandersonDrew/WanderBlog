@@ -27,24 +27,17 @@ if( !$button ){
             echo '<table width="200" border="1">';
             echo '<tr>';
             echo '<th>';
-            echo '<td>';
             echo "User Name: " ;
-            echo '</td>';
             echo '</th>';
             echo '<th>';
-            echo '<td>';
             echo "Display Name: " ;
-            echo '</td>';
             echo '</th>';
             echo '<th>';
-            echo '<td>';
             echo "User ID: " ;
-            echo '</td>';
             echo '</th>';
             echo '<th>';
             echo '<th>';
             echo "Votes: " ;
-            echo '</td>';
             echo '</th>';
             echo '</tr>';
             while ($row = $result->fetch_assoc()) {
