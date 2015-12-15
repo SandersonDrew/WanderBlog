@@ -96,7 +96,7 @@ $userid = $_SESSION['userid'];
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>check</p>
+            <p>Lorem</p>
         </div>
     </div>
 </div>
