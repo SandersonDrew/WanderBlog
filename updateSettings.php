@@ -6,10 +6,10 @@ if (isset($_POST['submit'])) {
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
         $username = $_SESSION['login_user'];
         $newUsername = $_POST['username'];
-        $password = $_POST['password'];
-        $email = $_POST['email'];
+//        $password = $_POST['password'];
+//        $email = $_POST['email'];
         echo "Before sql";
-        $query = mysqli_query($connection, "UPDATE users SET `username`='$newUsername' WHERE `username`='$username'");
+        $query = mysqli_query($connection, "UPDATE users SET username='$newUsername' WHERE username='$username'");
         echo "After sql";
         $result = mysqli_num_rows($query);
         if ($result == 1) {
