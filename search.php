@@ -25,9 +25,11 @@ if( !$button ){
         if ($result->num_rows > 0) {
             echo '<table><tr>';
             while ($row = $result->fetch_assoc()) {
-                echo '<td>', $field_title, '</td>
-                echo "username";
-                <tr>. $row["username"];
+                echo '<td>', "Usrname", '</td>
+
+                <tr>. $row["username"] </tr>;
+
+                echo </table>';
             }
         } else {
             echo "0 results";
