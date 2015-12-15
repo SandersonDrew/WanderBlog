@@ -50,7 +50,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
-<div id = "profile-photo"> <img src="http://placehold.it/150x50&text=Logo" class="w3-circle" alt="Profile-Photo"> </div>
+<div id = "profile-photo"> <img src="http://placehold.it/150x50&text=Logo" class="circle" style="width:100%" alt="Profile-Photo"> </div>
 
 </body>
 </html>
