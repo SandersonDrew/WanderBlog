@@ -1,3 +1,6 @@
+<?php
+include('session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +51,7 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
-            <p><h4>Author Name goes here</h4>
+            <p><h4><?php echo $_SESSION['login_user']?></h4>
         </div>
         <div class="col-md-2"></div>
     </div>
