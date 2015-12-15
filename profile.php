@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#"><img src="Photos\wlogo.png" alt="logo" style="width:150px;height:100px;"</a>
+                <a class="navbar-brand" href="#"><img src="Photos\wlogo.png" alt="logo" style="width:150px;height:75px;"</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
