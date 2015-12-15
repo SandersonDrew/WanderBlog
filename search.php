@@ -22,7 +22,7 @@ echo "Connected successfully<br>";
            else {
                echo "You searched for <b> $search </b> <hr size='1' > </ br > ";
                mysql_connect( $localhost,$username,$password) ;
-               mysql_select_db($wb1306507);
+               mysql_select_db($database);
 
                $search_exploded = explode ( " ", $search );
                $x = 0;
