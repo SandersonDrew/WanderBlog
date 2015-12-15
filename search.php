@@ -24,16 +24,46 @@ if( !$button ){
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
         if ($result->num_rows > 0) {
+            echo '<tr>';
+            echo '<td>';
+            echo "User Name: " ;
+            echo '</td>';
+            echo '</tr>';
+            echo '<tr>';
+            echo '<td>';
+            echo "Display Name: " ;
+            echo '</td>';
+            echo '</tr>';
+            echo '<tr>';
+            echo '<td>';
+            echo "User ID: " ;
+            echo '</td>';
+            echo '</tr>';
+            echo '<tr>';
+            echo '<td>';
+            echo "Votes: " ;
+            echo '</td>';
+            echo '</tr>';
             echo '<table width="200" border="1">';
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
                 echo '<td>';
-                echo "username: " ;
+                echo $row["username"];
                 echo '</td>';
                 echo '</tr>';
                 echo '<tr>';
                 echo '<td>';
-                echo $row["email"];
+                echo $row["displayName"];
+                echo '</td>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<td>';
+                echo $row["userid"] ;
+                echo '</td>';
+                echo '</tr>';
+                echo '<tr>';
+                echo '<td>';
+                echo "0 " ;
                 echo '</td>';
                 echo '</tr>';
             }
