@@ -21,7 +21,7 @@ if( !$button ){
         echo "Search term too short";
     } else {
 
-        $result = mysqli_query($conn, "SELECT * FROM users WHERE displayName='$search'");
+        $result = mysqli_query($conn, "SELECT * FROM users WHERE displayName='$search' ORDER BY userid");
 
         if ($result->num_rows > 0) {
             echo '<table width="200" border="1">';
@@ -56,6 +56,7 @@ if( !$button ){
                 echo '</tr>';
             }
             echo '</table>';
+
         } else {
             echo "0 results";
         }
