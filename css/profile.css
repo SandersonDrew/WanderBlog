@@ -16,7 +16,7 @@ body{
 
     width: 200px;
     word-break: break-all;
-    white-space: nowrap;
+    white-space: normal;
 
 }
 
