@@ -24,7 +24,7 @@ if( !$button ){
 
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo "username: " . $row["username"];
+                echo "username: " . $row["email"];
             }
         } else {
             echo "0 results";
