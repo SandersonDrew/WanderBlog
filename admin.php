@@ -1,5 +1,5 @@
 <?php
-include('session.php');
+include('updateSettings.php');
 ?>
 <?php $name = $_SESSION['login_user'];
 $email = $_SESSION['email_add'];
@@ -65,7 +65,7 @@ $email = $_SESSION['email_add'];
         <div class="col-md-8" style="border:1px solid #000;">
             <p><h4>Update Settings</h4>
 
-            <form action="updatesettings.php" method="post">
+            <form action="updateSettings.php" method="post">
                 <h6>Name: </h6> <input type="text" name="name" value="<?php echo $name;?>">
                 <h6>Email: </h6><input type="text" name="email" value="placeholder">
                 <h6>Password: </h6><input type="text" name="pword" value="placeholder">
