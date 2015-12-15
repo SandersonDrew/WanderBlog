@@ -24,6 +24,7 @@ if( !$button ){
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
         if ($result->num_rows > 0) {
+            echo '<table width="200" border="1">';
             echo '<tr>';
             echo '<td>';
             echo "User Name: " ;
@@ -44,7 +45,6 @@ if( !$button ){
             echo "Votes: " ;
             echo '</td>';
             echo '</tr>';
-            echo '<table width="200" border="1">';
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
                 echo '<td>';
