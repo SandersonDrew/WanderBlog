@@ -27,7 +27,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
-
+<nav id="navbar">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -38,7 +38,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Logo goes here</a>
+                <a class="navbar-brand" href="index.php">Logo goes here</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,6 +53,7 @@
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
+</nav>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 
 
@@ -80,10 +81,48 @@
         <div class="col-md-12">
             <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
                 Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p></div>
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+        </div>
     </div>
 </div>
 
+<div id="desc" class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                    Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+            </div>
+    </div>
+</div>
+
+<div id="top1" class="container">
+        <div class="row">
+            <div class="col-md-2">
+                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
+            </div>
+
+            <div class="col-md-2">
+                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
+            </div>
+
+            <div class="col-md-2">
+                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
+            </div>
+
+            <div class="col-md-2">
+                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
+            </div>
+
+            <div class="col-md-2">
+                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
+            </div>
+
+            <div class="col-md-2">
+                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
+            </div>
+        </div>
+    </div>
 
 
 
