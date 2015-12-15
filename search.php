@@ -23,7 +23,7 @@ echo "Connected successfully<br>";
            else {
                echo "You searched for <b> $search </b> <hr size='1' > </ br > ";
 
-               $sql = " SELECT * FROM users WHERE username=$search ";
+               $sql = " SELECT * FROM users WHERE username==$search ";
                $result = $conn->query($sql);
 
  if($result->num_rows > 0) {
