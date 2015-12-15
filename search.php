@@ -25,15 +25,41 @@ if( !$button ){
 
         if ($result->num_rows > 0) {
             echo '<table width="200" border="1">';
+            echo '<tr>';
+            echo '<th>';
+            echo '<td>';
+            echo "User Name: " ;
+            echo '</td>';
+            echo '</th>';
+            echo '<th>';
+            echo '<td>';
+            echo "Display Name: " ;
+            echo '</td>';
+            echo '</th>';
+            echo '<th>';
+            echo '<td>';
+            echo "User ID: " ;
+            echo '</td>';
+            echo '</th>';
+            echo '<th>';
+            echo '<th>';
+            echo "Votes: " ;
+            echo '</td>';
+            echo '</th>';
+            echo '</tr>';
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
                 echo '<td>';
-                echo "username: " ;
+                echo $row["username"];
                 echo '</td>';
-                echo '</tr>';
-                echo '<tr>';
                 echo '<td>';
-                echo $row["email"];
+                echo $row["displayName"];
+                echo '</td>';
+                echo '<td>';
+                echo $row["userid"] ;
+                echo '</td>';
+                echo '<td>';
+                echo "0 " ;
                 echo '</td>';
                 echo '</tr>';
             }
