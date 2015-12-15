@@ -12,18 +12,23 @@ if (isset($_POST['submit'])) {
         $password=$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 // Selecting Database
-        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+        $db = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+        //Test Connection to db
+        if($db->connect_errno){
+            die('Connectfailed['.$db->connect_error.']');
+        }
+
 // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
         $password = stripslashes($password);
         //$username = mysql_real_escape_string($username);
        // $password = mysql_real_escape_string($password);
 // SQL query to fetch information of registered users and finds user match.
-        $query = mysqli_query($connection,"select * from login where password='$password' AND username='$username'");
-        $rows = mysqli_num_rows($query);
-        if ($rows == 1) {
+        $query = "select * from login where password='$password' AND username='$username'";
+        $result = $db->query($query);
+        if ($result) {
             $_SESSION['login_user']=$username; // Initializing Session
-            header("location: http://wb1306507.azurewebsites.net/profile.php"); // Redirecting To Other Page
+            header("location: profiletest.php"); // Redirecting To Other Page
         } else {
             $error = "Username or Password is invalid";
         }
