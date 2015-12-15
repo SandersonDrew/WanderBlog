@@ -1,6 +1,7 @@
 <?php
 include('session.php');
 $userid = $_SESSION['userid'];
+echo $userid;
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "Username or Password is empty";
