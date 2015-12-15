@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
 // SQL query to insert new user details into database and log them in
-        $query = mysqli_query($connection,"INSERT INTO users $username,$password,0");
+        mysqli_query($connection,"INSERT INTO users ($username,$password,0)");
         $_SESSION['login_user']=$username; // Initializing Session
         header("location: profiletest.php"); // Redirecting To Other Page
         $connection->close(); // Closing Connection
