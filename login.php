@@ -1,4 +1,5 @@
 <?php
+session_destroy();
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
