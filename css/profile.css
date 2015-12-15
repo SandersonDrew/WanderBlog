@@ -14,4 +14,6 @@ body{
 
 #desc{
     text-align: center;
+    width: 200px;
+    word-wrap: break-word;
 }
