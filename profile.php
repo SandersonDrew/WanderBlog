@@ -50,17 +50,10 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
-
-<div class="row">
-    <div class="col-md-12">
-
-    </div>
-</div>
-
 <div class="container">
     <div class="row">
         <div class="span4"></div>
-        <div class="span4"><img class="center-block" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
+        <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
         <div class="span4"></div>
     </div>
 </div>
