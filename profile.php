@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="#">Upload</a></li>
-                    <li><a href="#">Profile</a></li>
+                    <li><a href="profile.php">Profile</a></li>
                 </ul>
 
                 <ul class="nav navbar-nav navbar-right">
@@ -70,13 +70,17 @@
 
 
     <?php
+    $userid = $_SESSION['userid'];
+    $sql_query = "SELECT displayName FROM users WHERE userid = $userid";
+    $name = $db->query($sql_query);
+
 
     ?>
 
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 id="userName">Name</h1></div>
+            <h1 id="userName"><?php echo $name ?> </h1></div>
         <div class="span4">
         </div>
     </div>
