@@ -11,11 +11,9 @@ if (isset($_POST['submit'])) {
     $newUsername = $_POST['username'];
 //    $password = $_POST['password'];
 //    $email = $_POST['email'];
-    $query = mysqli_query($connection, "UPDATE users SET username='$newUsername' WHERE userid='$userid'");
-    $result = mysqli_num_rows($query);
-    if ($result == 1) {
-        $_SESSION['login_user']=$newUsername; // Initializing Session
-    }
+    $query = "UPDATE users SET username='$newUsername' WHERE userid = '$userid'";
+    $connection->query($query);
+    $_SESSION['login_user']=$newUsername; // Initializing Session
     header("location: admin.php"); // Redirecting To Other Page
     $connection->close(); // Closing Connection
 }
