@@ -19,8 +19,7 @@ if(isset($_SESSION['login_user'])){
         <form action="login.php" method="post">
             <label>UserName :</label>
             <input id="name" name="username" placeholder="username" type="text">
-            <label>Email :</label>
-            <input id="email" name="email" placeholder="email" type="text">
+
             <label>Password :</label>
             <input id="password" name="password" placeholder="**********" type="password">
             <input name="submit" type="submit" value=" Login ">
@@ -34,6 +33,8 @@ if(isset($_SESSION['login_user'])){
         <form action="createNewUser.php" method="post">
             <label>UserName :</label>
             <input id="name" name="username" placeholder="username" type="text">
+            <label>Email :</label>
+            <input id="email" name="email" placeholder="email" type="text">
             <label>Password :</label>
             <input id="password" name="password" placeholder="**********" type="password">
             <input name="submit" type="submit" value=" Login ">
