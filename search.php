@@ -23,16 +23,12 @@ if( !$button ){
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
         if ($result->num_rows > 0) {
-            echo "Usernasme: ".$row["username"];
-            $attrs = array('width' => '600');
-            $table = new HTML_Table($attrs);
-            $table->setAutoGrow(true);
-            $table->setAutoFill('n/a');
+            echo '<table><tr>';
             while ($row = $result->fetch_assoc()) {
-                $table->setCellContents("Usernasme: ".$row["username"]);
+                echo '<td>', $field_title, '</td>
+                echo "username";
+                <tr>. $row["username"];
             }
-echo $table->toHtml();
-
         } else {
             echo "0 results";
         }
