@@ -1,6 +1,5 @@
-Listing 2: Our index.php file –
 
-
+<php
 <html>
 <head>
     <title> My search engine </title>
@@ -20,3 +19,4 @@ Listing 2: Our index.php file –
 </ form >
 </ body >
 </ html >
+?>
