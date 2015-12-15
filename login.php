@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         $rows = mysqli_num_rows($query);
         if ($rows == 1) {
             $_SESSION['login_user']=$username; // Initializing Session
-            header("location: http://wb1306507.azurewebsites.net/profile.php"); // Redirecting To Other Page
+            header("location: profile.php"); // Redirecting To Other Page
         } else {
             $error = "Username or Password is invalid";
         }
