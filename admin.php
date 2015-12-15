@@ -1,6 +1,10 @@
 <?php
 include('session.php');
 ?>
+<?php $name = $_SESSION['login_user'];
+$email = $_SESSION['email_add'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +59,7 @@ include('session.php');
         </div>
         <div class="col-md-2"></div>
     </div>
-<?php $bacon = $_SESSION['login_user'] ?>
+
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
@@ -64,19 +68,19 @@ include('session.php');
             <p><h5>Update Name</h5>
 
             <form action="updatesettings.php">
-                <h6>Name: </h6> <input type="text" name="name" value="<?php echo $bacon?>">
+                <h6>Name: </h6> <input type="text" name="name" value="<?php echo $name?>">
                 <input type="submit" value="Submit">
             </form>
             <p><h5>Update Email</h5>
 
             <form action="updatesettings.php">
-                <h6>Email: </h6><input type="text" name="email">
+                <h6>Email: </h6><input type="text" name="email" value="<?php echo $email?>">
                 <input type="submit" value="Submit">
             </form>
             <p><h5>Update Password</h5>
 
             <form action="updatesettings.php">
-                <h6>Password: </h6><input type="text" name="pword">
+                <h6>Password: </h6><input type="text" name="pword" placeholder="********">
                 <input type="submit" value="Submit">
             </form>
             <br>

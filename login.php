@@ -9,6 +9,7 @@ if (isset($_POST['submit'])) {
     {
 // Define $username and $password
         $username=$_POST['username'];
+        $email=$_POST['email'];
         $password=$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 // Selecting Database
@@ -19,10 +20,12 @@ if (isset($_POST['submit'])) {
         //$username = mysql_real_escape_string($username);
        // $password = mysql_real_escape_string($password);
 // SQL query to fetch information of registered users and finds user match.
-        $query = mysqli_query($connection,"SELECT * FROM users WHERE password='$password' AND username='$username'");
+        $query = mysqli_query($connection,"SELECT * FROM users WHERE password='$password' AND username='$username'AND email = '$email'");
         $result = mysqli_num_rows($query);
         if ($result == 1) {
             $_SESSION['login_user']=$username; // Initializing Session
+            $_SESSION['email_add']=$email;
+
             header("location: profiletest.php"); // Redirecting To Other Page
         } else {
             $error = "Username or Password is invalid";
