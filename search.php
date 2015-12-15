@@ -13,7 +13,7 @@ echo "Connected successfully";
 <?php $button = $_GET [ 'submit' ]; $search = $_GET [ 'search' ]; if( !$button ) echo "you didn't submit a keyword";
 else { if( strlen( $search ) <= 1 ) echo "Search term too short";
 else { echo "You searched for <b> $search </b> <hr size='1' > </ br > ";
-    mysql_connect( $servername, $username, $password) ; mysql_select_db(users);
+    mysql_connect( $servername, $username, $password) ; mysql_select_db(wb1306507);
     $search_exploded = explode ( " ", $search ); $x = 0;
     foreach( $search_exploded as $search_each ) { $x++; $construct = "";
         if( $x == 1 ) $construct .="keywords LIKE '%$search_each%'";
