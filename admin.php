@@ -1,6 +1,6 @@
 <?php
 include('session.php');
-$userid = $_SESSION['login_user'];
+$username = $_SESSION['login_user'];
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,7 @@ $userid = $_SESSION['login_user'];
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
-            <p><h4><?php echo $userid?></h4>
+            <p><h4><?php echo $username?></h4>
         </div>
         <div class="col-md-2"></div>
     </div>
@@ -54,7 +54,7 @@ $userid = $_SESSION['login_user'];
             <p><h4>Update Settings</h4>
 
             <form action="updateSettings.php" method="post">
-                <h6>Name: </h6> <input type="text" name="name" value="<?php echo $userid;?>">
+                <h6>Name: </h6> <input type="text" name="name" value="<?php echo $username;?>">
                 <h6>Email: </h6><input type="text" name="email" value="placeholder">
                 <h6>Password: </h6><input type="text" name="pword" value="placeholder">
                 <input type="submit" value="Submit">
