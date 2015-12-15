@@ -48,7 +48,7 @@ if( !$button ){
                 echo $row["displayName"];
                 echo '</td>';
                 echo '<td>';
-                echo $row["userid"] ;
+                echo $row["usersid"] ;
                 echo '</td>';
                 echo '<td>';
                 echo "0 " ;
