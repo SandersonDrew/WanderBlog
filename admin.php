@@ -1,4 +1,6 @@
-<?php $name = $_SESSION['login_user'];
+<?php
+include('session.php');
+$username = $_SESSION['login_user'];
 ?>
 
 <!DOCTYPE html>
@@ -36,22 +38,12 @@
         <div class="col-md-2"></div>
     </div>
 </div>
+
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
-            <form action="updatesettings.php">
-                <input type="submit" value="Update Profile Picture" style="display: block; margin: 0 auto">
-            </form>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="border:1px solid #000;">
-            <p><h4><?php echo $_SESSION['login_user']?></h4>
+            <p><h4><?php echo $username?></h4>
         </div>
         <div class="col-md-2"></div>
     </div>
@@ -62,10 +54,10 @@
             <p><h4>Update Settings</h4>
 
             <form action="updateSettings.php" method="post">
-                <h6>Name: </h6> <input type="text" name="name" value="<?php echo $name;?>">
+                <h6>Name: </h6> <input type="text" name="name" value="<?php echo $username;?>">
                 <h6>Email: </h6><input type="text" name="email" value="placeholder">
                 <h6>Password: </h6><input type="text" name="pword" value="placeholder">
-                <input type="submit" value="Submit">
+                <input type="submit" value="submit">
             </form>
             <br>
         </div>
