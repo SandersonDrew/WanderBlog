@@ -84,7 +84,7 @@ $userid = $_SESSION['userid'];
                 $sql_query = "SELECT displayName FROM users WHERE userid='userid'";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
-                     echo "<p>" . $row['name'] . "</p>";
+                     echo "<p>" . $row['displayName'] . "</p>";
                 }
                 ?>
             </h1></div>
@@ -96,7 +96,9 @@ $userid = $_SESSION['userid'];
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>check </p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
         </div>
     </div>
 </div>
