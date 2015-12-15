@@ -8,14 +8,10 @@ if (isset($_POST['submit'])) {
         $newUsername = $_POST['username'];
         $password = $_POST['password'];
         $email = $_POST['email'];
-        $userid = mysqli_query($connection, "SELECT userid FROM users WHERE username='$username'");
-        $query = mysqli_query($connection, "INSERT INTO users (username,password,email)WHERE userid='$userid' VALUES('$newUsername','$password','$email'");
+        $query = mysqli_query($connection, "UPDATE users SET `username`='$newUsername' WHERE username='$username'");
         $result = mysqli_num_rows($query);
         if ($result == 1) {
             $_SESSION['login_user']=$newUsername; // Initializing Session
-            $_SESSION['email_add']=$email;
-
-
         }
         header("location: admin.php"); // Redirecting To Other Page
         $connection->close(); // Closing Connection
