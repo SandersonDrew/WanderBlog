@@ -14,8 +14,8 @@ if (isset($_POST['submit'])) {
 // Selecting Database
         $db = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
         //Test Connection to db
-        if($db->connect_errno){
-            die('Connectfailed['.$db->connect_error.']');
+        if(mysqli_connect_errno()){
+            echo "Failed to connect to DB";
         }
 
 // To protect MySQL injection for Security purpose
@@ -24,8 +24,8 @@ if (isset($_POST['submit'])) {
         //$username = mysql_real_escape_string($username);
        // $password = mysql_real_escape_string($password);
 // SQL query to fetch information of registered users and finds user match.
-        $query = "select * from login where password='$password' AND username='$username'";
-        $result = $db->query($query);
+        $query = "SELECT * FROM login WHERE password='$password' AND username='$username'";
+        $result = mysqli_query($db,$query);
         if ($result) {
             $_SESSION['login_user']=$username; // Initializing Session
             header("location: profiletest.php"); // Redirecting To Other Page
