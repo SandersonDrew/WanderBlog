@@ -1,4 +1,5 @@
 <?php
+require_once 'HTML/Table.php';
 $localhost = "eu-cdbr-azure-west-c.cloudapp.net";
 $username = "b0b05a48637b3e";
 $password = "2d0628d7";
@@ -9,35 +10,31 @@ $conn = new mysqli($localhost, $username, $password, $database);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "Connected successfully<br>";
 
-       $button = $_GET [ 'submit' ];
-       $search = $_GET [ 'search' ];
+$button = $_GET [ 'submit' ];
+$search = $_GET [ 'search' ];
 
-       if( !$button ) {
-           echo "you didn't submit a keyword";
-       }
-       else {
-           if( strlen( $search ) <= 1 )
-               echo "Search term too short";
-           else {
-               echo "You searched for <b> $search </b> <hr size='1' > </ br > ";
+if( !$button ){
+    echo "you disdn't submit a keyword";
+} else {
+    if (strlen($search) <= 1) {
+        echo "Search term too short";
+    } else {
 
-               $sql = " SELECT * FROM users WHERE username=$search ";
-               $result = mysql_query($sql);
+        $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
- if($result->num_rows > 0) {
-                       // output data of each row
-                       while($row = $result->fetch_assoc()) {
-                           echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-                       }
-                   } else {
-                       echo "0 results";
-                   }
-                   $conn->close();
-                   }
-
-           }
-
- ?>
-
+        if ($result->num_rows > 0) {
+            $attrs = array('width' => '600');
+            $table = new HTML_Table($attrs);
+            $table->setAutoGrow(true);
+            $table->setAutoFill('n/a');
+            while ($row = $result->fetch_assoc()) {
+                $table->setCellContents("Username: ".$row["username"]);
+            }
+        } else {
+            echo "0 results";
+        }
+        $conn->close();
+    }
+}
+?>

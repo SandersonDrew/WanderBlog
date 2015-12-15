@@ -89,10 +89,7 @@
 <div id="top1" class="container">
         <div class="row">
             <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-            <div class="col-md-2">
+
                 <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
@@ -151,6 +148,8 @@
                 <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
+
+
 
 
         </div>
