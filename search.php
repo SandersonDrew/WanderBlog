@@ -31,6 +31,7 @@ if( !$button ){
             while ($row = $result->fetch_assoc()) {
                 $table->setCellContents("Username: ".$row["username"]);
             }
+            echo "lol";
         } else {
             echo "0 results";
         }
