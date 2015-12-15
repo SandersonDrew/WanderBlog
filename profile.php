@@ -22,6 +22,7 @@
 
 <?php
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+$userid = $_SESSION['userid'];
 ?>
 
 
@@ -73,20 +74,19 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 </div>
 
 
-    <?php
-    $userid = $_SESSION['userid'];
 
-    $sql_query = "SELECT displayName FROM users WHERE userid = $userid";
-    $name = $db->query($sql_query);
-
-
-    ?>
 
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
             <h1 id="userName">
-                <?php echo $name ?>
+                <?php
+                $sql_query = "SELECT displayName FROM users WHERE userid='userid'";
+                $result = $connection->query($sql_query);
+                while($row = $result->fetch_assoc()){
+                     echo "<h1>" . $row['name'] . "</h1>";
+                }
+                ?>
             </h1></div>
         <div class="span4">
         </div>
@@ -108,7 +108,7 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
             <div class="col-md-2">
 
                 <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
 
             <div class="col-md-2">

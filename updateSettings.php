@@ -8,12 +8,12 @@ echo $userid;
         die("Connection failed: " . $connection->connect_error);
     }
     echo "Connected successfully";
-    $newUsername = $_POST['username'];
-//    $password = $_POST['password'];
-//    $email = $_POST['email'];
-    $query = "UPDATE users SET username='Fred' WHERE userid = $userid";
+    $newUsername = $_POST['name'];
+    $password = $_POST['pword'];
+    $email = $_POST['email'];
+    $query = "UPDATE users SET displayName='$newUsername', password = '$password', email = '$email' WHERE userid = $userid";
     $connection->query($query);
     $_SESSION['login_user']=$newUsername; // Initializing Session
-    header("location: admin.php"); // Redirecting To Other Page
-    $connection->close(); // Closing Connection
 
+header("location: admin.php"); // Redirecting To Other Page
+    $connection->close(); // Closing Connection
