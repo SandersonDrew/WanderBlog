@@ -20,7 +20,9 @@
         <div class="navbar">
             <div class="navbar-inner">
                 <a class="brand" href="index.php">
-                    <img src="Photos\wlogo.png" alt="Logo">
+                    <!-- UNCOMMENT THE CSS VALUES TO TEST OTHER DIMENTIONS -->
+                    <!-- <img src="http://placehold.it/150x80&text=Logo" alt=""> -->
+                    <img src="http://placehold.it/150x50&text=Logo" alt="">
                 </a>
                 <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                     <span class="icon-bar"></span>
