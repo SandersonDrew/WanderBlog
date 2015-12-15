@@ -1,5 +1,5 @@
 <?php
-include('session.php');
+include('http://wb1306507.azurewebsites.net/session.php');
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +10,7 @@ include('session.php');
 <body>
 <div id="profile">
     <b id="welcome">Welcome : <i><?php echo $login_session; ?></i></b>
-    <b id="logout"><a href="logout.php">Log Out</a></b>
+    <b id="logout"><a href="http://wb1306507.azurewebsites.net/logout.php">Log Out</a></b>
 </div>
 </body>
 </html>
