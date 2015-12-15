@@ -32,6 +32,8 @@ if( !$button ){
                 echo '</tr>';
                 echo '<tr>';
                 echo '<td>';
+                echo '<td>';
+                echo '</td>';
                 echo $row["email"];
                 echo '</td>';
                 echo '</tr>';
