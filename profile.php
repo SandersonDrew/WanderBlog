@@ -20,13 +20,15 @@
 
 </head>
 
+
+
+
+<body>
+
 <?php
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 $userid = $_SESSION['userid'];
 ?>
-
-
-<body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -81,11 +83,7 @@ $userid = $_SESSION['userid'];
         <div class="col-md-12">
             <h1 id="userName">
                 <?php
-                $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
-                $result = $connection->query($sql_query);
-                while($row = $result->fetch_assoc()){
-                     echo $row['displayName'];
-                }
+                echo $userid
                 ?>
             </h1></div>
         <div class="span4">
@@ -96,7 +94,7 @@ $userid = $_SESSION['userid'];
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Lorem </p>
+            <p>Lorem ipsum </p>
         </div>
     </div>
 </div>
