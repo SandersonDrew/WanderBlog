@@ -1,4 +1,10 @@
-mysql_connect ( "eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7" ) ;
+<?php
+$servername = "eu-cdbr-azure-west-c.cloudapp.net";
+$username = "b0b05a48637b3";
+$password = "2d0628d";
+?>
+// Create connection
+$conn = new mysqli($servername, $username, $password);
 <?php $button = $_GET [ 'submit' ]; $search = $_GET [ 'search' ]; if( !$button ) echo "you didn't submit a keyword";
 else { if( strlen( $search ) <= 1 ) echo "Search term too short";
 else { echo "You searched for <b> $search </b> <hr size='1' > </ br > ";
