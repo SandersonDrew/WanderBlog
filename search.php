@@ -20,7 +20,7 @@ if( !$button ){
         echo "Search term too short";
     } else {
 
-        $sql = "SELECT * FROM users WHERE username=$search";
+        $sql = "SELECT * FROM users WHERE username='$search''";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
