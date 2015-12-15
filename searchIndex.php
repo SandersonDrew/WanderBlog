@@ -1,12 +1,17 @@
+Listing 2: Our index.php file –
+
+
 <html>
 <head>
     <title> My search engine </title>
 </head>
 <body>
-< form action = 'search.php' method = 'GET' > < center >
+< form action = 'search.php' method = 'GET' >
+< center >
 <h1 > My Search Engine </h1 >
 < input type = 'text' size='90' name = 'search' >
-</ br > </ br >
+</ br >
+</ br >
 < input type = 'submit' name = 'submit' value = 'Search source code' >
 < option > 10 </ option >
 < option > 20 </ option >
@@ -15,4 +20,3 @@
 </ form >
 </ body >
 </ html >
-
