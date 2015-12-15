@@ -23,13 +23,8 @@ if( !$button ){
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
         if ($result->num_rows > 0) {
-            echo '<table><tr>';
             while ($row = $result->fetch_assoc()) {
-                echo '<td>', "Usrname", '</td>
-
-                <tr>. $row["username"] </tr>;
-
-                echo </table>';
+                echo "username: " . $row["username"];
             }
         } else {
             echo "0 results";
