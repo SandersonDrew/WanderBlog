@@ -27,6 +27,7 @@
             <div>
                 <img src="http://placehold.it/150x150"
                      style="max-width: 100%; max-height: 100%; display:block; margin:auto;" alt="ProfilePic"/>
+
             </div>
         </div>
         <div class="col-md-2"></div>
