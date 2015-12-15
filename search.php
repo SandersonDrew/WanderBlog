@@ -14,7 +14,7 @@ echo "Connected successfully<br>";
        $button = $_GET [ 'submit' ];
        $search = $_GET [ 'search' ];
 
-       if( !$button )
+       if( !$button ){
            echo "you didn't submit a keyword";
        else {
            if( strlen( $search ) <= 1 )
@@ -24,42 +24,23 @@ echo "Connected successfully<br>";
                mysql_connect( $localhost,$username,$password) ;
                mysql_select_db($database);
 
-               $search_exploded = explode ( " ", $search );
-               $x = 0;
-               foreach( $search_exploded as $search_each ) {
-                   $x++;
-                   $construct = "";
-                   if( $x == 1 )
-                       $construct .="keywords LIKE '%$search_each%'";
-                   else
-                       $construct .="AND keywords LIKE '%$search_each%'";
-               }
-
-               $construct = " SELECT * FROM users WHERE $construct ";
+               $construct = " SELECT * FROM users WHERE username=$search ";
                $run = mysql_query( $construct );
 
-               $foundnum = mysql_num_rows($run);
 
-               if ($foundnum == 0)
-                   echo "Sorry, there are no matching result for <b> $search </b>.
-</br>
-</br> 1. Try more general words. for example: If you want to search 'how to create a website' then use general keyword like 'create' 'website'
-</br> 2. Try different words with similar  meaning
-</br> 3. Please check your spelling";
-               else {
-                   echo "$foundnum results found !<p>";
-
-                   while( $runrows = mysql_fetch_assoc( $run ) ) {
-                       $title = $runrows ['title'];
-                       $desc = $runrows ['description'];
-                       $url = $runrows ['url'];
-
-                       echo "<a href='$url'> <b> $title </b> </a> <br> $desc <br> <a href='$url'> $url </a> <p>";
-
+ if($run->num_rows > 0) {
+                       // output data of each row
+                       while($row = $run->fetch_assoc()) {
+                           echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+                       }
+                   } else {
+                       echo "0 results";
+                   }
+                   $conn->close();
                    }
                }
 
            }
-       }
+
  ?>
 
