@@ -1,6 +1,6 @@
 <?php
 echo "lol";
-echo "Banter";
+echo "Bantser";
 $lel = getcwd();
 $string = $lel."/photos/dan/1";
 $fi = new FilesystemIterator($string, FilesystemIterator::SKIP_DOTS);
