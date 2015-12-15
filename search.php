@@ -6,6 +6,7 @@ $database = "wb1306507";
 $table = "users";
 $conn = new mysqli($localhost, $username, $password, $database);
 
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -23,7 +24,7 @@ if( !$button ){
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
         if ($result->num_rows > 0) {
-            echo '<table>';
+            echo '<table width="200" border="1">';
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
                 echo '<td>';
@@ -31,8 +32,6 @@ if( !$button ){
                 echo '</td>';
                 echo '</tr>';
                 echo '<tr>';
-                echo '<td>';
-                echo '<td>';
                 echo '</td>';
                 echo $row["email"];
                 echo '</td>';
