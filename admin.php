@@ -57,7 +57,7 @@ $username = $_SESSION['login_user'];
                 <h6>Name: </h6> <input type="text" name="name" value="<?php echo $username;?>">
                 <h6>Email: </h6><input type="text" name="email" value="placeholder">
                 <h6>Password: </h6><input type="text" name="pword" value="placeholder">
-                <input type="submit" value="Submit">
+                <input type="submit" value="submit">
             </form>
             <br>
         </div>
