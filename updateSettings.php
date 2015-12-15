@@ -1,5 +1,4 @@
 <?php
-include('session.php');
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "Username or Password is empty";
