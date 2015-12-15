@@ -13,8 +13,10 @@ body{
 }
 
 #desc{
-    width: 350px;
-    /*word-wrap: break-word;*/
+
+    width: 200px;
+    word-break: break-all;
+    white-space: nowrap;
 
 }
 
