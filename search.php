@@ -1,5 +1,4 @@
 <?php
-require_once 'HTML/Table.php';
 $localhost = "eu-cdbr-azure-west-c.cloudapp.net";
 $username = "b0b05a48637b3e";
 $password = "2d0628d7";
@@ -31,6 +30,8 @@ if( !$button ){
             while ($row = $result->fetch_assoc()) {
                 $table->setCellContents("Username: ".$row["username"]);
             }
+echo $table->toHtml();
+
             echo "lol";
         } else {
             echo "0 results";
