@@ -23,7 +23,9 @@ if( !$button ){
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
         if ($result->num_rows > 0) {
-            echo "Usernasme: ".$row["username"];
+            while ($row = $result->fetch_assoc()) {
+                echo "Usernasme: " . $row["username"];
+            }
             $attrs = array('width' => '600');
             $table = new HTML_Table($attrs);
             $table->setAutoGrow(true);
