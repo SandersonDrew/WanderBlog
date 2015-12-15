@@ -64,7 +64,7 @@ include('session.php');
             <p><h5>Update Name</h5>
 
             <form action="updatesettings.php">
-                <h6>Name: </h6> <input type="text" name="name" placeholder=<?php $_Session['login_user'] ?>>
+                <h6>Name: </h6> <input type="text" name="name" value="<?php echo $_Session['login_user'] ?>">
                 <input type="submit" value="Submit">
             </form>
             <p><h5>Update Email</h5>
