@@ -62,8 +62,4 @@ echo "Connected successfully<br>";
            }
        }
  ?>
-S
-
-
-Read more: http://mrbool.com/how-to-create-your-own-search-engine-with-php-and-mysql/32733#ixzz3uOpmnVdB
 
