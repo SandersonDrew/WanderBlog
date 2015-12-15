@@ -59,13 +59,22 @@
         <div class="span4"></div>
     </div>
 </div>
-<div class="row">
-    <div class="col-6">
-        <p id="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+<!--<div class="row">-->
+<!--    <div class="col-md-12">-->
+<!--        <p id="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
+<!--            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.-->
+<!--            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>-->
+<!--    </div>-->
+<!--</div>-->
+
+<div id="desc" class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <p >Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+        </div>
     </div>
 </div>
-
 </body>
 </html>
