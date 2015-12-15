@@ -1,8 +1,4 @@
-<?php
-include('updateSettings.php');
-?>
 <?php $name = $_SESSION['login_user'];
-$email = $_SESSION['email_add'];
 ?>
 
 <!DOCTYPE html>
