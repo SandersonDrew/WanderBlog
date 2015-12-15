@@ -67,19 +67,19 @@ $email = $_SESSION['email_add'];
 
             <p><h5>Update Name</h5>
 
-            <form action="updatesettings.php">
+            <form action="updatesettings.php" method="post">
                 <h6>Name: </h6> <input type="text" name="name" value="<?php echo $name?>">
                 <input type="submit" value="Submit">
             </form>
             <p><h5>Update Email</h5>
 
-            <form action="updatesettings.php">
+            <form action="updatesettings.php" method="post">
                 <h6>Email: </h6><input type="text" name="email" value="<?php echo $email?>">
                 <input type="submit" value="Submit">
             </form>
             <p><h5>Update Password</h5>
 
-            <form action="updatesettings.php">
+            <form action="updatesettings.php" method="post">
                 <h6>Password: </h6><input type="text" name="pword" placeholder="********">
                 <input type="submit" value="Submit">
             </form>
