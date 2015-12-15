@@ -84,7 +84,7 @@ $userid = $_SESSION['userid'];
                 $sql_query = "SELECT displayName FROM users WHERE userid='userid'";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
-                     echo "<h1>" . $row['name'] . "</h1>";
+                     echo "<p>" . $row['name'] . "</p>";
                 }
                 ?>
             </h1></div>
