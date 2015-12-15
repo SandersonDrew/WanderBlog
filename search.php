@@ -25,7 +25,7 @@ echo "Connected successfully<br>";
 
                $sql = " SELECT * FROM users WHERE username=$search ";
                $result = $conn->query($sql);
-               echo$result;
+               echo "$result";
 
  if($result->num_rows > 0) {
                        // output data of each row
