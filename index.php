@@ -41,4 +41,3 @@ if(isset($_SESSION['login_user'])){
 </div>
 </body>
 </html>
-INSERT INTO users VALUES ('2','Fred','bacon',0)
