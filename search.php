@@ -36,7 +36,6 @@ if( !$button ){
             echo "User ID: " ;
             echo '</th>';
             echo '<th>';
-            echo '<th>';
             echo "Votes: " ;
             echo '</th>';
             echo '</tr>';
