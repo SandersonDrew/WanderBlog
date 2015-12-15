@@ -7,7 +7,6 @@ if (isset($_POST['submit'])) {
         $error = "Username or Password is empty";
     } else {
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-        $userid = $_SESSION['login_user'];
         $newUsername = $_POST['username'];
 //        $password = $_POST['password'];
 //        $email = $_POST['email'];
