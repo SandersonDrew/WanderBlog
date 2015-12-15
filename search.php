@@ -1,4 +1,5 @@
 <?php
+require_once 'HTML/Table.php';
 $localhost = "eu-cdbr-azure-west-c.cloudapp.net";
 $username = "b0b05a48637b3e";
 $password = "2d0628d7";
@@ -23,9 +24,12 @@ if( !$button ){
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
         if ($result->num_rows > 0) {
-            // output data of each row
+            $attrs = array('width' => '600');
+            $table = new HTML_Table($attrs);
+            $table->setAutoGrow(true);
+            $table->setAutoFill('n/a');
             while ($row = $result->fetch_assoc()) {
-                echo "username: " . $row["username"];
+                $table->setCellContents("Username: ".$row["username"]);
             }
         } else {
             echo "0 results";
