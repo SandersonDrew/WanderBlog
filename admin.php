@@ -88,6 +88,7 @@ $email = $_SESSION['email_add'];
         <div class="col-md-2"></div>
     </div>
 </div>
+<b id="logout"><a href="logout.php">Log Out</a></b>
 <?php
 function genDivs($numNewUsers)
 {
@@ -112,6 +113,7 @@ function genDivs($numNewUsers)
 </div>';
     }
 }
+
 genDivs(12);
 ?>
 
