@@ -82,7 +82,7 @@ $userid = $_SESSION['userid'];
             <h1 id="userName">
                 <?php
                 $sql_query = "SELECT displayName FROM users WHERE userid='userid'";
-                $result = $db->query($sql_query);
+                $result = $connection->query($sql_query);
                 while($row = $result->fetch_array()){
                      echo "<h1>" . $row['name'] . "</h1>";
                 }
@@ -108,7 +108,7 @@ $userid = $_SESSION['userid'];
             <div class="col-md-2">
 
                 <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+                <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
 
             <div class="col-md-2">
