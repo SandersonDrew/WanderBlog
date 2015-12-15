@@ -26,10 +26,16 @@ if( !$button ){
             echo '<table>';
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
+                echo '<td>';
                 echo "username: " ;
+                echo '</td>';
                 echo '</tr>';
                 echo '<tr>';
+                echo '<td>';
+                echo '<td>';
+                echo '</td>';
                 echo $row["email"];
+                echo '</td>';
                 echo '</tr>';
             }
             echo '</table>';
