@@ -11,17 +11,25 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully<br>";
 
-$sql = "SELECT username FROM users";
+
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        echo "username: " . $row["username"]."<br>";
-    }
-} else {
-    echo "0 results";
+
+$search_exploded = explode ( " ", $search );
+$x = 0;
+foreach( $search_exploded as $search_each ) {
+    $x++;
+    $construct = " ";
+    if( $x == 1 )
+        $construct .= "keywords LIKE '%$search_each%' ";
+    else
+        $construct .= "AND keywords LIKE '%$search_each%' ";
 }
+$construct = " SELECT * FROM users WHERE $construct ";
+$result = $conn->query($construct);
+
+
+
 $conn->close();
 ?>
 
