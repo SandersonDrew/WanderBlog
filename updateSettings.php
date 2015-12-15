@@ -1,5 +1,6 @@
 <?php
 include('session.php');
+$userid = $_SESSION['userid'];
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "Username or Password is empty";
@@ -10,7 +11,7 @@ if (isset($_POST['submit'])) {
 //        $password = $_POST['password'];
 //        $email = $_POST['email'];
         echo "Before sql";
-        $query = mysqli_query($connection, "UPDATE users SET username='$newUsername' WHERE username='$username'");
+        $query = mysqli_query($connection, "UPDATE users SET username='$newUsername' WHERE userid='$userid'");
         echo "After sql";
         $result = mysqli_num_rows($query);
         if ($result == 1) {
