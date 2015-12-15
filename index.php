@@ -16,7 +16,7 @@ if(isset($_SESSION['login_user'])){
     <h1>PHP Login Session Example</h1>
     <div id="login">
         <h2>Login Form</h2>
-        <form action="" method="post">
+        <form action="login.php" method="post">
             <label>UserName :</label>
             <input id="name" name="username" placeholder="username" type="text">
             <label>Password :</label>
