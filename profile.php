@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#">Logo goes here</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,12 +34,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#">Link</a></li>
                 </ul>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Link</a></li>
                 </ul>
@@ -53,5 +48,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+<div id = "profile photo"> <img src="http://placehold.it/150x50&text=Logo" alt=""> </div>
+
 </body>
 </html>
