@@ -23,7 +23,7 @@ if (isset($_POST['submit'])) {
         $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
         $result = mysqli_num_rows($query);
         if ($result == 1) {
-            $_SESSION['login_user']=$username; // Initializing Session
+            $_SESSION['login_user']=$userid; // Initializing Session
             header("location: profiletest.php"); // Redirecting To Other Page
         } else {
             $error = "Username or Password is invalid";
