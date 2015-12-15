@@ -27,12 +27,19 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.php"><img src="Photos\wlogo.png" alt="logo" style="width:150px;height:50px;"</a>
-                <li><a href="#">Upload</a></li>
-                <li><a href="#">Profile</a></li>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Upload</a></li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Profile</a></li>
+                </ul>
 
+
+            </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </head>
