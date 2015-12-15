@@ -22,22 +22,26 @@ if( !$button ){
 
         $result = mysqli_query($conn, "SELECT * FROM users WHERE username='$search'");
 
-        if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                echo "Usernasme: " . $row["username"];
-            }
-            $attrs = array('width' => '600');
-            $table = new HTML_Table($attrs);
-            $table->setAutoGrow(true);
-            $table->setAutoFill('n/a');
-            while ($row = $result->fetch_assoc()) {
-                $table->setCellContents("Usernasme: ".$row["username"]);
-            }
-echo $table->toHtml();
+        while($tableName = mysql_fetch_row($result)) {
 
-        } else {
-            echo "0 results";
+            $table = $tableName[0];
+
+            echo '<h3>',$table,'</h3>';
+            $result2 = mysql_query('SHOW COLUMNS FROM '.$table) or die('cannot show columns from '.$table);
+            if(mysql_num_rows($result2)) {
+                echo '<table cellpadding="0" cellspacing="0" class="db-table">';
+                echo '<tr><th>Field</th><th>Type</th><th>Null</th><th>Key</th><th>Default<th>Extra</th></tr>';
+                while($row2 = mysql_fetch_row($result2)) {
+                    echo '<tr>';
+                    foreach($row2 as $key=>$value) {
+                        echo '<td>',$value,'</td>';
+                    }
+                    echo '</tr>';
+                }
+                echo '</table><br />';
+            }
         }
+
         $conn->close();
     }
 }
