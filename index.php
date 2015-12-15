@@ -8,14 +8,14 @@ if(isset($_SESSION['login_user'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login Form in PHP with Session</title>
+    <title>WanderBlog Login</title>
     <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <div id="main">
-    <h1>PHP Login Session Example</h1>
+    <h1>WanderBlog Login</h1>
     <div id="login">
-        <h2>Login Form</h2>
+        <h2>Login </h2>
         <form action="login.php" method="post">
             <label>UserName :</label>
             <input id="name" name="username" placeholder="username" type="text">
@@ -29,7 +29,7 @@ if(isset($_SESSION['login_user'])){
 <div id="main">
     <h1>PHP Login Session Example</h1>
     <div id="NewUser">
-        <h2>Login Form</h2>
+        <h2>New User</h2>
         <form action="createNewUser.php" method="post">
             <label>UserName :</label>
             <input id="name" name="username" placeholder="username" type="text">
