@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 
-$sql = "SELECT username FROM $table";
+$sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
