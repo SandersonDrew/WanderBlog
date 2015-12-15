@@ -41,7 +41,7 @@
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
-            <p><h4><?php echo $_SESSION['login_user']?></h4>
+            <p><h4><?php echo $name?></h4>
         </div>
         <div class="col-md-2"></div>
     </div>
