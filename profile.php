@@ -50,17 +50,25 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
+
 <div class="container">
     <div class="row">
         <div class="span4"></div>
         <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
         <div class="span4"><h1 id="userName">Name</h1></div>
-        <div class="span4"><p id="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                              Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,
-                              pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p></div>
+        <div class="span4"><p id="desc" style="text-align:center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p></div>
         <div class="span4"></div>
     </div>
 </div>
+
+
+
+
+
+
+
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 .img-circle {
     border-radius: 50%;
     width: 250px;
-    height: 250px;
+    height: 200px;
 }
 
 body{
@@ -13,7 +13,10 @@ body{
 }
 
 #desc{
-    text-align: center;
+
     width: 200px;
-    word-wrap: break-word;
+    word-break: break-all;
+    white-space: nowrap;
+
 }
+
