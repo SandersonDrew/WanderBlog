@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
         $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
         $email = getval($connection,"SELECT email FROM users WHERE userid='$userid'");
         $pword = getval($connection,"SELECT password FROM users WHERE userid='$userid'");
+        $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
         $result = mysqli_num_rows($query);
         if ($result == 1) {
             $_SESSION['login_user']=$username; // Initializing Session
@@ -31,6 +32,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['email'] = $email;
             $_SESSION['pword'] = $pword;
             $_SESSION['displayName'] = $displayName;
+            $_SESSION['permLevel'] = $permLevel;
             header("location: profiletest.php"); // Redirecting To Other Page
         } else {
             $error = "Username or Password is invalid";

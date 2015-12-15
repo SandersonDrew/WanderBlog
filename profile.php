@@ -20,13 +20,18 @@
 
 </head>
 
-<?php
-$connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-$userid = $_SESSION['userid'];
-?>
+
 
 
 <body>
+
+<?php
+$connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+if ($connection->connect_error) {
+    die("Connection failed: " . $connection->connect_error);
+}
+$userid = $_SESSION['userid'];
+?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -81,10 +86,10 @@ $userid = $_SESSION['userid'];
         <div class="col-md-12">
             <h1 id="userName">
                 <?php
-                $sql_query = "SELECT displayName FROM users WHERE userid='userid'";
+                $sql_query = "SELECT displayName FROM users WHERE userid= $userid";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
-                     echo "<p>" . $row['displayName'] . "</p>";
+                    echo $row['displayName'];
                 }
                 ?>
             </h1></div>
@@ -96,9 +101,7 @@ $userid = $_SESSION['userid'];
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+            <p>Lorem ipsum </p>
         </div>
     </div>
 </div>
