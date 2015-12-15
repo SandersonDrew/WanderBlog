@@ -81,7 +81,7 @@ $userid = $_SESSION['userid'];
         <div class="col-md-12">
             <h1 id="userName">
                 <?php
-                $sql_query = "SELECT displayName FROM users WHERE userid='userid'";
+                $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
                      echo "<p>" . $row['displayName'] . "</p>";
