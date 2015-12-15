@@ -100,6 +100,7 @@
         <div class="row">
             <div class="col-md-2">
                 <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
+                <p>Text</p>
             </div>
 
             <div class="col-md-2">
