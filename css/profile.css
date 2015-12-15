@@ -10,8 +10,11 @@
 }
 
 #desc{
-    width: 350px;
+    width: 400px;
     word-wrap: break-word;
 
+}
+#top1{
+    padding-top:50px;
 }
 
