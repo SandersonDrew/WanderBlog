@@ -13,7 +13,10 @@ body{
 }
 
 #desc{
-    /*text-align: center;*/
+    text-align: center;
     width: 350px;
     word-wrap: break-word;
+    font-size: large;
+    margin-top: 90px;
 }
+
