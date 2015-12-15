@@ -9,18 +9,11 @@ echo $userid;
     }
     echo "Connected successfully";
     $newUsername = $_POST['name'];
-//    $password = $_POST['password'];
-//    $email = $_POST['email'];
-    $query = "UPDATE users SET username='$newUsername' WHERE userid = $userid";
+    $password = $_POST['password'];
+    $email = $_POST['email'];
+    $query = "UPDATE users SET username='$newUsername', password = '$password', email = '$email' WHERE userid = $userid";
     $connection->query($query);
     $_SESSION['login_user']=$newUsername; // Initializing Session
 
-//$stmt = new mysqli_stmt ($connection, "UPDATE users
-//        SET username = ? WHERE userid= ?");
-
-//if ($stmt) {
-//    $stmt->bind_param("si", $newUsername, $userid);
-//    $stmt->execute();
-//}
 header("location: admin.php"); // Redirecting To Other Page
     $connection->close(); // Closing Connection
