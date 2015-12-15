@@ -9,7 +9,7 @@ echo $userid;
     }
     echo "Connected successfully";
     $newUsername = $_POST['name'];
-    $password = $_POST['password'];
+    $password = $_POST['pword'];
     $email = $_POST['email'];
     $query = "UPDATE users SET username='$newUsername', password = '$password', email = '$email' WHERE userid = $userid";
     $connection->query($query);
