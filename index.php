@@ -26,7 +26,7 @@ if(isset($_SESSION['login_user'])){
         </form>
     </div>
 </div>
-<div id="main">
+<div id="main2">
     <div id="NewUser">
         <h2>New User</h2>
         <form action="createNewUser.php" method="post">
