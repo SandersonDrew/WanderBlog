@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="profile.css">
+    <link rel="stylesheet" type="text/css" href="css\profile.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Profile</title>
 
@@ -50,17 +50,10 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 
-
-<div class="row">
-    <div class="col-md-12">
-
-    </div>
-</div>
-
 <div class="container">
     <div class="row">
         <div class="span4"></div>
-        <div class="span4"><img class="center-block" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
+        <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
         <div class="span4"></div>
     </div>
 </div>
