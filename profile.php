@@ -26,7 +26,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Brand</a>
+                <a class="navbar-brand" href="#"><img src="C:\Users\1308353\PhpstormProjects\WanderBlog3\Photos\wlogo.png" alt=""logo"</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -34,6 +34,7 @@
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                 </ul>
+
                 <form class="navbar-form navbar-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
