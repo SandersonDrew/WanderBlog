@@ -24,6 +24,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_num_rows($query);
         if ($result == 1) {
             $_SESSION['login_user']=$username; // Initializing Session
+            $_SESSION['userid'] = $userid;
             header("location: profiletest.php"); // Redirecting To Other Page
         } else {
             $error = "Username or Password is invalid";
