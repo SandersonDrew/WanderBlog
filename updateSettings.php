@@ -8,7 +8,9 @@ if (isset($_POST['submit'])) {
         $newUsername = $_POST['username'];
         $password = $_POST['password'];
         $email = $_POST['email'];
-        $query = mysqli_query($connection, "UPDATE users SET `username`='$newUsername' WHERE username='$username'");
+        echo "Before sql";
+        $query = mysqli_query($connection, "UPDATE users SET `username`='$newUsername' WHERE `username`='$username'");
+        echo "After sql";
         $result = mysqli_num_rows($query);
         if ($result == 1) {
             $_SESSION['login_user']=$newUsername; // Initializing Session
