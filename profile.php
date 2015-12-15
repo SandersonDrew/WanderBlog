@@ -22,6 +22,7 @@
 
 <?php
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+$userid = $_SESSION['userid'];
 ?>
 
 
@@ -73,20 +74,19 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 </div>
 
 
-    <?php
-    $userid = $_SESSION['userid'];
 
-    $sql_query = "SELECT displayName FROM users WHERE userid = $userid";
-    $name = $db->query($sql_query);
-
-
-    ?>
 
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
             <h1 id="userName">
-                <?php echo $name ?>
+                <?php
+                $sql_query = "SELECT displayName FROM users WHERE userid='userid'";
+                $result = $db->query($sql_query);
+                while($row = $result->fetch_array()){
+                     echo "<h1>" . $row['name'] . "</h1>";
+                }
+                ?>
             </h1></div>
         <div class="span4">
         </div>
