@@ -10,6 +10,7 @@ include('session.php');
 <body>
 <div id="profile">
     <b id="welcome">Welcome : <i><?php echo $_SESSION['login_user']; ?></i></b>
+    <b id="admin"><a href="admin.php">Click here to go to your admin page</a></b>
     <b id="logout"><a href="logout.php">Log Out</a></b>
 </div>
 </body>
