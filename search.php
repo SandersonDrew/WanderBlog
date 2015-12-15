@@ -24,8 +24,7 @@ echo "Connected successfully<br>";
                echo "You searched for <b> $search </b> <hr size='1' > </ br > ";
 
                $sql = " SELECT * FROM users WHERE username=$search ";
-               $result = $conn->query($sql);
-               echo "$result<br>";
+               $result = mysql_query($sql);
 
  if($result->num_rows > 0) {
                        // output data of each row
