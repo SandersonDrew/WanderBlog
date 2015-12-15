@@ -56,21 +56,16 @@
         <div class="span4"></div>
         <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
         <div class="span4"><h1 id="userName">Name</h1></div>
+        <div class="span4"><p id="desc" align="center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p></div>
         <div class="span4"></div>
     </div>
 </div>
-<!--<div class="row">-->
-<!--    <div class="col-md-12">-->
-<!--        <p id="desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.-->
-<!--            Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.-->
-<!--            Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>-->
-<!--    </div>-->
-<!--</div>-->
 
 
-            <p id="desc" align="center">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. </p>
+
+
 
 
 
