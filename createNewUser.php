@@ -2,11 +2,8 @@
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
-    if (empty($_POST['username'])) {
-        $error = "Username is empty";
-    }
-    elseif(empty($_POST['password'])){
-        $error += "password is empty";
+    if (empty($_POST['username']) || empty($_POST['password'])) {
+        $error = "Username or Password is empty";
     }
     else
     {
@@ -21,7 +18,7 @@ if (isset($_POST['submit'])) {
         $password = stripslashes($password);
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
-// SQL query to fetch information of registered users and finds user match.
+// SQL query to insert new user details into database and log them in
         $query = mysqli_query($connection,"INSERT INTO users $username,$password,0");
         $_SESSION['login_user']=$username; // Initializing Session
         header("location: profiletest.php"); // Redirecting To Other Page
