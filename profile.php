@@ -81,10 +81,10 @@ $userid = $_SESSION['userid'];
         <div class="col-md-12">
             <h1 id="userName">
                 <?php
-                $sql_query = "SELECT displayName FROM users WHERE userid='userid'";
+                $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
-                     echo "<p>" . $row['name'] . "</p>";
+                     echo $row['displayName'];
                 }
                 ?>
             </h1></div>
@@ -96,7 +96,7 @@ $userid = $_SESSION['userid'];
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>check </p>
+            <p>check</p>
         </div>
     </div>
 </div>
