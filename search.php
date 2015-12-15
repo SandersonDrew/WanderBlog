@@ -4,6 +4,11 @@ $username = "b0b05a48637b3";
 $password = "2d0628d";
 
 $conn = new mysqli($servername, $username, $password);
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+?>
 ?>
 <?php $button = $_GET [ 'submit' ]; $search = $_GET [ 'search' ]; if( !$button ) echo "you didn't submit a keyword";
 else { if( strlen( $search ) <= 1 ) echo "Search term too short";
