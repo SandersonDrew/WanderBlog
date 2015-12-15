@@ -12,14 +12,12 @@ if (isset($_POST['submit'])) {
     {
 // Define $username and $password
         $username=$_POST['username'];
-
         $password=$_POST['password'];
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 // Selecting Database
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
-        $email = stripcslashes($email);
         $password = stripslashes($password);
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
