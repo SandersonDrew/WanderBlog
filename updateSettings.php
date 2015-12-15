@@ -1,5 +1,4 @@
 <?php
-include('session.php');
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "Username or Password is empty";
@@ -16,8 +15,9 @@ if (isset($_POST['submit'])) {
             $_SESSION['login_user']=$newUsername; // Initializing Session
             $_SESSION['email_add']=$email;
 
-            header("location: admin.php"); // Redirecting To Other Page
+
         }
+        header("location: admin.php"); // Redirecting To Other Page
         $connection->close(); // Closing Connection
     }
 }
