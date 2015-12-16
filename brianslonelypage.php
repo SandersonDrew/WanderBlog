@@ -52,7 +52,7 @@ if(isset($_SESSION['login_user'])){
 		<script type="text/javascript">
 
             $( "#up" ).click(function() {
-                $(this ).alert('Test');
+              alert('Test');
             });
 
 
