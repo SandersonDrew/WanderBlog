@@ -85,11 +85,8 @@ if ($connection->connect_error) {
         <div class="col-md-12">
 
                 <h1 id="userName"><?php
-                    $userid = $_SESSION['userid'];
-                    $result = mysqli_query($connection, "SELECT displayName FROM users WHERE userid= '$userid'");
-                    while($row = $result->fetch_assoc()) {
-                        echo $row["displayName"];
-                    }
+                    $_SESSION['displayName'] = $displayName;
+                    echo $displayName;
                 ?></h1></div>
 
         <div class="span4">
