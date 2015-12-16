@@ -117,23 +117,23 @@ if ($connection->connect_error) {
     </div>
 </div>
 
-<div id="top1" class="container">
+<!--<div id="top1" class="container">
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
             <p>
                 <?php
-                $sql_query = "SELECT description FROM adventures WHERE userid='$userid'";
+/*                $sql_query = "SELECT description FROM adventures WHERE userid='$userid'";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
                 echo $row['description'];
-                }?>
+                }*/?>
             </p>
         </div>
         <div class="col-md-2"></div>
     </div>
-</div>
+</div>-->
 </body>
 </html>
 
