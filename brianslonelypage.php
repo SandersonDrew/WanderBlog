@@ -35,7 +35,7 @@ if(isset($_SESSION['login_user'])){
 		}
 
         .adventure img{
-            width: 60px;
+            width: 100px;
             height: 60px;
             bottom: 10px;
             text-align: center;
