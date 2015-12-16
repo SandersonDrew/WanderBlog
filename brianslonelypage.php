@@ -45,6 +45,7 @@ if(isset($_SESSION['login_user'])){
 			height: 350px;
 			overflow: hidden;
 			margin: 30px auto;
+            top: 10px;
 		}
 
 		.slider img{
