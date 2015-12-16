@@ -1,6 +1,6 @@
 <?php
 include('session.php');
-if(isnull($_GET['userid'])){
+if($_GET['userid'] == null){
     $displayName = $_SESSION['displayName'];
     $userid = $_SESSION['userid'];
 } else{
