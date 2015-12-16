@@ -104,8 +104,8 @@ if(isset($_SESSION['login_user'])){
 <body onload="Slider();">
 <div class="container">
     <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
             <div class = "adventure">
                 <h1>TITLE OF ADVENTURE</h1>
                 <div class = "slider">
@@ -130,7 +130,7 @@ if(isset($_SESSION['login_user'])){
                 </div>
             </div>
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-1"></div>
     </div>
 </div>';
 <div id="main">
