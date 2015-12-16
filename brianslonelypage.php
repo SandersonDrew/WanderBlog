@@ -6,6 +6,7 @@ if (isset($_GET['submit'])) {
     $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
     $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
+    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
 }
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
@@ -116,7 +117,7 @@ function getval($mysqli, $sql) {
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class = "adventure">
-                <h1>TITLE OF ADVENTURE</h1>
+                <h1><?php echo $advname?></h1>
                 <div class = "slider">
                     <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
                     <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
