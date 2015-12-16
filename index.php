@@ -17,8 +17,6 @@ if(isset($_SESSION['login_user'])){
         .adventure img{
             width: 60px;
             height: 60px;
-            position: absolute;
-            bottom: 0;
         }
 
 		.slider{
