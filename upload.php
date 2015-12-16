@@ -1,5 +1,5 @@
 <?php
-$target_dir = "/photos/dan/1";
+$target_dir = getcwd()."/photos/dan/1";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -16,7 +16,7 @@ if(isset($_POST["submit"])) {
 }
 // Check if file already exists
 if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
+    echo "Sorry, files already exists.";
     $uploadOk = 0;
 }
 // Check file size
