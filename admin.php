@@ -99,7 +99,11 @@ function genDivs(){
             <h6> ' .$row[0] . ' </h6>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
-            <a href="verifyUser.php"><img src="http://placehold.it/60x60" alt="Yes"></a>
+        <form action="verifyUser.php" method="post">
+            <input type="hidden" name="username" value="'.$row[0].'">
+            <input type="submit" value="submit" style="background:url(http://placehold.it/60x60) no-repeat;" />
+        </form>
+
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="No">
