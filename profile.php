@@ -136,3 +136,33 @@ if ($connection->connect_error) {
 </div>
 </body>
 </html>
+
+<?php
+genDivs();
+function genDivs()
+{
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    $userid = $_SESSION['userid'];
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }else{
+        $sql_query = "SELECT description FROM adventures WHERE userid='$userid'";
+        $result = $connection->query($sql_query);
+        while ($row = $result->fetch_assoc()) {
+            echo $row['description'];
+            for ($i = 0; $i < $result; $i++) {
+                $row = mysqli_fetch_array($sql_query, MYSQLI_NUM);
+                echo '<div class="container">
+                <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <h6> ' . $row[0] . ' </h6>
+                </div>
+                <div class="col-md-2"></div>
+                </div>
+                </div>';
+            }
+        }
+    }
+}
+?>
