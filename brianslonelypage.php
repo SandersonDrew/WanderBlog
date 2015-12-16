@@ -42,7 +42,6 @@ function getval($mysqli, $sql) {
     <style type="text/css">
         .text{
             text-align: justify;
-            border: 1px solid black;
 
         }
         .adventure p{
@@ -126,11 +125,11 @@ function getval($mysqli, $sql) {
                 </div>
                 <div class="info">
                     <p><?php echo $authname?></p>
-                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                     <p><?php echo $advdate?></p>
                     <p>Upvotes: </p>
+                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
                     <p>Downvotes: </p>
+                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                 </div>
                 <div class ="text">
                     <p><?php echo $text?></p>
