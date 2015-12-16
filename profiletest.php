@@ -27,7 +27,12 @@ include('session.php');
     <b id="profile"><a href="profile.php">Click here to go to your profile page</a></b>
     <b id="logout"><a href="logout.php">Log Out</a></b>
     <b id="brian"><a href="brianslonelypage.php">All by myself</a></b>
-    <div class="row">
+    <?php
+        if($_SESSION['permLevel'] == 4){
+            showNewAdventure();
+        }
+    function showNewAdventure(){
+        echo '<div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
             <p><h4>Create New Adventure</h4>
@@ -41,6 +46,9 @@ include('session.php');
         </div>
         <div class="col-md-2"></div>
     </div>
-</div>
+</div>';
+    }
+    ?>
+
 </body>
 </html>
