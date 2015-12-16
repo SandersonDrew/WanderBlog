@@ -1,5 +1,10 @@
 <?php
 include('session.php');
+function getval($mysqli, $sql) {
+    $result = $mysqli->query($sql);
+    $value = $result->fetch_array(MYSQLI_NUM);
+    return is_array($value) ? $value[0] : "";
+}
 if($_GET['username'] == null){
     $userid = $_SESSION['userid'];
 } else{
