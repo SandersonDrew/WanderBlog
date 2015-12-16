@@ -23,6 +23,7 @@ if(isset($_SESSION['login_user'])){
             width: 60px;
             height: 60px;
             bottom: 10px;
+            left:300px;
             horiz-align: center;
             zoom: 1;
         }
@@ -31,6 +32,7 @@ if(isset($_SESSION['login_user'])){
 			width: 60px;
 			height: 60px;
 			bottom: 10px;
+            left:440px;
             horiz-align: center;
 			zoom: 1;
 
