@@ -140,7 +140,7 @@ function genDivs()
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }else{
-        $sql_query = "SELECT description FROM adventures WHERE userid='$userid'";
+        $sql_query = "SELECT description,adventureid FROM adventures WHERE userid='$userid'";
         $result = $connection->query($sql_query);
         while ($row = $result->fetch_assoc()) {
             echo '
@@ -150,6 +150,8 @@ function genDivs()
                     <div class="col-md-8">
                         <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                         <h6> ' . $row['description']. ' </h6>
+                        <form action="adventure.php" method="get">
+                        <input type="submit" value="'.$row['adventureid'].'";
                     </div>
                     <div class="col-md-2"></div>
                 </div>
