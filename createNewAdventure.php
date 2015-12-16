@@ -1,8 +1,8 @@
 <?php
 include('session.php');
 if (isset($_POST['submit'])) {
-    if (empty($_POST['username']) || empty($_POST['password']) || empty($_POST['email'])) {
-        $error = "Username, Password or Email is empty";
+    if (empty($_POST['Text']) || empty($_POST['Location'])) {
+        $error = "Text or Location is empty";
     } else {
 
         // Define $text
