@@ -23,7 +23,6 @@ if (isset($_POST['submit'])) {
 // SQL query to insert new user details into database and log them in
         $query = mysqli_query($connection,"SELECT * FROM users WHERE username='$username'");
         $result = mysqli_num_rows($query);
-
         if ($result == 0) {
             mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email) VALUES('$username', '$password', '0','FALSE','$email') ");
             $userid = getval($connection, "SELECT userid FROM users WHERE username='$username'");
