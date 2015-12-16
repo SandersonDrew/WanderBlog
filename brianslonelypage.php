@@ -132,7 +132,11 @@ function getval($mysqli, $sql) {
                     <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                 </div>
                 <div class ="text">
-                    <p><?php echo $text?></p>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-8">
+                        <p><?php echo $text?></p>
+                    </div>
+                    <div class="col-md-1"></div>
                 </div>
             </div>
         </div>
