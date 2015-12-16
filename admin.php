@@ -63,7 +63,7 @@ $email = $_SESSION['email'];
             <p><h4>Update Settings</h4>
 
             <form action="updateSettings.php" method="post">
-                <h6>Name: </h6> <input type="text" name="name" value="<?php echo $displayName;?>">
+                <h6>Display Name: </h6> <input type="text" name="name" value="<?php echo $displayName;?>">
                 <h6>Email: </h6><input type="text" name="email" value="<?php echo $email ?>">
                 <input type="submit" value="submit">
             </form>
@@ -72,18 +72,20 @@ $email = $_SESSION['email'];
         <div class="col-md-2"></div>
     </div>
 </div>
+<b id="logout"><a href="logout.php">Log Out</a></b>
 <?php
 if($_SESSION['permLevel'] == 3){
     genDivs();
 }
 ?>
-<b id="logout"><a href="logout.php">Log Out</a></b>
+
 <?php
 function genDivs()
 {
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
+    $row = mysqli_fetch_array($query, MYSQLI_NUM);
     for ($i = 0; $i < $result; $i++) {
         echo '<div class="container">
         <div class="row">
@@ -92,7 +94,7 @@ function genDivs()
             <img src="http://placehold.it/60x60">
         </div>
         <div class="col-md-5" style="height: 62px; border:1px solid #000;">
-            <h6> ' . $query = mysqli_fetch_array($i). ' </h6>
+            <h6> ' .$row[$i] . ' </h6>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="Yes">
