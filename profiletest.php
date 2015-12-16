@@ -1,6 +1,7 @@
 <?php
 include('session.php');
 if($_SESSION['permLevel'] == 0){
+    echo $_SESSION['permLevel'];
     header('location: index.php');
 }
 ?>
