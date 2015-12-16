@@ -85,8 +85,11 @@ if ($connection->connect_error) {
         <div class="col-md-12">
 
                 <h1 id="userName"><?php
-                    $_SESSION['displayName'] = $displayName;
-                    echo $displayName;
+                    $userid = $_SESSION['userid'];
+                    $result = mysqli_query($connection, "SELECT displayName FROM users WHERE userid= '$userid'");
+                    while($row = $result->fetch_assoc()) {
+                        echo "<p>" . $row['displayName'] . "</p>";
+                    }
                 ?></h1></div>
 
         <div class="span4">
@@ -97,7 +100,7 @@ if ($connection->connect_error) {
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aenean commodo ligula eget dolor. Aenean massa. </p>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aeneanean massa. </p>
         </div>
     </div>
 </div>
