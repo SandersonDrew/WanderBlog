@@ -50,6 +50,7 @@ function getval($mysqli, $sql) {
         	margin-left: auto;
             margin-right:auto;
             bottom: 10px;
+
             margin-left: auto;
             margin-right:auto;
             border: 1px solid black;
