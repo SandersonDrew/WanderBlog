@@ -4,33 +4,43 @@ if(isset($_SESSION['login_user'])){
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Welcome</title>
+
+    <!-- Bootstrap -->
+    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
     <title>Welcome to WanderBlog</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
 		.adventure{
 			width: 900px;
 			height: 500px;
-			border: 1px black;
+            margin: 40px;
+            border: 1px solid black;
 		}
 
-        #up{
+        .adventure img{
             width: 60px;
             height: 60px;
             bottom: 10px;
-            left:300px;
-            zoom: 1;
+            align-items: center;
+            border: 1px solid black;
         }
-
-		#down{
-			width: 60px;
-			height: 60px;
-			bottom: 10px;
-            left:440px;
-			zoom: 1;
-
-		}
 
 		.slider{
 			width: 800px;
@@ -38,20 +48,29 @@ if(isset($_SESSION['login_user'])){
 			overflow: hidden;
 			margin: 30px auto;
             top: 10px;
+            border: 1px solid black;
 		}
 
 		.slider img{
 			width:800px;
 			height:350px;
 			display: none;
+            border: 1px solid black;
 		}
 
 		</style>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript">
-            $(".adventure #up" ).click(function() {
-              alert("Test");
+            $(document).ready(function() {
+                // This will add a vote eventually.
+                $(".adventure #up").click(function() {
+                    alert("upvote");
+                });
+                // this will remove a vote.
+                $(".adventure #down").click(function() {
+                    alert("downvote");
+                });
             });
 
 			function Slider(){
@@ -77,45 +96,17 @@ if(isset($_SESSION['login_user'])){
 </head>
 <body onload="Slider();">
 <div id="main">
-    <h1>WanderBlog Login</h1>
-    <div id="login">
-        <h2>Login </h2>
-        <form action="login.php" method="post">
-            <label>UserName :</label>
-            <input id="name" name="username" placeholder="username" type="text">
-            <label>Password :</label>
-            <input id="password" name="password" placeholder="**********" type="password">
-            <input name="submit" type="submit" value=" Login ">
-            <span><?php echo $error; ?></span>
-        </form>
-    </div>
-</div>
-<div id="main2">
-    <div id="NewUser">
-        <h2>New User</h2>
-        <form action="createNewUser.php" method="post">
-            <label>UserName :</label>
-            <input id="name" name="username" placeholder="username" type="text">
-            <label>Email :</label>
-            <input id="email" name="email" placeholder="email" type="text">
-            <label>Password :</label>
-            <input id="password" name="password" placeholder="**********" type="password">
-            <input name="submit" type="submit" value=" Login ">
-            <span><?php echo $error; ?></span>
-        </form>
-    </div>
-
     <div class = "adventure">
     	<div class = "slider">
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
 			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-</div>
-        <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-        <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-
+        </div>
+            <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+            <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
 	</div>
+</div>
 </div>
 </body>
 </html>
