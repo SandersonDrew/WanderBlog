@@ -14,7 +14,20 @@ include('session.php');
     <b id="profile"><a href="profile.php">Click here to go to your profile page</a></b>
     <b id="logout"><a href="logout.php">Log Out</a></b>
     <b id="brian"><a href="brianslonelypage.php">All by myself</a></b>
-    <b id="newAdventure"><a href="createNewAdventure.php">Create New Adventure</a></b>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8" style="border:1px solid #000;">
+            <p><h4>Update Settings</h4>
+
+            <form action="updateSettings.php" method="post">
+                <h6>Name: </h6> <input type="text" name="Text" placeholder="Adventure Text">
+                <h6>Email: </h6><input type="text" name="Location" placeholder="Location">
+                <input type="submit" value="submit">
+            </form>
+            <br>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </div>
 </body>
 </html>
