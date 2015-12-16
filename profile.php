@@ -64,9 +64,9 @@ if ($connection->connect_error) {
                 </ul>
 
                 <?php
-                    if($_SESSION['login_user']){
-                        $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
-                        $name = "Logged in as " . $connection->query($sql_query);
+                    if($_SESSION['login_user']!= null){
+
+                        $name = "Logged in as " . $_SESSION['displayName'];
                     }else{
                         $name = "Log In";
                     }
