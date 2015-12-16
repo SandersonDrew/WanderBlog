@@ -88,7 +88,7 @@ function genDivs(){
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
     $row = mysqli_fetch_array($query, MYSQLI_NUM);
-    echo $row;
+    print_r($row);
     for ($i = 0; $i < $result; $i++) {
         echo '<div class="container">
         <div class="row">
