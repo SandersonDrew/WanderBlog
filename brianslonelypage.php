@@ -45,6 +45,7 @@ if(isset($_SESSION['login_user'])){
 			height: 350px;
 			overflow: hidden;
 			margin: 30px auto;
+            top: 10px;
 		}
 
 		.slider img{
@@ -108,9 +109,10 @@ if(isset($_SESSION['login_user'])){
             <span><?php echo $error; ?></span>
         </form>
     </div>
-    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+
     <div class = "adventure">
+		<img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+		<img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
     	<div class = "slider">
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
 			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
