@@ -90,7 +90,6 @@ if ($connection->connect_error) {
     <div class="row">
         <div class="span4"></div>
         <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
-        <div class="span4">
         <div class="span4"></div>
     </div>
 </div>
@@ -101,20 +100,17 @@ if ($connection->connect_error) {
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-
                 <h1 id="userName"><?php
-
                     $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
                     $result = $connection->query($sql_query);
                     while($row = $result->fetch_assoc()){
                         echo $row['displayName'];
                     }
-                ?></h1></div>
-
-        <div class="span4">
+                ?></h1>
         </div>
     </div>
 </div>
+
 
 <div id="desc" class="container">
     <div class="row">
