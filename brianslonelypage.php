@@ -15,7 +15,7 @@ if(isset($_SESSION['login_user'])){
 			border: 1px black;
 		}
 
-        #up{
+        .adventure #up{
             width: 60px;
             height: 60px;
             bottom: 10px;
@@ -23,7 +23,7 @@ if(isset($_SESSION['login_user'])){
             zoom: 1;
         }
 
-		#down{
+		.adventure #down{
 			width: 60px;
 			height: 60px;
 			bottom: 10px;
@@ -51,10 +51,11 @@ if(isset($_SESSION['login_user'])){
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript">
             $(document).ready(function() {
+                // This will add a vote eventually.
                 $(".adventure #up").click(function() {
                     alert("upvote");
                 });
-
+                // this will remove a vote.
                 $(".adventure #down").click(function() {
                     alert("downvote");
                 });
