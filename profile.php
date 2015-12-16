@@ -61,6 +61,7 @@ if ($connection->connect_error) {
                 <ul class="nav navbar-nav">
                     <li><a href="#">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
+                    <li><a href="admin.php">Settings</a></li>
                 </ul>
 
                 <?php
