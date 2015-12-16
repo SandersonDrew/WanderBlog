@@ -51,7 +51,7 @@ if(isset($_SESSION['login_user'])){
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript">
 
-            $( "#up" ).click(function() {
+            $(#up ).click(function() {
               alert('Test');
             });
 
