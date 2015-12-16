@@ -1,3 +1,9 @@
+<?php
+include('session.php');
+$displayName = $_SESSION['displayName'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -86,10 +92,7 @@ if ($connection->connect_error) {
 
                 <h1 id="userName"><?php
                     $userid = $_SESSION['userid'];
-                    $result = mysqli_query($connection, "SELECT displayName FROM users WHERE userid= '$userid'");
-                    while($row = $result->fetch_assoc()) {
-                        echo "<p>" . $row['displayName'] . "</p>";
-                    }
+                    echo $userid;
                 ?></h1></div>
 
         <div class="span4">
