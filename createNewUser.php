@@ -1,7 +1,7 @@
 <?php
-ini_set('display_errors', 1);
+/*ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL);*/
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
@@ -26,9 +26,9 @@ if (isset($_POST['submit'])) {
  *
  * For the VAST majority of use-cases, let password_hash generate the salt randomly for you
  */
-     echo $email;
+/*     echo $email;
         echo $username;
-        echo $password;
+        echo $password;*/
 
     /*$options = [
     'cost' => 11
