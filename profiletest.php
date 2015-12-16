@@ -52,7 +52,7 @@ if($_SESSION['permLevel'] == 0){
             <form action="createNewAdventure.php" method="post">
                 <h6>Text: </h6> <input type="text" name="Text" placeholder="Adventure Text">
                 <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
-                <input type="submit" value="submit">
+                <input type="submit" name="submit" value="submit">
             </form>
             <br>
         </div>

@@ -2,6 +2,11 @@
 include('session.php');
 echo "Hello World";
 if (isset($_POST['submit'])) {
+    if (empty($_POST['Text']) || empty($_POST['Location'])) {
+        $error = "Text or Location is empty";
+        echo $error;
+    } else {
+
         echo "Hi Again";
         // Define $text
         $text = $_POST['Text'];
@@ -16,5 +21,5 @@ if (isset($_POST['submit'])) {
         mysqli_query($connection, "INSERT INTO adventures(userid,description,Location) VALUES(92,'I went to France. It was Nice.','France') ");
         $connection->close(); // Closing Connection
         header("location: profiletest.php");
-
+    }
 }
