@@ -14,6 +14,12 @@ if(isset($_SESSION['login_user'])){
 			height: 500px;
 			border: 1px black;
 		}
+        .adventure img{
+            width: 60px;
+            height: 60px;
+            position: absolute;
+            bottom: 0;
+        }
 
 		.slider{
 			width: 800px;
@@ -28,11 +34,6 @@ if(isset($_SESSION['login_user'])){
 			display: none;
 		}
 
-		.vote{
-			width: 60px;
-			height: 60px;
-			align: bottom;
-		}
 		</style>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
@@ -89,16 +90,14 @@ if(isset($_SESSION['login_user'])){
         </form>
     </div>
     <div class = "adventure">
-		<div class = "vote">
-			<img src = "H:\Web Develop\up.jpeg" border = "0">
-			<img src = "H:\Web Develop\down.jpeg" border="0">
+		    <img src = "http://i68.tinypic.com/dh7giv.jpg">
+			<img src = "http://i68.tinypic.com/dh7giv.jpg">
 
     	<div class = "slider">
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
 			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-		</div>
 		</div>
 	</div>
 </div>
