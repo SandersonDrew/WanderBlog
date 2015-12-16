@@ -62,15 +62,16 @@ if ($connection->connect_error) {
                     <li><a href="#">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                 </ul>
+
                 <?php
                     if($userid!=null){
                         $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
-                        $result = $connection->query($sql_query);
-                        $name = $result;
+                        $name = "Logged in as " . $connection->query($sql_query);
                     }else{
                         $name = "Log In";
                     }
                 ?>
+
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php"><?php
                             echo $name;
