@@ -204,7 +204,7 @@ function genDivs()
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }else{
-        $sql_query = "SELECT text FROM comments WHERE userid='$userid' AND adventureid='$adventureid'";
+        $sql_query = "SELECT text FROM comments WHERE adventureid='$adventureid'";
         $result = $connection->query($sql_query);
         while ($row = $result->fetch_assoc()) {
             echo '
