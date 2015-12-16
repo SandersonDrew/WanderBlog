@@ -39,8 +39,6 @@ function getval($mysqli, $sql) {
     <style type="text/css">
         .text{
             text-align: justify;
-            border: 1px solid black;
-
         }
         .adventure p{
         	display: inline-block;
