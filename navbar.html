@@ -14,7 +14,20 @@
         outline: 1.5px solid white;}
 </style>
 
-<header><img src="/Photos/wlogo.png" width="210" height="110" alt=""/></header>
+<header>
+        <div id="login">
+            <h2>Login </h2>
+            <form action="login.php" method="post">
+                <label>UserName :</label>
+                <input id="name" name="username" placeholder="username" type="text">
+                <label>Password :</label>
+                <input id="password" name="password" placeholder="**********" type="password">
+                <input name="submit" type="submit" value=" Login ">
+                <span><?php echo $error; ?></span>
+            </form>
+        </div>
+    <img src="/Photos/logoback.png" width="210" height="110" alt=""/>
+</header>
 <html>
 <head>
     <style>
@@ -54,5 +67,7 @@
     <li><a href="#contact">Contact</a></li>
     <li><a href="#about">About</a></li>
 </ul>
+
+
 </body>
 </html>
