@@ -83,8 +83,10 @@ if ($connection->connect_error) {
 
 <div id="desc" class="container">
     <div class="row">
-        <div class="col-md-12">
-                <h1 id="userName"><?php
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+                <h1 id="userName">
+                    <?php
                     $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
                     $result = $connection->query($sql_query);
                     while($row = $result->fetch_assoc()){
@@ -92,13 +94,16 @@ if ($connection->connect_error) {
                     }
                 ?></h1>
         </div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 
 <div id="desc" class="container">
     <div class="row">
-        <div class="col-md-12">
-            <p style="text-align: center"><?php
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <p style="text-align: center">
+                <?php
                 $userid = $_SESSION['userid'];
                 $sql_query = "SELECT bio FROM users WHERE userid='$userid'";
                 $result = $connection->query($sql_query);
@@ -107,15 +112,25 @@ if ($connection->connect_error) {
                 }
                 ?> </p>
         </div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 
 <div id="top1" class="container">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
             <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-            <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
+            <p>
+                <?php
+                $sql_query = "SELECT description FROM adventures WHERE userid='$userid'";
+                $result = $connection->query($sql_query);
+                while($row = $result->fetch_assoc()){
+                echo $row['description'];
+                }?>
+            </p>
         </div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 </body>
