@@ -17,6 +17,12 @@ if(isset($_SESSION['login_user'])){
         .adventure img{
             width: 60px;
             height: 60px;
+            bottom: 10px;
+            vertical-align: top;
+            display: inline-block;
+            *display: inline;
+            zoom: 1;
+
         }
 
 		.slider{
@@ -87,6 +93,8 @@ if(isset($_SESSION['login_user'])){
             <span><?php echo $error; ?></span>
         </form>
     </div>
+    <img src = "http://i68.tinypic.com/dh7giv.jpg">
+    <img src = "http://i68.tinypic.com/dh7giv.jpg">
     <div class = "adventure">
     	<div class = "slider">
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
@@ -94,8 +102,7 @@ if(isset($_SESSION['login_user'])){
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
 </div>
-            <img src = "http://i68.tinypic.com/dh7giv.jpg">
-            <img src = "http://i68.tinypic.com/dh7giv.jpg">
+
 	</div>
 </div>
 </body>
