@@ -21,27 +21,11 @@ if (isset($_POST['submit'])) {
         $username = stripslashes($username);
         $email = stripslashes($email);
         $password = stripslashes($password);
-/**
- * Note that the salt here is randomly generated.
- * Never use a static salt or one that is not randomly generated.
- *
- * For the VAST majority of use-cases, let password_hash generate the salt randomly for you
- */
-/*     echo $email;
-        echo $username;
-        echo $password;*/
-
-    /*$options = [
-    'cost' => 11
-    ];
-    $password = password_hash($password, PASSWORD_BCRYPT, $options);*/
-
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
 // SQL query to insert new user details into database and log them in
-        $query = mysqli_query($connection,"SELECT * FROM users WHERE username='$username'");
-        $result = mysqli_num_rows($query);
-        if ($result == 0) {
+        $query = mysqli_query($connection,"SELECT COUNT(*) FROM users WHERE username='$username'");
+        if ($query == 0) {
             mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email) VALUES('$username', '$password', '0','FALSE','$email') ");
             $userid = getval($connection, "SELECT userid FROM users WHERE username='$username'");
             $_SESSION['login_user']=$userid; // Initializing Session

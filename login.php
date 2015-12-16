@@ -16,17 +16,6 @@ if (isset($_POST['submit'])) {
 // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
         $password = stripslashes($password);
-        /**
-         * Note that the salt here is randomly generated.
-         * Never use a static salt or one that is not randomly generated.
-         *
-         * For the VAST majority of use-cases, let password_hash generate the salt randomly for you
-         */
-       /* $options = [
-            'cost' => 11
-        ];
-        $password = password_hash($password, PASSWORD_BCRYPT, $options);*/
-
         //$username = mysql_real_escape_string($username);
        // $password = mysql_real_escape_string($password);
 // SQL query to fetch information of registered users and finds user match.
