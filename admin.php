@@ -90,6 +90,7 @@ function genDivs(){
     for ($i = 0; $i < $result; $i++) {
         $row = mysqli_fetch_array($query, MYSQLI_NUM);
         print_r($row);
+        echo $i;
         echo '<div class="container">
         <div class="row">
         <div class="col-md-2"></div>
