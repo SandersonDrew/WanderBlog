@@ -4,7 +4,6 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 session_start();// Starting Session
 // Storing Session
 $user_check=$_SESSION['login_user'];
-echo $user_check;
 if($user_check == null){
     $_SESSION['permLevel'] = 0;
     $login_session = "null";
