@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
 // SQL query to insert new user details into database and log them in
-        $query = mysqli_query($connection,"SELECT COUNT(*) FROM users WHERE username='$username'");
+        $query = getval($connection,"SELECT COUNT(*) FROM users WHERE username='$username'");
         if ($query == 0) {
             mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email) VALUES('$username', '$password', '0','FALSE','$email') ");
             $userid = getval($connection, "SELECT userid FROM users WHERE username='$username'");
