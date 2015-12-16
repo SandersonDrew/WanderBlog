@@ -1,10 +1,8 @@
 <?php
 include('session.php');
 if($_GET['userid'] == null){
-    $displayName = $_SESSION['displayName'];
     $userid = $_SESSION['userid'];
 } else{
-    $displayName = $_GET['displayName'];
     $userid = $_GET['userid'];
 }
 
