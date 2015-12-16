@@ -107,7 +107,14 @@ if ($connection->connect_error) {
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aeneanean massa. </p>
+            <p><?php
+                $userid = $_SESSION['userid'];
+                $sql_query = "SELECT bio FROM users WHERE userid='$userid'";
+                $result = $connection->query($sql_query);
+                while($row = $result->fetch_assoc()){
+                    echo $row['bio'];
+                }
+                ?> </p>
         </div>
     </div>
 </div>
@@ -119,65 +126,6 @@ if ($connection->connect_error) {
                 <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                 <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-
-
-
         </div>
 
 
