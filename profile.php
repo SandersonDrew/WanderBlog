@@ -1,7 +1,13 @@
 <?php
 include('session.php');
-$displayName = $_SESSION['displayName'];
-$userid = $_SESSION['userid'];
+if($_GET['userid'] == null){
+    $displayName = $_SESSION['displayName'];
+    $userid = $_SESSION['userid'];
+} else{
+    $displayName = $_GET['displayName'];
+    $userid = $_GET['userid'];
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -56,8 +62,7 @@ if ($connection->connect_error) {
                 </ul>
                 <?php
                     if($_SESSION['login_user']!= null){
-
-                        $name = "Logged in as " . $_SESSION['displayName'];
+                        $name = "Logged in as " . $displayName;
                     }else{
                         $name = "Log In";
                     }
