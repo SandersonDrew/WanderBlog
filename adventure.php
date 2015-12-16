@@ -174,5 +174,52 @@ function getval($mysqli, $sql) {
         <div class="col-md-1"></div>
     </div>
 </div>
+
+<?php
+genDivs();
+function genDivs()
+{
+    $adventureid = $_GET['adventureid'];
+    if($_SESSION['userid'] != null){
+        $userid = $_SESSION['userid'];
+        echo '
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <form action="postComment.php" method="post">
+                        <input type="hidden" name="userid" value="'.$userid.'"/>
+                        <input type="hidden" name="adventureid" value="'.$adventureid.'"/>
+                        <input type="text" name="comment" placeholder="Please type a comment"/>
+                        <input type="submit" name="submit" value="Post Comment"/>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>';
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    } else{
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    }
+
+    if ($connection->connect_error) {
+        die("Connection failed: " . $connection->connect_error);
+    }else{
+        $sql_query = "SELECT text FROM comments WHERE userid='$userid' AND adventureid='$adventureid'";
+        $result = $connection->query($sql_query);
+        while ($row = $result->fetch_assoc()) {
+            echo '
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <h6> ' . $row['text']. ' </h6>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>';
+        }
+    }
+}
+?>
 </body>
 </html>
