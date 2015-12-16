@@ -131,21 +131,17 @@ function getval($mysqli, $sql) {
                     <p>Downvotes: </p>
                     <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                 </div>
-                <div class ="text">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-8">
-                        <p><?php echo $text?></p>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
             </div>
         </div>
         <div class="col-md-1"></div>
     </div>
-</div>';
-<div id="main">
-
-</div>
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-8">
+            <p><?php echo $text?></p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
 </div>
 </body>
 </html>
