@@ -10,7 +10,7 @@ if(isset($_SESSION['login_user'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Settings Page</title>
+    <title>Welcome</title>
 
     <!-- Bootstrap -->
     <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -38,17 +38,9 @@ if(isset($_SESSION['login_user'])){
             width: 60px;
             height: 60px;
             bottom: 10px;
-            horiz-align: center;
+            align-items: center;
             border: 1px solid black;
         }
-
-        #up{
-            left: 300px;
-        }
-        #down {
-            right: 400px;
-        }
-
 
 		.slider{
 			width: 800px;
