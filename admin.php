@@ -2,7 +2,6 @@
 include('session.php');
 $displayName = $_SESSION['displayName'];
 $email = $_SESSION['email'];
-$pword = $_SESSION['pword'];
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +65,6 @@ $pword = $_SESSION['pword'];
             <form action="updateSettings.php" method="post">
                 <h6>Name: </h6> <input type="text" name="name" value="<?php echo $displayName;?>">
                 <h6>Email: </h6><input type="text" name="email" value="<?php echo $email ?>">
-                <h6>Password: </h6><input type="password" name="pword" value="<?php echo $pword ?>">
                 <input type="submit" value="submit">
             </form>
             <br>
