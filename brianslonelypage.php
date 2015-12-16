@@ -30,12 +30,14 @@ if(isset($_SESSION['login_user'])){
 
         .adventure p{
             width: 800px;
+            height: 100%;
+            text-align: justify;
             margin: 30px auto;
-            overflow-y scroll;
+            overflow-y: scroll;
         }
 		.adventure{
 			width: 900px;
-			height: 1000px;
+			height: 600px;
             margin: 30px auto;
             border: 1px solid black;
             text-align: center;
