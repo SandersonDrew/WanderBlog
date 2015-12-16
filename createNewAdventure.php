@@ -7,6 +7,7 @@ if (isset($_POST['submit'])) {
         echo $error;
     } else {
 
+        echo "Hi Again";
         // Define $text
         $text = $_POST['Text'];
         $location = $_POST['Location'];
