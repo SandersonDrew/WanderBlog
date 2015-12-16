@@ -30,7 +30,7 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
-$userid = $_SESSION['userid'];
+
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -86,7 +86,8 @@ $userid = $_SESSION['userid'];
         <div class="col-md-12">
             <h1 id="userName">
                 <?php
-                $sql_query = "SELECT displayName FROM users WHERE userid= $userid";
+                $userid = $_SESSION['userid'];
+                $sql_query = "SELECT displayName FROM users WHERE userid= '$userid'";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
                     echo $row['displayName'];
