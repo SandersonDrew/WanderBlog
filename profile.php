@@ -154,6 +154,7 @@ function genDivs()
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
+                        <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                         <h6> ' . $row['description']. ' </h6>
                     </div>
                     <div class="col-md-2"></div>
