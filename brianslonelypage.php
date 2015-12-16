@@ -42,6 +42,12 @@ if(isset($_SESSION['login_user'])){
             border: 1px solid black;
         }
 
+        #up{
+            left: 300px;
+        }
+        #down right: 400px;
+        }
+
 
 		.slider{
 			width: 800px;
@@ -108,8 +114,6 @@ if(isset($_SESSION['login_user'])){
             <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
 	</div>
 </div>
-
-
 </div>
 </body>
 </html>
