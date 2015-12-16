@@ -17,7 +17,7 @@ if (isset($_POST['submit'])) {
         $text = stripslashes($text);
         $location = stripslashes($location);
         // SQL query to insert new user details into database and log them in
-        mysqli_query($connection, "INSERT INTO adventures(userid,text,Location) VALUES('$userid','$text','$location') ");
+        mysqli_query($connection, "INSERT INTO adventures(userid,description,Location) VALUES('$userid','$text','$location') ");
         $connection->close(); // Closing Connection
         header("location: profiletest.php");
     }
