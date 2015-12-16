@@ -31,6 +31,7 @@ if(isset($_SESSION['login_user'])){
 			width: 900px;
 			height: 500px;
             margin: 40px auto;
+            border: 1px solid black;
 		}
 
         .adventure img{
@@ -38,6 +39,7 @@ if(isset($_SESSION['login_user'])){
             height: 60px;
             bottom: 10px;
             horiz-align: center;
+            border: 1px solid black;
         }
 
 
@@ -47,12 +49,14 @@ if(isset($_SESSION['login_user'])){
 			overflow: hidden;
 			margin: 30px auto;
             top: 10px;
+            border: 1px solid black;
 		}
 
 		.slider img{
 			width:800px;
 			height:350px;
 			display: none;
+            border: 1px solid black;
 		}
 
 		</style>
@@ -100,21 +104,12 @@ if(isset($_SESSION['login_user'])){
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
         </div>
-
-
+            <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+            <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
 	</div>
 </div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="border:1px solid #000;">
-            <div>
-                <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
+
+
 </div>
 </body>
 </html>
