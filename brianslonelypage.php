@@ -6,7 +6,7 @@ if(isset($_SESSION['login_user'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WanderBlog Login</title>
+    <title>Welcome to WanderBlog</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
 		.adventure{
@@ -23,8 +23,8 @@ if(isset($_SESSION['login_user'])){
             width: 60px;
             height: 60px;
             bottom: 10px;
-            vertical-align: top;
-            display: inline-block;
+            horiz-align: center;
+             display: inline-block;
             *display: inline;
             zoom: 1;
         }
@@ -33,7 +33,7 @@ if(isset($_SESSION['login_user'])){
 			width: 60px;
 			height: 60px;
 			bottom: 10px;
-			vertical-align: top;
+            horiz-align: center;
 			display: inline-block;
 			*display: inline;
 			zoom: 1;
@@ -111,14 +111,14 @@ if(isset($_SESSION['login_user'])){
     </div>
 
     <div class = "adventure">
-		<img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-		<img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
     	<div class = "slider">
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
 			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
 </div>
+        <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+        <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
 
 	</div>
 </div>
