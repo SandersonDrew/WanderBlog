@@ -38,11 +38,11 @@ if (isset($_POST['submit'])) {
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
 // SQL query to insert new user details into database and log them in
-        $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
-        $query = mysqli_query($connection,"SELECT * FROM users WHERE userid='$userid'");
+        $query = mysqli_query($connection,"SELECT * FROM users WHERE username='$username'");
         $result = mysqli_num_rows($query);
         if ($result == 0) {
             mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email) VALUES('$username', '$password', '0','FALSE','$email') ");
+            $userid = getval($connection, "SELECT userid FROM users WHERE username='$username'");
             $_SESSION['login_user']=$userid; // Initializing Session
             header("location: profiletest.php"); // Redirecting To Other Page
         } else {
