@@ -23,25 +23,18 @@ $userid = $_SESSION['userid'];
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
 </head>
 
-
-
-
 <body>
-
 <?php
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 ?>
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-
 <nav id="navbar">
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -55,7 +48,6 @@ if ($connection->connect_error) {
                 </button>
                 <a class="navbar-brand" href="index.php">Logo goes here</a>
             </div>
-
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -63,7 +55,6 @@ if ($connection->connect_error) {
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
                 </ul>
-
                 <?php
                     if($_SESSION['login_user']!= null){
 
@@ -72,7 +63,6 @@ if ($connection->connect_error) {
                         $name = "Log In";
                     }
                 ?>
-
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php"><?php
                             echo $name;
@@ -82,9 +72,6 @@ if ($connection->connect_error) {
         </div><!-- /.container-fluid -->
     </nav>
 </nav>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-
 
 <div class="container">
     <div class="row">
@@ -93,9 +80,6 @@ if ($connection->connect_error) {
         <div class="span4"></div>
     </div>
 </div>
-
-
-
 
 <div id="desc" class="container">
     <div class="row">
@@ -111,11 +95,10 @@ if ($connection->connect_error) {
     </div>
 </div>
 
-
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p><?php
+            <p style="align-content: center"><?php
                 $userid = $_SESSION['userid'];
                 $sql_query = "SELECT bio FROM users WHERE userid='$userid'";
                 $result = $connection->query($sql_query);
@@ -127,28 +110,13 @@ if ($connection->connect_error) {
     </div>
 </div>
 
-    <?php
-
-    ?>
 <div id="top1" class="container">
         <div class="row">
             <div class="col-md-2">
-
                 <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                 <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
         </div>
-
-
-
-        </div>
-    </div>
-
-
-
-
-
-
-
+</div>
 </body>
 </html>
