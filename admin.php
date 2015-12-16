@@ -84,7 +84,6 @@ function genDivs()
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
-    //$query = iterator_to_array($query);
     for ($i = 0; $i < $result; $i++) {
         echo '<div class="container">
         <div class="row">
@@ -93,7 +92,7 @@ function genDivs()
             <img src="http://placehold.it/60x60">
         </div>
         <div class="col-md-5" style="height: 62px; border:1px solid #000;">
-            <h6> ' . $query[$i]. ' </h6>
+            <h6> ' . $query = mysqli_fetch_array($i). ' </h6>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="Yes">
