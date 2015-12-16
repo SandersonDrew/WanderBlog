@@ -9,10 +9,23 @@ if(isset($_SESSION['login_user'])){
     <title>Welcome to WanderBlog</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
+
+        .adventure {
+            height: 60px;
+            width:60px;
+            position:relative;
+        }
+        .adventure a img{
+            margin:auto; /* Required */
+            position:absolute; /* Required */
+            bottom:0; /* Aligns at the bottom */
+            left:0;right:0; /* Aligns horizontal center */
+            max-height:100%; /* images bigger than 175 px  */
+            max-width:100%;  /* will be shrinked to size */
+        }
 		.adventure{
 			width: 900px;
 			height: 500px;
-			border: 3px black;
 		}
 
         .adventure #up{
@@ -38,7 +51,6 @@ if(isset($_SESSION['login_user'])){
 			overflow: hidden;
 			margin: 30px auto;
             top: 10px;
-            border: 3px black;
 		}
 
 		.slider img{
