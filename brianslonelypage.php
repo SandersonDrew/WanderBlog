@@ -29,7 +29,6 @@ if(isset($_SESSION['login_user'])){
     <title>Welcome to WanderBlog</title>
     <style type="text/css">
         .text{
-            width: 800px;
             text-align: justify;
             border: 1px solid black;
 
@@ -45,7 +44,6 @@ if(isset($_SESSION['login_user'])){
             border: 1px solid black;
         }
 		.adventure{
-			width: 900px;
 			height: 600px;
             border: 1px solid black;
             text-align: center;
