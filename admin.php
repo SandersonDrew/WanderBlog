@@ -99,7 +99,7 @@ function genDivs(){
             <h6> ' .$row[0] . ' </h6>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
-            <img src="http://placehold.it/60x60" alt="Yes">
+            <img src="http://placehold.it/60x60" alt="Yes" href="verifyUser.php">
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="No">
