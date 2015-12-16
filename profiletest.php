@@ -28,7 +28,7 @@ include('session.php');
     <b id="logout"><a href="logout.php">Log Out</a></b>
     <b id="brian"><a href="brianslonelypage.php">All by myself</a></b>
     <?php
-        if($_SESSION['permLevel'] == 4){
+        if($_SESSION['permLevel'] > 0){
             showNewAdventure();
         }
     function showNewAdventure(){
