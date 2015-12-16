@@ -1,5 +1,8 @@
 <?php
 include('session.php');
+if($_SESSION['permLevel'] == 0){
+    header('location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <head>
