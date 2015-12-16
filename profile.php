@@ -1,11 +1,16 @@
 <?php
 include('session.php');
-if($_GET['userid'] == null){
-    $displayName = $_SESSION['displayName'];
+function getval($mysqli, $sql) {
+    $result = $mysqli->query($sql);
+    $value = $result->fetch_array(MYSQLI_NUM);
+    return is_array($value) ? $value[0] : "";
+}
+if($_GET['username'] == null){
     $userid = $_SESSION['userid'];
 } else{
-    $displayName = $_GET['displayName'];
-    $userid = $_GET['userid'];
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    $temp = $_GET['username'];
+    $userid = getval($connection,"SELECT userid FROM users WHERE username = '$temp'");
 }
 
 ?>
@@ -62,7 +67,7 @@ if ($connection->connect_error) {
                 </ul>
                 <?php
                     if($_SESSION['login_user']!= null){
-                        $name = "Logged in as " . $displayName;
+                        $name = "Logged in as " . $_SESSION['displayName'];
                     }else{
                         $name = "Log In";
                     }
@@ -108,7 +113,6 @@ if ($connection->connect_error) {
         <div class="col-md-8">
             <p style="text-align: center">
                 <?php
-                $userid = $_SESSION['userid'];
                 $sql_query = "SELECT bio FROM users WHERE userid='$userid'";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
@@ -120,31 +124,19 @@ if ($connection->connect_error) {
     </div>
 </div>
 
-<!--<div id="top1" class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-            <p>
-                <?php
-/*                $sql_query = "SELECT description FROM adventures WHERE userid='$userid'";
-                $result = $connection->query($sql_query);
-                while($row = $result->fetch_assoc()){
-                echo $row['description'];
-                }*/?>
-            </p>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-</div>-->
-
-
 <?php
 genDivs();
 function genDivs()
 {
-    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $userid = $_SESSION['userid'];
+    if($_GET['username'] == null){
+        $userid = $_SESSION['userid'];
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    } else{
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+        $temp = $_GET['username'];
+        $userid = getval($connection,"SELECT userid FROM users WHERE username = '$temp'");
+    }
+
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }else{
