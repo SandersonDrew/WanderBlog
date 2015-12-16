@@ -15,17 +15,11 @@ if(isset($_SESSION['login_user'])){
 			border: 1px black;
 		}
 
-		.adventure img{
-			horiz-align: center;
-			bottom: 10px;
-		}
         #up{
             width: 60px;
             height: 60px;
             bottom: 10px;
-            horiz-align: center;
-             display: inline-block;
-            *display: inline;
+            left:300px;
             zoom: 1;
         }
 
@@ -33,9 +27,7 @@ if(isset($_SESSION['login_user'])){
 			width: 60px;
 			height: 60px;
 			bottom: 10px;
-            horiz-align: center;
-			display: inline-block;
-			*display: inline;
+            left:440px;
 			zoom: 1;
 
 		}
@@ -58,6 +50,12 @@ if(isset($_SESSION['login_user'])){
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript">
+
+            $( "#up" ).click(function() {
+                $(this ).alert('Test');
+            });
+
+
 
 			function Slider(){
 				$(".slider #1").show("fade", 500);
