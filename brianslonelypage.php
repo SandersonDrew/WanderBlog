@@ -32,6 +32,7 @@ if(isset($_SESSION['login_user'])){
             width: 800px;
             text-align: justify;
             margin: 30px auto;
+            display: inline-block;
         }
 		.adventure{
 			width: 900px;
