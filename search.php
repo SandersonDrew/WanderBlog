@@ -13,6 +13,7 @@ if ($conn->connect_error) {
 
 $button = $_GET [ 'submit' ];
 $search = $_GET [ 'search' ];
+$search = trim($search, " ");
 
 if( !$button ){
     echo "you disdn't submit a keyword";
