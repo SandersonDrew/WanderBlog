@@ -1,7 +1,7 @@
 <?php
 include('session.php');
+echo $_SESSION['permLevel'];
 if($_SESSION['permLevel'] == 0){
-    echo $_SESSION['permLevel'];
     header('location: index.php');
 }
 $displayName = $_SESSION['displayName'];
@@ -78,7 +78,7 @@ $email = $_SESSION['email'];
 </div>
 <b id="logout"><a href="logout.php">Log Out</a></b>
 <?php
-if($_SESSION['permLevel'] == 3){
+if($_SESSION['permLevel'] > 2){
     genDivs();
 }
 ?>
