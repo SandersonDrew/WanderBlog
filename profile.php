@@ -134,8 +134,7 @@ if ($connection->connect_error) {
         <div class="col-md-2"></div>
     </div>
 </div>-->
-</body>
-</html>
+
 
 <?php
 genDivs();
@@ -166,3 +165,5 @@ function genDivs()
     }
 }
 ?>
+</body>
+</html>
