@@ -6,7 +6,7 @@ if(isset($_SESSION['login_user'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WanderBlog Login</title>
+    <title>Welcome to WanderBlog</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
 		.adventure{
@@ -14,22 +14,36 @@ if(isset($_SESSION['login_user'])){
 			height: 500px;
 			border: 1px black;
 		}
-        .adventure img{
+
+		.adventure img{
+			horiz-align: center;
+			bottom: 10px;
+		}
+        #up{
             width: 60px;
             height: 60px;
             bottom: 10px;
-            vertical-align: top;
-            display: inline-block;
-            *display: inline;
+            left:300px;
+            horiz-align: center;
             zoom: 1;
-
         }
+
+		#down{
+			width: 60px;
+			height: 60px;
+			bottom: 10px;
+            left:440px;
+            horiz-align: center;
+			zoom: 1;
+
+		}
 
 		.slider{
 			width: 800px;
 			height: 350px;
 			overflow: hidden;
 			margin: 30px auto;
+            top: 10px;
 		}
 
 		.slider img{
@@ -93,8 +107,7 @@ if(isset($_SESSION['login_user'])){
             <span><?php echo $error; ?></span>
         </form>
     </div>
-    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+
     <div class = "adventure">
     	<div class = "slider">
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
@@ -102,6 +115,8 @@ if(isset($_SESSION['login_user'])){
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
 </div>
+        <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+        <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
 
 	</div>
 </div>
