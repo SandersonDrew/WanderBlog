@@ -14,7 +14,7 @@ if(isset($_SESSION['login_user'])){
 			height: 500px;
 			border: 1px black;
 		}
-        .adventure img{
+        #up{
             width: 60px;
             height: 60px;
             bottom: 10px;
@@ -24,6 +24,17 @@ if(isset($_SESSION['login_user'])){
             zoom: 1;
 
         }
+
+		#down{
+			width: 60px;
+			height: 60px;
+			bottom: 10px;
+			vertical-align: top;
+			display: inline-block;
+			*display: inline;
+			zoom: 1;
+
+		}
 
 		.slider{
 			width: 800px;
