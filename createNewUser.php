@@ -25,8 +25,15 @@ if (isset($_POST['submit'])) {
         $result = mysqli_num_rows($query);
         if ($result == 0) {
             mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email) VALUES('$username', '$password', '0','FALSE','$email') ");
-            $userid = getval($connection, "SELECT userid FROM users WHERE username='$username'");
-            $_SESSION['login_user']=$userid; // Initializing Session
+            $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
+            $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
+            $email = getval($connection,"SELECT email FROM users WHERE userid='$userid'");
+            $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
+            $_SESSION['login_user']=$username; // Initializing Session
+            $_SESSION['userid'] = $userid;
+            $_SESSION['email'] = $email;
+            $_SESSION['displayName'] = $displayName;
+            $_SESSION['permLevel'] = $permLevel;
             header("location: profiletest.php"); // Redirecting To Other Page
         } else {
             $error = "Username is already taken";

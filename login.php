@@ -23,7 +23,6 @@ if (isset($_POST['submit'])) {
         $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
         $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
         $email = getval($connection,"SELECT email FROM users WHERE userid='$userid'");
-        $pword = getval($connection,"SELECT password FROM users WHERE userid='$userid'");
         $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
         $result = mysqli_num_rows($query);
         if ($result == 1) {
