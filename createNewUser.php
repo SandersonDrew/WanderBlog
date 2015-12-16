@@ -16,16 +16,24 @@ if (isset($_POST['submit'])) {
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
+        $email = stripslashes($email);
         $password = stripslashes($password);
+        $password = crypt($password,'bananafacemcghee');
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
 // SQL query to insert new user details into database and log them in
-        $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
-        $query = mysqli_query($connection,"SELECT * FROM users WHERE userid='$userid'");
+        $query = mysqli_query($connection,"SELECT * FROM users WHERE username='$username'");
         $result = mysqli_num_rows($query);
         if ($result == 0) {
-            mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email) VALUES('$username', '$password', '0','FALSE','$email') ");
-            $_SESSION['login_user']=$userid; // Initializing Session
+            mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email,displayname) VALUES('$username', '$password', 1,0,'$email','$username') ");
+            $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
+            $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
+            $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
+            $_SESSION['login_user']=$username; // Initializing Session
+            $_SESSION['userid'] = $userid;
+            $_SESSION['email'] = $email;
+            $_SESSION['displayName'] = $displayName;
+            $_SESSION['permLevel'] = $permLevel;
             header("location: profiletest.php"); // Redirecting To Other Page
         } else {
             $error = "Username is already taken";

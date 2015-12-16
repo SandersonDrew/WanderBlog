@@ -1,3 +1,9 @@
+<?php
+include('session.php');
+$displayName = $_SESSION['displayName'];
+$userid = $_SESSION['userid'];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +36,6 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
-$userid = $_SESSION['userid'];
 ?>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -58,8 +63,19 @@ $userid = $_SESSION['userid'];
                     <li><a href="profile.php">Profile</a></li>
                 </ul>
 
+                <?php
+                    if($_SESSION['login_user']!= null){
+
+                        $name = "Logged in as " . $_SESSION['displayName'];
+                    }else{
+                        $name = "Log In";
+                    }
+                ?>
+
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php">Log In</a></li>
+                    <li><a href="index.php"><?php
+                            echo $name;
+                            ?></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -84,15 +100,16 @@ $userid = $_SESSION['userid'];
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1 id="userName">
-                <?php
-                $sql_query = "SELECT displayName FROM users WHERE userid= $userid";
-                $result = $connection->query($sql_query);
-                while($row = $result->fetch_assoc()){
-                    echo $row['displayName'];
-                }
-                ?>
-            </h1></div>
+
+                <h1 id="userName"><?php
+
+                    $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
+                    $result = $connection->query($sql_query);
+                    while($row = $result->fetch_assoc()){
+                        echo $row['displayName'];
+                    }
+                ?></h1></div>
+
         <div class="span4">
         </div>
     </div>
@@ -101,11 +118,21 @@ $userid = $_SESSION['userid'];
 <div id="desc" class="container">
     <div class="row">
         <div class="col-md-12">
-            <p>Lorem ipsum </p>
+            <p><?php
+                $userid = $_SESSION['userid'];
+                $sql_query = "SELECT bio FROM users WHERE userid='$userid'";
+                $result = $connection->query($sql_query);
+                while($row = $result->fetch_assoc()){
+                    echo $row['bio'];
+                }
+                ?> </p>
         </div>
     </div>
 </div>
 
+    <?php
+
+    ?>
 <div id="top1" class="container">
         <div class="row">
             <div class="col-md-2">
@@ -113,65 +140,6 @@ $userid = $_SESSION['userid'];
                 <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                 <p>Lorem ipsum dolor sit amet, consectetuer adipicing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
             </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-            <div class="col-md-2">
-                <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.</p>
-            </div>
-
-
-
-
         </div>
 
 
