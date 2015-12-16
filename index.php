@@ -41,6 +41,7 @@ if(isset($_SESSION['login_user'])){
             <span><?php echo $error; ?></span>
         </form>
     </div>
+
 </div>
 </body>
 </html>
