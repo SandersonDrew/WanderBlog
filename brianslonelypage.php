@@ -35,7 +35,7 @@ if(isset($_SESSION['login_user'])){
 		}
 
         .adventure img{
-            width: 60px;
+            width: 100px;
             height: 60px;
             bottom: 10px;
             text-align: center;
@@ -97,14 +97,16 @@ if(isset($_SESSION['login_user'])){
 <body onload="Slider();">
 <div id="main">
     <div class = "adventure">
+        <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+        <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
     	<div class = "slider">
+
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
 			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
         </div>
-            <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-            <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+
 	</div>
 </div>
 </div>
