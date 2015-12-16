@@ -7,6 +7,7 @@ if (isset($_GET['submit'])) {
     $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
     $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
+    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
 }
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
@@ -17,6 +18,7 @@ function getval($mysqli, $sql) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,24 +40,15 @@ function getval($mysqli, $sql) {
 
     <title>Welcome to WanderBlog</title>
     <style type="text/css">
-        .text{
-            text-align: justify;
-            border: 1px solid black;
-
-        }
         .adventure p{
         	display: inline-block;
         	margin-left: auto;
             margin-right:auto;
-            border: 1px solid black;
             bottom: 10px;
             margin-left: auto;
             margin-right:auto;
-            border: 1px solid black;
         }
 		.adventure{
-			height: 600px;
-            border: 1px solid black;
             text-align: center;
             overflow: auto;
 		}
@@ -126,23 +119,23 @@ function getval($mysqli, $sql) {
                 </div>
                 <div class="info">
                     <p><?php echo $authname?></p>
-                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-                    <p>Date</p>
+                    <p><?php echo $advdate?></p>
                     <p>Upvotes: </p>
+                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
                     <p>Downvotes: </p>
+                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                 </div>
-                <div class ="text">
-                    <p><?php echo $text?></p>
+                <div class = "adventure">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <p><?php echo $text?></p>
+                    </div>
+                    <div class="col-md-1"></div>
                 </div>
             </div>
         </div>
         <div class="col-md-1"></div>
     </div>
-</div>';
-<div id="main">
-
-</div>
 </div>
 </body>
 </html>

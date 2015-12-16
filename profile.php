@@ -1,9 +1,15 @@
 <?php
 include('session.php');
-if($_GET['userid'] == null){
+function getval($mysqli, $sql) {
+    $result = $mysqli->query($sql);
+    $value = $result->fetch_array(MYSQLI_NUM);
+    return is_array($value) ? $value[0] : "";
+}
+if($_GET['username'] == null){
     $userid = $_SESSION['userid'];
 } else{
-    $userid = $_GET['userid'];
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    $userid = getval($connection,"SELECT userid FROM users WHERE username = '$username'");
 }
 
 ?>
