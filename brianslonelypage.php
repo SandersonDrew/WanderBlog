@@ -7,9 +7,7 @@ if(isset($_SESSION['login_user'])){
 <html>
 <head>
     <title>Welcome to WanderBlog</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
-
 		.adventure{
 			width: 900px;
 			height: 500px;
