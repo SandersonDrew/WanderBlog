@@ -1,6 +1,4 @@
 <?php
-include('login.php');
-include('createNewUser.php');
 if(isset($_SESSION['login_user'])){
     header("location: profiletest.php");
 }
