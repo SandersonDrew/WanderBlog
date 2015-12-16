@@ -93,8 +93,8 @@ if(isset($_SESSION['login_user'])){
             <span><?php echo $error; ?></span>
         </form>
     </div>
-    <img src = "http://i68.tinypic.com/dh7giv.jpg">
-    <img src = "http://i68.tinypic.com/dh7giv.jpg">
+    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
     <div class = "adventure">
     	<div class = "slider">
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
