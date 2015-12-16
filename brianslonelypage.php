@@ -31,7 +31,6 @@ if(isset($_SESSION['login_user'])){
         .text{
             width: 800px;
             text-align: justify;
-            margin: 30px auto;
             border: 1px solid black;
 
         }
@@ -48,7 +47,6 @@ if(isset($_SESSION['login_user'])){
 		.adventure{
 			width: 900px;
 			height: 600px;
-            margin: 30px auto;
             border: 1px solid black;
             text-align: center;
             overflow: auto;
