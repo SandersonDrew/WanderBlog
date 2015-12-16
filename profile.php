@@ -62,7 +62,7 @@ if ($connection->connect_error) {
                 </ul>
                 <?php
                     if($_SESSION['login_user']!= null){
-                        $name = "Logged in as " . $displayName;
+                        $name = "Logged in as " . $_SESSION['displayName'];
                     }else{
                         $name = "Log In";
                     }
@@ -143,8 +143,13 @@ if ($connection->connect_error) {
 genDivs();
 function genDivs()
 {
+    if($_GET['userid'] == null){
+        $userid = $_SESSION['userid'];
+    } else{
+        $userid = $_GET['userid'];
+    }
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $userid = $_SESSION['userid'];
+
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }else{
