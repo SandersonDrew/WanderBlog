@@ -38,17 +38,10 @@ if(isset($_SESSION['login_user'])){
             width: 60px;
             height: 60px;
             bottom: 10px;
+            align-content: center;
             horiz-align: center;
             border: 1px solid black;
         }
-
-        #up{
-            left: 300px;
-        }
-        #down {
-            right: 400px;
-        }
-
 
 		.slider{
 			width: 800px;
