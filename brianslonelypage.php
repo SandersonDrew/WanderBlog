@@ -6,7 +6,7 @@ if(isset($_SESSION['login_user'])){
 <!DOCTYPE html>
 <html>
 <head>
-    <title>WanderBlog Login</title>
+    <title>Welcome to WanderBlog</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
 		.adventure{
@@ -23,8 +23,8 @@ if(isset($_SESSION['login_user'])){
             width: 60px;
             height: 60px;
             bottom: 10px;
-            vertical-align: top;
-            display: inline-block;
+            horiz-align: center;
+             display: inline-block;
             *display: inline;
             zoom: 1;
         }
@@ -33,7 +33,7 @@ if(isset($_SESSION['login_user'])){
 			width: 60px;
 			height: 60px;
 			bottom: 10px;
-			vertical-align: top;
+            horiz-align: center;
 			display: inline-block;
 			*display: inline;
 			zoom: 1;
