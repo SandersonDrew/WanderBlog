@@ -12,7 +12,7 @@ if(isset($_SESSION['login_user'])){
 		.adventure{
 			width: 900px;
 			height: 500px;
-			border: 1px black;
+			border: 3px black;
 		}
 
         .adventure #up{
@@ -38,6 +38,7 @@ if(isset($_SESSION['login_user'])){
 			overflow: hidden;
 			margin: 30px auto;
             top: 10px;
+            border: 3px black;
 		}
 
 		.slider img{
