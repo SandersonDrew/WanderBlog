@@ -128,12 +128,13 @@ if ($connection->connect_error) {
 genDivs();
 function genDivs()
 {
-    if($_GET['userid'] == null){
+    if($_GET['username'] == null){
         $userid = $_SESSION['userid'];
     } else{
-        $userid = $_GET['userid'];
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+        $temp = $_GET['username'];
+        $userid = getval($connection,"SELECT userid FROM users WHERE username = '$temp'");
     }
-    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
