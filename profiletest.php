@@ -54,9 +54,8 @@ if($_SESSION['permLevel'] == 0){
         <div class="col-md-8" style="border:1px solid #000;">
             <p><h4>Create New Adventure</h4>
 
-            <form action="createNewAdventure.php" method="post">
-                <h6>Text: </h6> <input type="text" name="Text" placeholder="Adventure Text">
-                <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
+            <form action="brianslonelypage.php" method="post">
+                <h6>Text: </h6> <input type="text" name="adventureid" placeholder="Adventure Text">
                 <input type="submit" name="submit" value="submit">
             </form>
             <br>

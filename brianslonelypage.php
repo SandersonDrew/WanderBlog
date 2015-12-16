@@ -1,8 +1,15 @@
-
 <?php
-if(isset($_SESSION['login_user'])){
-    header("location: profiletest.php");
+include('session.php');
+function getval($mysqli, $sql) {
+    $result = $mysqli->query($sql);
+    $value = $result->fetch_array(MYSQLI_NUM);
+    return is_array($value) ? $value[0] : "";
 }
+$adventureid = $_GET['adventureid'];
+$connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+$text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
+$authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
+$authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -109,14 +116,13 @@ if(isset($_SESSION['login_user'])){
             <div class = "adventure">
                 <h1>TITLE OF ADVENTURE</h1>
                 <div class = "slider">
-
                     <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
                     <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
                     <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
                     <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
                 </div>
                 <div class="info">
-                    <p>Author</p>
+                    <p><?php echo $authname?></p>
                     <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
                     <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                     <p>Date</p>
