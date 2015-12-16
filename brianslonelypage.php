@@ -49,7 +49,6 @@ function getval($mysqli, $sql) {
             margin-right:auto;
         }
 		.adventure{
-			height: 600px;
             text-align: center;
             overflow: auto;
 		}
