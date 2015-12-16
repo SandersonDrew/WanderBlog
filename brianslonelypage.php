@@ -14,6 +14,11 @@ if(isset($_SESSION['login_user'])){
 			height: 500px;
 			border: 1px black;
 		}
+
+		.adventure img{
+			horiz-align: center;
+			bottom: 10px;
+		}
         #up{
             width: 60px;
             height: 60px;
@@ -22,9 +27,6 @@ if(isset($_SESSION['login_user'])){
             display: inline-block;
             *display: inline;
             zoom: 1;
-			horiz-align: center;
-			bottom: 10px;
-
         }
 
 		#down{
