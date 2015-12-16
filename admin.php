@@ -80,9 +80,11 @@
         <div class="col-md-2"></div>
     </div>
 </div>
+
 <?php
 function genDivs($numNewUsers)
 {
+    //
     for ($i = 0; $i < $numNewUsers; $i++) {
         echo '<div class="container">
     <div class="row">
