@@ -15,16 +15,11 @@ if(isset($_SESSION['login_user'])){
 			border: 1px black;
 		}
 
-		.adventure img{
-			horiz-align: center;
-			bottom: 10px;
-		}
         #up{
             width: 60px;
             height: 60px;
             bottom: 10px;
             left:300px;
-            horiz-align: center;
             zoom: 1;
         }
 
@@ -33,7 +28,6 @@ if(isset($_SESSION['login_user'])){
 			height: 60px;
 			bottom: 10px;
             left:440px;
-            horiz-align: center;
 			zoom: 1;
 
 		}
