@@ -60,7 +60,7 @@ if(isset($_SESSION['login_user'])){
 
                 </div>
 
-                <p><a href="javascript:void(0)">Close</a> </p>
+                <p><a href="javascript:void(0)" onclick="toggle_visibility('login-popup');">Close</a> </p>
             </div>
         </div>
     </div>
