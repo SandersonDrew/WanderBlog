@@ -50,8 +50,10 @@ if(isset($_SESSION['login_user'])){
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript">
-            $(".adventure #up" ).click(function() {
-              alert("Test");
+            $(document).ready(function() {
+                $("#up").click(function() {
+                    alert("hello!");
+                });
             });
 
 			function Slider(){
@@ -111,7 +113,7 @@ if(isset($_SESSION['login_user'])){
 			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-</div>
+        </div>
         <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
         <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
 
