@@ -27,9 +27,15 @@ if(isset($_SESSION['login_user'])){
 
     <title>Welcome to WanderBlog</title>
     <style type="text/css">
+
+        .adventure p{
+            width: 800px;
+            margin: 30px auto;
+            overflow-y scroll;
+        }
 		.adventure{
 			width: 900px;
-			height: 500px;
+			height: 1000px;
             margin: 30px auto;
             border: 1px solid black;
             text-align: center;
