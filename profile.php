@@ -9,7 +9,8 @@ if($_GET['username'] == null){
     $userid = $_SESSION['userid'];
 } else{
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $userid = getval($connection,"SELECT userid FROM users WHERE username = '$username'");
+    $temp = $_GET['username'];
+    $userid = getval($connection,"SELECT userid FROM users WHERE username = '$temp'");
 }
 
 ?>
