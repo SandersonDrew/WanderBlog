@@ -106,30 +106,39 @@ if(isset($_SESSION['login_user'])){
 		</script>
 </head>
 <body onload="Slider();">
-<div id="main">
-    <div class = "adventure">
-    	<h1>TITLE OF ADVENTURE</h1>
-    	<div class = "slider">
+<div class="container">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <div class = "adventure">
+                <h1>TITLE OF ADVENTURE</h1>
+                <div class = "slider">
 
-			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
+                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
+                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
+                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
+                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
+                </div>
+                <div class="info">
+                    <p>Author</p>
+                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+                    <p>Date</p>
+                    <p>Upvotes: </p>
+                    <p>Downvotes: </p>
+                </div>
+                <div class ="text">
+                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus commodo lacus ornare massa finibus, vitae hendrerit ex luctus. Nullam mattis purus mi, sagittis euismod nisi ultrices sit amet. Phasellus sed diam feugiat, dictum arcu sed, scelerisque odio. Ut convallis purus eget placerat ullamcorper. Fusce ultricies venenatis magna, vel malesuada neque laoreet eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sed nisi ac diam laoreet fermentum a id velit. Sed vitae vestibulum lectus. Maecenas sit amet egestas ante. Suspendisse varius mauris id leo vestibulum congue. Donec facilisis nisi sit amet tellus ullamcorper, sed commodo tellus placerat. Donec congue pharetra risus sed maximus.
+
+                        Nam et turpis non ante interdum mattis eu a lacus. Nam luctus, libero sed scelerisque accumsan, nibh justo sodales urna, maximus lobortis tellus ipsum et metus. Pellentesque in velit sit amet odio ultricies consequat. Sed cursus non neque vehicula imperdiet. Donec scelerisque tellus sollicitudin massa semper tempus sed et ligula. Fusce tempor dignissim accumsan. Sed nec mollis nisi. Nunc tortor ex, consequat id varius eu, feugiat vitae metus. Duis volutpat ut turpis vitae placerat. Duis efficitur molestie velit, eget porttitor nisl lobortis eu. Etiam auctor bibendum maximus. Duis nisi eros, rhoncus non leo at, ultricies placerat lorem. Suspendisse malesuada magna eget ipsum auctor, ut lobortis nibh volutpat. Aenean at tempor diam, vitae lobortis est. Quisque varius neque at rutrum auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+                </div>
+            </div>
         </div>
-        <div info>
-        <p>Author</p>
-        <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-        <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-        <p>Date</p>
-        <p>Upvotes: </p>
-        <p>Downvotes: </p>
-    	</div>
-<div class ="text">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus commodo lacus ornare massa finibus, vitae hendrerit ex luctus. Nullam mattis purus mi, sagittis euismod nisi ultrices sit amet. Phasellus sed diam feugiat, dictum arcu sed, scelerisque odio. Ut convallis purus eget placerat ullamcorper. Fusce ultricies venenatis magna, vel malesuada neque laoreet eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sed nisi ac diam laoreet fermentum a id velit. Sed vitae vestibulum lectus. Maecenas sit amet egestas ante. Suspendisse varius mauris id leo vestibulum congue. Donec facilisis nisi sit amet tellus ullamcorper, sed commodo tellus placerat. Donec congue pharetra risus sed maximus.
-
-            Nam et turpis non ante interdum mattis eu a lacus. Nam luctus, libero sed scelerisque accumsan, nibh justo sodales urna, maximus lobortis tellus ipsum et metus. Pellentesque in velit sit amet odio ultricies consequat. Sed cursus non neque vehicula imperdiet. Donec scelerisque tellus sollicitudin massa semper tempus sed et ligula. Fusce tempor dignissim accumsan. Sed nec mollis nisi. Nunc tortor ex, consequat id varius eu, feugiat vitae metus. Duis volutpat ut turpis vitae placerat. Duis efficitur molestie velit, eget porttitor nisl lobortis eu. Etiam auctor bibendum maximus. Duis nisi eros, rhoncus non leo at, ultricies placerat lorem. Suspendisse malesuada magna eget ipsum auctor, ut lobortis nibh volutpat. Aenean at tempor diam, vitae lobortis est. Quisque varius neque at rutrum auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+        <div class="col-md-2"></div>
     </div>
-	</div>
+</div>';
+<div id="main">
+
 </div>
 </div>
 </body>
