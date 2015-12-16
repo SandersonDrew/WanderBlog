@@ -50,7 +50,6 @@ function getval($mysqli, $sql) {
         }
 		.adventure{
 			height: 600px;
-            border: 1px solid black;
             text-align: center;
             overflow: auto;
 		}
