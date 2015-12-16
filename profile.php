@@ -54,6 +54,7 @@ if ($connection->connect_error) {
                     <li><a href="#">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
+                    <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
                 <?php
                     if($_SESSION['login_user']!= null){
