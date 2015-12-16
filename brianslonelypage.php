@@ -40,10 +40,6 @@ function getval($mysqli, $sql) {
 
     <title>Welcome to WanderBlog</title>
     <style type="text/css">
-        .text{
-            text-align: justify;
-
-        }
         .adventure p{
         	display: inline-block;
         	margin-left: auto;
@@ -136,11 +132,13 @@ function getval($mysqli, $sql) {
         <div class="col-md-1"></div>
     </div>
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-8">
-            <p><?php echo $text?></p>
+        <div class = "adventure">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <p><?php echo $text?></p>
+            </div>
+            <div class="col-md-1"></div>
         </div>
-        <div class="col-md-1"></div>
     </div>
 </div>
 </body>
