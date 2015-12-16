@@ -30,15 +30,15 @@ if(isset($_SESSION['login_user'])){
 		.adventure{
 			width: 900px;
 			height: 500px;
-            margin: 40px;
+            margin: 30px auto;
             border: 1px solid black;
 		}
 
         .adventure img{
-            width: 60px;
+            width: 100px;
             height: 60px;
             bottom: 10px;
-            align-items: center;
+            text-align: center;
             border: 1px solid black;
         }
 
