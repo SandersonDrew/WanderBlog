@@ -1,10 +1,8 @@
 <?php
 include('session.php');
 if($_GET['userid'] == null){
-    $displayName = $_SESSION['displayName'];
     $userid = $_SESSION['userid'];
 } else{
-    $displayName = $_GET['displayName'];
     $userid = $_GET['userid'];
 }
 
@@ -108,7 +106,6 @@ if ($connection->connect_error) {
         <div class="col-md-8">
             <p style="text-align: center">
                 <?php
-                $userid = $_SESSION['userid'];
                 $sql_query = "SELECT bio FROM users WHERE userid='$userid'";
                 $result = $connection->query($sql_query);
                 while($row = $result->fetch_assoc()){
