@@ -93,10 +93,9 @@ if(isset($_SESSION['login_user'])){
 			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-
+</div>
             <img src = "http://i68.tinypic.com/dh7giv.jpg">
             <img src = "http://i68.tinypic.com/dh7giv.jpg">
-		</div>
 	</div>
 </div>
 </body>
