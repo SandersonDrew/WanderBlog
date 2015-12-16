@@ -151,7 +151,7 @@ function genDivs()
                         <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                         <h6> ' . $row['description']. ' </h6>
                         <form action="adventure.php" method="get">
-                        <input type="submit" value="'.$row['adventureid'].'";
+                            <input type="submit" name="adventureid" value="'.$row['adventureid'].'";
                         </form>
                     </div>
                     <div class="col-md-2"></div>
