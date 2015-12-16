@@ -26,10 +26,14 @@ if (isset($_POST['submit'])) {
  *
  * For the VAST majority of use-cases, let password_hash generate the salt randomly for you
  */
-    $options = [
+     echo $email;
+        echo $username;
+        echo $password;
+
+    /*$options = [
     'cost' => 11
     ];
-    $password = password_hash($password, PASSWORD_BCRYPT, $options);
+    $password = password_hash($password, PASSWORD_BCRYPT, $options);*/
 
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
