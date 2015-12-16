@@ -135,7 +135,7 @@ function genDivs(){
         </div>
         <div class="col-md-5" style="height: 62px; border:1px solid #000;">
             <form action="profile.php" method="get">
-                <input type="submit" name="submit" value="'.$row[0].'" />
+                <input type="submit" name="username" value="'.$row[0].'" />
             </form>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
