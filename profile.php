@@ -92,7 +92,11 @@ if ($connection->connect_error) {
 
                 <h1 id="userName"><?php
                     $userid = $_SESSION['userid'];
-                    echo $userid;
+                    $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
+                    $result = $connection->query($sql_query);
+                    while($row = $result->fetch_assoc()){
+                        echo $row['displayName'];
+                    }
                 ?></h1></div>
 
         <div class="span4">
