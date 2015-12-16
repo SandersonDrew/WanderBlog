@@ -34,10 +34,12 @@ if($_SESSION['permLevel'] == 0){
     <?php
     if($_SESSION['permLevel'] == 1){
         echo '<b id="admin"><a href="admin.php">Click here to go to your admin page</a></b>';
-    }
-    if($_SESSION['permLevel'] > 1){
+    } else{
+        if($_SESSION['permLevel'] > 1){
         showNewAdventure();
     }
+    }
+
 
     function showNewAdventure(){
         echo '
