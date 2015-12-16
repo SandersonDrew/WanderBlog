@@ -9,6 +9,12 @@ if(isset($_SESSION['login_user'])){
     <title>WanderBlog Login</title>
     <link href="style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
+		.adventure{
+			width: 900px;
+			height: 500px;
+			border: 1px black;
+		}
+
 		.slider{
 			width: 800px;
 			height: 350px;
