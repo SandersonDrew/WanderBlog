@@ -22,6 +22,8 @@ if(isset($_SESSION['login_user'])){
             display: inline-block;
             *display: inline;
             zoom: 1;
+			horiz-align: center;
+			bottom: 10px;
 
         }
 
