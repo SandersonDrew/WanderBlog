@@ -11,6 +11,7 @@ include('session.php');
 <div id="profile">
     <b id="welcome">Welcome : <i><?php echo $_SESSION['login_user']; ?></i></b>
     <b id="admin"><a href="admin.php">Click here to go to your admin page</a></b>
+    <b id="profile"><a href="profile.php">Click here to go to your profile page</a></b>
     <b id="logout"><a href="logout.php">Log Out</a></b>
 </div>
 </body>
