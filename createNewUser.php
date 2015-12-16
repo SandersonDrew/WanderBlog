@@ -18,6 +18,10 @@ if (isset($_POST['submit'])) {
         $username = stripslashes($username);
         $email = stripslashes($email);
         $password = stripslashes($password);
+        $options = [
+            'cost' => 12,
+        ];
+        $password= password_hash("$password", PASSWORD_BCRYPT, $options);
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
 // SQL query to insert new user details into database and log them in
