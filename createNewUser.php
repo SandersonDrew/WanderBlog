@@ -33,7 +33,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['email'] = $email;
             $_SESSION['displayName'] = $username;
             $_SESSION['permLevel'] = $permLevel;
-            header("location: profiletest.php"); // Redirecting To Other Page
+            header("location: profile.php"); // Redirecting To Other Page
         } else {
             $error = "Username is already taken";
         }
