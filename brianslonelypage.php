@@ -1,15 +1,17 @@
 <?php
 include('session.php');
+if (isset($_GET['submit'])) {
+    $adventureid = $_GET['adventureid'];
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
+    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
+    $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
+}
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
     $value = $result->fetch_array(MYSQLI_NUM);
     return is_array($value) ? $value[0] : "";
 }
-$adventureid = $_GET['adventureid'];
-$connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-$text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
-$authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
-$authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
 ?>
 <!DOCTYPE html>
 <html lang="en">

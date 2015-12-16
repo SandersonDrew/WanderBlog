@@ -31,9 +31,8 @@ if($_SESSION['permLevel'] == 0){
     <b id="profile"><a href="profile.php">Click here to go to your profile page</a></b>
     <b id="logout"><a href="logout.php">Log Out</a></b>
     <b id="brian"><a href="brianslonelypage.php">All by myself</a></b>
-    <form action="profile.php" method="get">
-        <h6>Text: </h6> <input type="text" name="userid" placeholder="Adventure Text">
-        <h6>Location: </h6><input type="text" name="displayName" placeholder="Location">
+    <form action="brianslonelypage.php" method="get">
+        <h6>Text: </h6> <input type="text" name="adventureid" placeholder="Adventure Text">
         <input type="submit" name="submit" value="submit">
     </form>
     <?php
@@ -54,8 +53,9 @@ if($_SESSION['permLevel'] == 0){
         <div class="col-md-8" style="border:1px solid #000;">
             <p><h4>Create New Adventure</h4>
 
-            <form action="brianslonelypage.php" method="post">
-                <h6>Text: </h6> <input type="text" name="adventureid" placeholder="Adventure Text">
+            <form action="createNewAdventure.php" method="post">
+                <h6>Text: </h6> <input type="text" name="Text" placeholder="Adventure Text">
+                <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
                 <input type="submit" name="submit" value="submit">
             </form>
             <br>
