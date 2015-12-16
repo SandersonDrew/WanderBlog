@@ -51,6 +51,12 @@ if(isset($_SESSION['login_user'])){
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript">
 
+            $( "#up" ).click(function() {
+                $(this ).alert('Test');
+            });
+
+
+
 			function Slider(){
 				$(".slider #1").show("fade", 500);
 				$(".slider #1").delay(5500).hide("slide", {direction: 'left'},500);
