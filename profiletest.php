@@ -30,9 +30,9 @@ include('session.php');
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
-            <p><h4>Update Settings</h4>
+            <p><h4>Create New Adventure</h4>
 
-            <form action="createNewAdventure.php.php" method="post">
+            <form action="createNewAdventure.php" method="post">
                 <h6>Name: </h6> <input type="text" name="Text" placeholder="Adventure Text">
                 <h6>Email: </h6><input type="text" name="Location" placeholder="Location">
                 <input type="submit" value="submit">
