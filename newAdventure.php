@@ -1,11 +1,15 @@
+<?php
+include('session.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css\profile.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Profile</title>
 
     <!-- Bootstrap -->
     <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,12 +21,16 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
-<h1>Hello, world!</h1>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-</body>
-</html>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8" style="border:1px solid #000;">
+        <p><h4>Create New Adventure</h4>
+        <form action="createNewAdventure.php" method="post">
+            <h6>Text: </h6> <input type="text" name="Text" placeholder="Adventure Text">
+            <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
+            <input type="submit" name="submit" value="submit">
+        </form>
+        <br>
+    </div>
+    <div class="col-md-2"></div>
+</div>

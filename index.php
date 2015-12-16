@@ -8,6 +8,9 @@ if(isset($_SESSION['login_user'])){
 <head>
     <title>WanderBlog Login</title>
     <link href="style.css" rel="stylesheet" type="text/css">
+
+
+
 </head>
 <body>
 <div id="main">
@@ -38,6 +41,7 @@ if(isset($_SESSION['login_user'])){
             <span><?php echo $error; ?></span>
         </form>
     </div>
+
 </div>
 </body>
 </html>

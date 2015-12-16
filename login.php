@@ -16,26 +16,27 @@ if (isset($_POST['submit'])) {
 // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
         $password = stripslashes($password);
-        //$username = mysql_real_escape_string($username);
-       // $password = mysql_real_escape_string($password);
+        $password = crypt($password,'bananafacemcghee');
+
 // SQL query to fetch information of registered users and finds user match.
-        $query = mysqli_query($connection,"SELECT * FROM users WHERE password='$password' AND username='$username'");
-        $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
-        $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
-        $email = getval($connection,"SELECT email FROM users WHERE userid='$userid'");
-        $pword = getval($connection,"SELECT password FROM users WHERE userid='$userid'");
-        $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
+        $query = mysqli_query($connection,"SELECT * FROM users WHERE username='$username'");
         $result = mysqli_num_rows($query);
         if ($result == 1) {
-            $_SESSION['login_user']=$username; // Initializing Session
-            $_SESSION['userid'] = $userid;
-            $_SESSION['email'] = $email;
-            $_SESSION['pword'] = $pword;
-            $_SESSION['displayName'] = $displayName;
-            $_SESSION['permLevel'] = $permLevel;
-            header("location: profiletest.php"); // Redirecting To Other Page
+            $known = getval($connection,"SELECT password FROM users WHERE username='$username'");
+            if(hash_equals($known,$password)){
+                $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
+                $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
+                $email = getval($connection,"SELECT email FROM users WHERE userid='$userid'");
+                $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
+                $_SESSION['login_user']=$username; // Initializing Session
+                $_SESSION['userid'] = $userid;
+                $_SESSION['email'] = $email;
+                $_SESSION['displayName'] = $displayName;
+                $_SESSION['permLevel'] = $permLevel;
+                header("location: profile.php"); // Redirecting To Other Page
+            }
         } else {
-            $error = "Username or Password is invalid";
+            header("location:index.php");
         }
         $connection->close(); // Closing Connection
     }
