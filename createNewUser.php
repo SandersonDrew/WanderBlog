@@ -26,7 +26,7 @@ if (isset($_POST['submit'])) {
     $options = [
     'cost' => 11
     ];
-    $password = password_hash($password, PASSWORD_BCRYPT, $options)."\n";
+    $password = password_hash($password, PASSWORD_BCRYPT, $options);
 
         //$username = mysql_real_escape_string($username);
         // $password = mysql_real_escape_string($password);
