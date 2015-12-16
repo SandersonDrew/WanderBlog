@@ -1,7 +1,7 @@
 <?php
 include('session.php');
 $displayName = $_SESSION['displayName'];
-
+$userid = $_SESSION['userid'];
 ?>
 
 <!DOCTYPE html>
@@ -62,9 +62,19 @@ if ($connection->connect_error) {
                     <li><a href="#">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                 </ul>
-
+                <?php
+                    if($userid!=null){
+                        $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
+                        $result = $connection->query($sql_query);
+                        $name = $result;
+                    }else{
+                        $name = "Log In";
+                    }
+                ?>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php">Log In</a></li>
+                    <li><a href="index.php"><?php
+                            echo $name;
+                            ?></a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -91,7 +101,7 @@ if ($connection->connect_error) {
         <div class="col-md-12">
 
                 <h1 id="userName"><?php
-                    $userid = $_SESSION['userid'];
+
                     $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
                     $result = $connection->query($sql_query);
                     while($row = $result->fetch_assoc()){
@@ -119,6 +129,9 @@ if ($connection->connect_error) {
     </div>
 </div>
 
+    <?php
+
+    ?>
 <div id="top1" class="container">
         <div class="row">
             <div class="col-md-2">
