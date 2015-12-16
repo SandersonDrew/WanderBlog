@@ -51,8 +51,12 @@ if(isset($_SESSION['login_user'])){
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
 		<script type="text/javascript">
             $(document).ready(function() {
-                $(".adventure img").click(function() {
-                    alert("hello!");
+                $(".adventure #up").click(function() {
+                    alert("upvote");
+                });
+
+                $(".adventure #down").click(function() {
+                    alert("downvote");
                 });
             });
 
