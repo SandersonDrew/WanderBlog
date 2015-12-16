@@ -11,6 +11,7 @@ if(isset($_SESSION['login_user'])){
 		.adventure{
 			width: 900px;
 			height: 500px;
+            margin: 40px auto;
 		}
 
         .adventure img{
