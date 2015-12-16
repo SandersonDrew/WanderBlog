@@ -32,7 +32,7 @@ if($_SESSION['permLevel'] == 0){
     <b id="logout"><a href="logout.php">Log Out</a></b>
     <b id="brian"><a href="brianslonelypage.php">All by myself</a></b>
     <?php
-    if($_SESSION['permLevel'] = 1){
+    if($_SESSION['permLevel'] == 1){
         echo '<b id="admin"><a href="admin.php">Click here to go to your admin page</a></b>';
     }
     if($_SESSION['permLevel'] > 1){
