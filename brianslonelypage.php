@@ -7,6 +7,7 @@ if (isset($_GET['submit'])) {
     $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
     $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
+    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
 }
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
@@ -47,7 +48,6 @@ function getval($mysqli, $sql) {
         	display: inline-block;
         	margin-left: auto;
             margin-right:auto;
-            border: 1px solid black;
             bottom: 10px;
             margin-left: auto;
             margin-right:auto;
@@ -128,7 +128,7 @@ function getval($mysqli, $sql) {
                     <p><?php echo $authname?></p>
                     <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
                     <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-                    <p>Date</p>
+                    <p><?php echo $advdate?></p>
                     <p>Upvotes: </p>
                     <p>Downvotes: </p>
                 </div>
