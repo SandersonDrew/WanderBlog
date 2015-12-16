@@ -36,7 +36,7 @@ if (isset($_POST['submit'])) {
                 header("location: profiletest.php"); // Redirecting To Other Page
             }
         } else {
-            $error = "Username or Password is invalid";
+            header("location:index.php");
         }
         $connection->close(); // Closing Connection
     }
