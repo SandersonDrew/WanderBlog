@@ -73,17 +73,20 @@ $email = $_SESSION['email'];
     </div>
 </div>
 <?php
-if($_SESSION['permLevel'] == 4){
-    genDivs(2);
+if($_SESSION['permLevel'] == 3){
+    genDivs();
 }
 ?>
 <b id="logout"><a href="logout.php">Log Out</a></b>
 <?php
-function genDivs($numNewUsers)
+function genDivs()
 {
-    for ($i = 0; $i < $numNewUsers; $i++) {
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    $query = mysqli_query($connection,"SELECT * FROM users WHERE verified=0");
+    $result = mysqli_num_rows($query);
+    for ($i = 0; $i < $result; $i++) {
         echo '<div class="container">
-    <div class="row">
+        <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60">
