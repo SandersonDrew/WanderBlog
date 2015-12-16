@@ -30,7 +30,7 @@ if(isset($_SESSION['login_user'])){
 		.adventure{
 			width: 900px;
 			height: 500px;
-            margin: 40px auto;
+            margin: 40px;
             border: 1px solid black;
 		}
 
@@ -45,7 +45,8 @@ if(isset($_SESSION['login_user'])){
         #up{
             left: 300px;
         }
-        #down right: 400px;
+        #down {
+            right: 400px;
         }
 
 
