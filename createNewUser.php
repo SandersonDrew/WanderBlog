@@ -25,7 +25,7 @@ if (isset($_POST['submit'])) {
         $query = mysqli_query($connection,"SELECT * FROM users WHERE username='$username'");
         $result = mysqli_num_rows($query);
         if ($result == 0) {
-            mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email,displayname) VALUES('$username', '$password', 0,0,'$email','$username') ");
+            mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email,displayname) VALUES('$username', '$password', 1,0,'$email','$username') ");
             $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
             $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
             $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
