@@ -149,15 +149,16 @@ function genDivs()
         $sql_query = "SELECT description FROM adventures WHERE userid='$userid'";
         $result = $connection->query($sql_query);
         while ($row = $result->fetch_assoc()) {
-                echo '<div class="container">
+            echo '
+            <div class="container">
                 <div class="row">
-                <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <h6> ' . $row['description']. ' </h6>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <h6> ' . $row['description']. ' </h6>
+                    </div>
+                    <div class="col-md-2"></div>
                 </div>
-                <div class="col-md-2"></div>
-                </div>
-                </div>';
+            </div>';
         }
     }
 }
