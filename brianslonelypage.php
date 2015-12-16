@@ -10,25 +10,12 @@ if(isset($_SESSION['login_user'])){
     <link href="style.css" rel="stylesheet" type="text/css">
     <style type="text/css">
 
-        .adventure {
-            height: 60px;
-            width:60px;
-            position:relative;
-        }
-        .adventure a img{
-            margin:auto; /* Required */
-            position:absolute; /* Required */
-            bottom:0; /* Aligns at the bottom */
-            left:0;right:0; /* Aligns horizontal center */
-            max-height:100%; /* images bigger than 175 px  */
-            max-width:100%;  /* will be shrinked to size */
-        }
 		.adventure{
 			width: 900px;
 			height: 500px;
 		}
 
-        .adventure #up{
+        .adventure img{
             width: 60px;
             height: 60px;
             bottom: 10px;
@@ -36,14 +23,6 @@ if(isset($_SESSION['login_user'])){
             zoom: 1;
         }
 
-		.adventure #down{
-			width: 60px;
-			height: 60px;
-			bottom: 10px;
-            left:440px;
-			zoom: 1;
-
-		}
 
 		.slider{
 			width: 800px;
@@ -97,34 +76,6 @@ if(isset($_SESSION['login_user'])){
 </head>
 <body onload="Slider();">
 <div id="main">
-    <h1>WanderBlog Login</h1>
-    <div id="login">
-        <h2>Login </h2>
-        <form action="login.php" method="post">
-            <label>UserName :</label>
-            <input id="name" name="username" placeholder="username" type="text">
-            <label>Password :</label>
-            <input id="password" name="password" placeholder="**********" type="password">
-            <input name="submit" type="submit" value=" Login ">
-            <span><?php echo $error; ?></span>
-        </form>
-    </div>
-</div>
-<div id="main2">
-    <div id="NewUser">
-        <h2>New User</h2>
-        <form action="createNewUser.php" method="post">
-            <label>UserName :</label>
-            <input id="name" name="username" placeholder="username" type="text">
-            <label>Email :</label>
-            <input id="email" name="email" placeholder="email" type="text">
-            <label>Password :</label>
-            <input id="password" name="password" placeholder="**********" type="password">
-            <input name="submit" type="submit" value=" Login ">
-            <span><?php echo $error; ?></span>
-        </form>
-    </div>
-
     <div class = "adventure">
     	<div class = "slider">
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
@@ -132,9 +83,9 @@ if(isset($_SESSION['login_user'])){
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
         </div>
+
         <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
         <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-
 	</div>
 </div>
 </body>
