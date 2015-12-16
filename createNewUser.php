@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 // To protect MySQL injection for Security purpose
         $username = stripslashes($username);
+        $email = stripslashes($email);
         $password = stripslashes($password);
 /**
  * Note that the salt here is randomly generated.
