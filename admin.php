@@ -89,8 +89,6 @@ function genDivs(){
     $result = mysqli_num_rows($query);
     for ($i = 0; $i < $result; $i++) {
         $row = mysqli_fetch_array($query, MYSQLI_NUM);
-        print_r($row);
-        echo $i;
         echo '<div class="container">
         <div class="row">
         <div class="col-md-2"></div>
@@ -98,7 +96,7 @@ function genDivs(){
             <img src="http://placehold.it/60x60">
         </div>
         <div class="col-md-5" style="height: 62px; border:1px solid #000;">
-            <h6> ' .$row[$i] . ' </h6>
+            <h6> ' .$row[0] . ' </h6>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="Yes">
