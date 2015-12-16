@@ -1,3 +1,4 @@
+
 <?php
 if(isset($_SESSION['login_user'])){
     header("location: profiletest.php");
@@ -27,13 +28,22 @@ if(isset($_SESSION['login_user'])){
 
     <title>Welcome to WanderBlog</title>
     <style type="text/css">
-
         .text{
             width: 800px;
             text-align: justify;
             margin: 30px auto;
-            height: -webkit-fit-content;
-            height: -moz-fit-content;
+            border: 1px solid black;
+
+        }
+        .adventure p{
+        	display: inline-block;
+        	margin-left: auto;
+            margin-right:auto;
+            border: 1px solid black;
+            bottom: 10px;
+            margin-left: auto;
+            margin-right:auto;
+            border: 1px solid black;
         }
 		.adventure{
 			width: 900px;
@@ -41,18 +51,14 @@ if(isset($_SESSION['login_user'])){
             margin: 30px auto;
             border: 1px solid black;
             text-align: center;
+            overflow: auto;
 		}
-
         .adventure img{
             display: inline-block;
             width: 60px;
             height: 60px;
-            bottom: 10px;
-            margin-left: auto;
-            margin-right:auto;
-            border: 1px solid black;
-        }
 
+        }
 		.slider{
 			width: 800px;
 			height: 350px;
@@ -61,14 +67,12 @@ if(isset($_SESSION['login_user'])){
             top: 10px;
             border: 1px solid black;
 		}
-
 		.slider img{
 			width:800px;
 			height:350px;
 			display: none;
             border: 1px solid black;
 		}
-
 		</style>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
@@ -83,18 +87,14 @@ if(isset($_SESSION['login_user'])){
                     alert("downvote");
                 });
             });
-
 			function Slider(){
 				$(".slider #1").show("fade", 500);
 				$(".slider #1").delay(5500).hide("slide", {direction: 'left'},500);
-
 				var sc = $(".slider img").size();
 				var count = 2;
-
 				setInterval(function(){
 					$(".slider #"+count).show("slide",{direction: 'right'},500);
 					$(".slider #"+count).delay(5500).hide("slide",{direction: 'left'},500);
-
 					if(count == sc){
 						count = 1;
 					}
@@ -108,6 +108,7 @@ if(isset($_SESSION['login_user'])){
 <body onload="Slider();">
 <div id="main">
     <div class = "adventure">
+    	<h1>TITLE OF ADVENTURE</h1>
     	<div class = "slider">
 
 			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
@@ -115,8 +116,14 @@ if(isset($_SESSION['login_user'])){
 			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
 			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
         </div>
+        <div info>
+        <p>Author</p>
         <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
         <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+        <p>Date</p>
+        <p>Upvotes: </p>
+        <p>Downvotes: </p>
+    	</div>
 <div class ="text">
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus commodo lacus ornare massa finibus, vitae hendrerit ex luctus. Nullam mattis purus mi, sagittis euismod nisi ultrices sit amet. Phasellus sed diam feugiat, dictum arcu sed, scelerisque odio. Ut convallis purus eget placerat ullamcorper. Fusce ultricies venenatis magna, vel malesuada neque laoreet eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sed nisi ac diam laoreet fermentum a id velit. Sed vitae vestibulum lectus. Maecenas sit amet egestas ante. Suspendisse varius mauris id leo vestibulum congue. Donec facilisis nisi sit amet tellus ullamcorper, sed commodo tellus placerat. Donec congue pharetra risus sed maximus.
 
