@@ -152,6 +152,7 @@ function genDivs()
                         <h6> ' . $row['description']. ' </h6>
                         <form action="adventure.php" method="get">
                         <input type="submit" value="'.$row['adventureid'].'";
+                        </form>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
