@@ -110,10 +110,9 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Upload</a></li>
-                    <li><a href="profile.php">Profile</a></li>
+                    <li><a href="newAdventure.php">Upload</a></li>
+                    <li><a href="profile.php">Profil</a></li>
                     <li><a href="admin.php">Settings</a></li>
-                    <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
 
                 <?php
@@ -124,10 +123,14 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li id="logged-in">
-                        <?php if($_SESSION['login_user']!= null){
+                        <?php
+                        if($_SESSION['login_user']!= null){
                             echo $name;
-                        }else{
+                        }
+                        else{
+
                             require_once("loginpopup.php");
+
                         }
                         ?></li>
                 </ul>
