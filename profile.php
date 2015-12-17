@@ -183,7 +183,7 @@ $sea= $_SESSION[userid];
             echo '<table width="60%" border="1">';
             echo '<tr>';
             echo '<th>';
-            echo "adventurename" ;
+            echo "adventurekname" ;
             echo '</th>';
             echo '<th>';
             echo "description: " ;
