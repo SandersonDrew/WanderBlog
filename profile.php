@@ -40,6 +40,9 @@ if($_GET['username'] == null){
 </head>
 
 <body>
+
+<?php require_once("navbar.php"); ?>
+
 <?php
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 if ($connection->connect_error) {
@@ -47,9 +50,9 @@ if ($connection->connect_error) {
 }
 ?>
 
-<div id = "navbar">
-    <?php require_once("navbar.php"); ?>
-</div>
+
+
+
 
 <div class="container">
     <div class="row">
