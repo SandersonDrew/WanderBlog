@@ -23,7 +23,7 @@ if( !$button ){
         echo "Search term too short";
     } else {
 
-        $result = mysqli_query($conn, "SELECT * FROM users WHERE REPLACE(displayName, ' ', '')='$search' ORDER BY username");
+        $result = mysqli_query($conn, "SELECT * FROM users WHERE (REPLACE(displayName, ' ', ''))='$search' ORDER BY username");
 
         if ($result->num_rows > 0) {
             echo '<table width="200" border="1">';
