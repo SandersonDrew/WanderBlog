@@ -5,9 +5,9 @@ if($_SESSION['permLevel'] == 0){
 }
 $displayName = $_SESSION['displayName'];
 $email = $_SESSION['email'];
-$userid = $_SESSION['userid'];
+$username = $_SESSION['login_user'];
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-$bio = mysqli_query($connection,"SELECT bio FROM users WHERE userid='$userid'");
+$bio = mysqli_query($connection,"SELECT bio FROM users WHERE username='$username'");
 
 ?>
 
@@ -118,9 +118,9 @@ $bio = mysqli_query($connection,"SELECT bio FROM users WHERE userid='$userid'");
         <div class="col-md-8" style="border:1px solid #000;">
             <p><h4>Update Settings</h4>
             <form action="updateSettings.php" method="post">
-                <h6>Display Name: </h6> <input type="text" name="name" value="<?php echo $displayName;?>">
+                <h6>Display Name: </h6><input type="text" name="name" value="<?php echo $displayName;?>">
                 <h6>Email: </h6><input type="text" name="email" value="<?php echo $email ?>">
-                <h6>Bio: </h6> <input type="text" name="bio" value="<?php echo $bio ?>">
+                <h6>Bio: </h6><input type="text" name="bio" value="<?php echo $bio ?>">
                 <input type="submit" value="submit">
             </form>
             <br>
