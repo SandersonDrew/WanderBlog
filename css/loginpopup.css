@@ -10,17 +10,11 @@
 #popup-wrapper{
     width:500px;
     margin:70px;
-    text-align: left;
+    text-align: center;
 }
 
 #popup-container{
     background-color: #9d9d9d;
     padding:20px;
     border-radius: 4px;
-}
-
-label{
-
-    text-color: black;
-
 }

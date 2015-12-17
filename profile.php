@@ -65,9 +65,8 @@ if ($connection->connect_error) {
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="newAdventure.php">Upload</a></li>
-                    <li><a href="profile.php">Profile</a></li>
+                    <li><a href="profile.php">Profil</a></li>
                     <li><a href="admin.php">Settings</a></li>
-                    <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
 
                 <?php
