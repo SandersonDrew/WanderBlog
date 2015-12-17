@@ -72,7 +72,7 @@ include('session.php');
         <form action="createNewAdventure.php" method="post">
             <h6>Adventure Name:</h6><input type="text" name="advname" placeholder="Adventure Text">
             <h6>Text: </h6> <input type="text" name="Text" placeholder="Adventure Text">
-            <h6>Location: </h6><input type="text" name="location" placeholder="Location">
+            <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
             <h6>Date: </h6><input type="text" name="date" placeholder="Date">
             <input type="submit" name="submit" value="submit">
         </form>
