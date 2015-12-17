@@ -7,6 +7,18 @@ $userid = $_SESSION['userid'];
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }
+if(empty($_POST['name'])){
+    $query = "SELECT displayName FROM users WHERE userid='$userid'";
+    $newUsername = $connection->query($query);
+}
+if(empty($_POST['email'])){
+    $query = "SELECT email FROM users WHERE userid='$userid'";
+    $email = $connection->query($query);
+}
+if(empty($_POST['bio'])){
+    $query = "SELECT bio FROM users WHERE userid='$userid'";
+    $bio = $connection->query($query);
+}
     $newUsername = $_POST['name'];
     $email = $_POST['email'];
     $bio = $_POST['bio'];
