@@ -28,16 +28,16 @@ if(isset($_SESSION['login_user'])){
     <div id="login-popup" class = "popup-position">
         <div id="popup-wrapper">
             <div id="popup-container">
-                <h1>Log In</h1>
-
                 <div id="main">
                     <div id="login">
                         <h2>Login </h2>
                         <form action="login.php" method="post">
                             <label>UserName :</label>
                             <input id="name" name="username" placeholder="username" type="text">
+                            <br>
                             <label>Password :</label>
-                            <input id="password" name="password" placeholder="**********" type="password">
+                            <input id="password" name="password" placeholder="*********" type="password">
+                            <br>
                             <input name="submit" type="submit" value=" Login ">
                             <span><?php echo $error; ?></span>
                         </form>
@@ -49,11 +49,15 @@ if(isset($_SESSION['login_user'])){
                         <form action="createNewUser.php" method="post">
                             <label>UserName :</label>
                             <input id="name" name="username" placeholder="username" type="text">
+                            <br>
                             <label>Email :</label>
                             <input id="email" name="email" placeholder="email" type="text">
+                            <br>
                             <label>Password :</label>
                             <input id="password" name="password" placeholder="**********" type="password">
+                            <br>
                             <input name="submit" type="submit" value=" Login ">
+                            <br>
                             <span><?php echo $error; ?></span>
                         </form>
                     </div>
