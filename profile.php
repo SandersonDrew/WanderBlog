@@ -68,17 +68,18 @@ if ($connection->connect_error) {
                     <li><a href="admin.php">Settings</a></li>
                     <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
+
                 <?php
                 if($_SESSION['login_user']!= null){
-                    $name = "<font-color:white;>Logged in as </font>" . $_SESSION['displayName'];
+                    $name = "Logged in as" . $_SESSION['displayName'];
 
                 }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li id="name">
+                    <li>
                         <?php if($_SESSION['login_user']!= null){
-                            echo $name;
+                            echo "<p> . $name . </p>";
                         }else{
                             require_once("loginpopup.php");
                         }
