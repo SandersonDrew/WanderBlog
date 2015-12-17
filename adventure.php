@@ -142,8 +142,6 @@ function getval($mysqli, $sql) {
                         <input type = "hidden" name = "swing" value = "-1" >
                         <input type = "image" src="http://i68.tinypic.com/2r6pq1g.jpg" name="submit" value="submit">
                     </form>
-
-
                 </div>
                 <div class = "adventure">
                     <div class="col-md-1"></div>
