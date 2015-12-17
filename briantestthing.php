@@ -14,9 +14,6 @@ function getval($mysqli, $sql) {
     $value = $result->fetch_array(MYSQLI_NUM);
     return is_array($value) ? $value[0] : "";
 }
-if(isset($_SESSION['login_user'])){
-    header("location: profiletest.php");
-}
 ?>
 <!DOCTYPE html>
 <html>
