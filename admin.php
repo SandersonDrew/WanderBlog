@@ -5,6 +5,10 @@ if($_SESSION['permLevel'] == 0){
 }
 $displayName = $_SESSION['displayName'];
 $email = $_SESSION['email'];
+$username = $_SESSION['login_user'];
+$connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+$bio = mysqli_query($connection,"SELECT bio FROM users WHERE username='$username'");
+
 ?>
 
 <!DOCTYPE html>
@@ -113,10 +117,10 @@ $email = $_SESSION['email'];
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
             <p><h4>Update Settings</h4>
-
             <form action="updateSettings.php" method="post">
-                <h6>Display Name: </h6> <input type="text" name="name" value="<?php echo $displayName;?>">
-                <h6>Email: </h6><input type="text" name="email" value="<?php echo $email ?>">
+                <h6>Display Name: </h6><input type="text" name="name" value="<?php echo $displayName;?>">
+                <h6>Email: </h6><input type="text" name="email" value="<?php echo $email; ?>">
+                <h6>Bio: </h6><input type="text" name="bio" value="Bacon">
                 <input type="submit" value="submit">
             </form>
             <br>
@@ -136,6 +140,7 @@ function genDivs(){
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
+
     for ($i = 0; $i < $result; $i++) {
         $row = mysqli_fetch_array($query, MYSQLI_NUM);
         echo '<div class="container">
@@ -152,7 +157,7 @@ function genDivs(){
         <div class="col-md-1" style="border:1px solid #000;">
         <form action="verifyUser.php" method="post">
             <input type="hidden" name="submit" value="submit"/>
-            <input type="image" src="http://placehold.it/60x60?text=Verify+User" name="username" value="'.$row[0].'"/>
+            <input name="username" value="'.$row[0].'"/>
         </form>
         </div>
         <div class="col-md-2"></div>
