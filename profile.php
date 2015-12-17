@@ -23,7 +23,7 @@ if($_GET['username'] == null){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
-    <link rel="stylesheet" type="text/css" href="</css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Profile</title>
 
@@ -68,18 +68,20 @@ if ($connection->connect_error) {
                     <li><a href="admin.php">Settings</a></li>
                     <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
+
                 <?php
                 if($_SESSION['login_user']!= null){
                     $name = "Logged in as " . $_SESSION['displayName'];
-
                 }
                 ?>
-                <ul id = "name" class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
 
-                    <li id="name"><?php if($_SESSION['login_user']!= null){
+                    <li id="logged-in">
+                        <?php if($_SESSION['login_user']!= null){
                             echo $name;
+                        }else{
+                            require_once("loginpopup.php");
                         }
-                        else{require_once("loginpopup.php");}
                          ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -87,10 +89,14 @@ if ($connection->connect_error) {
     </nav>
 </nav>
 
+<?php
+    $pphotopath = "\Photos\Profile Photos\' .$userid. '.jpeg";
+?>
+
 <div class="container">
     <div class="row">
         <div class="span4"></div>
-        <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
+        <div class="span4"><img class="center-block img-circle" src="<?php$pphotopath?>"  alt="Profile-Photo" ></div>
         <div class="span4"></div>
     </div>
 </div>

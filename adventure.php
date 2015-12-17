@@ -40,40 +40,7 @@ function getval($mysqli, $sql) {
 
 
     <title>Welcome to WanderBlog</title>
-    <style type="text/css">
-        .adventure p{
-            display: inline-block;
-            margin-left: auto;
-            margin-right:auto;
-            bottom: 10px;
-            margin-left: auto;
-            margin-right:auto;
-        }
-        .adventure{
-            text-align: center;
-            overflow: auto;
-        }
-        .adventure img{
-            display: inline-block;
-            width: 60px;
-            height: 60px;
 
-        }
-        .slider{
-            width: 800px;
-            height: 350px;
-            overflow: hidden;
-            margin: 30px auto;
-            top: 10px;
-            border: 1px solid black;
-        }
-        .slider img{
-            width:800px;
-            height:350px;
-            display: none;
-            border: 1px solid black;
-        }
-    </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
     <script type="text/javascript">
@@ -107,7 +74,7 @@ function getval($mysqli, $sql) {
 </head>
 <body onload="Slider();">
 <nav id="navbar">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -117,7 +84,7 @@ function getval($mysqli, $sql) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img  src="/Photos/wlogo.png" height="40" width="80" alt="Logo" ></a>
+                <a class="navbar-brand" href="index.php"><img id="sitelogo" src="/Photos/logoback.png" height="50" width="90" alt="Logo" ></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -130,19 +97,22 @@ function getval($mysqli, $sql) {
                 <?php
                 if($_SESSION['login_user']!= null){
                     $name = "Logged in as " . $_SESSION['displayName'];
-                }else{
-                    $name = "Log In";
+
                 }
                 ?>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php"><?php
+                <ul id = "name" class="nav navbar-nav navbar-right">
+
+                    <li id="name"><?php if($_SESSION['login_user']!= null){
                             echo $name;
-                            ?></a></li>
+                        }
+                        else{require_once("loginpopup.php");}
+                        ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </nav>
+
 <div class="container">
     <div class="row">
         <div class="col-md-1"></div>
@@ -234,5 +204,9 @@ function genDivs()
     }
 }
 ?>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 </body>
 </html>
