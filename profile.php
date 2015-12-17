@@ -45,7 +45,7 @@ if ($connection->connect_error) {
 }
 ?>
 
-<?php require_once("navbar.php"); ?>
+<?php require_once("../navbar.php"); ?>
 
 <div class="container">
     <div class="row">
