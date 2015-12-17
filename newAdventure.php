@@ -55,9 +55,7 @@ include('session.php');
                         <?php if($_SESSION['login_user']!= null){
                             echo $name;
                         }else{
-
                             require_once("loginpopup.php");
-
                         }
                         ?></li>
                 </ul>
