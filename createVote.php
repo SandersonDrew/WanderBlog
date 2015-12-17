@@ -9,6 +9,11 @@ if ($connection->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+echo '$userID';
+echo '$adventureID';
+echo '$swing';
+
+
 $sql = mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES('$userID', '$adventureID', '$swing')");
 
 if ($connection->query($sql) === TRUE) {
