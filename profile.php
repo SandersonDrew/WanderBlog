@@ -89,6 +89,10 @@ if ($connection->connect_error) {
     </nav>
 </nav>
 
+<?php
+    $photopath = $userid
+?>
+
 <div class="container">
     <div class="row">
         <div class="span4"></div>
