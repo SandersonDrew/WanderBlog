@@ -8,7 +8,7 @@ $email = $_SESSION['email'];
 $username = $_SESSION['login_user'];
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 $bio = mysqli_query($connection,"SELECT bio FROM users WHERE username='$username'");
-
+echo $bio;
 ?>
 
 <!DOCTYPE html>
@@ -30,17 +30,6 @@ $bio = mysqli_query($connection,"SELECT bio FROM users WHERE username='$username
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-        div#submitForm input {
-            background: url("http://placehold.it/60x60") no-repeat scroll 0 0 transparent;
-            color: #000000;
-            cursor: pointer;
-            font-weight: bold;
-            height: 20px;
-            padding-bottom: 2px;
-            width: 75px;
-        }
-    </style>
 </head>
 
 <body>
