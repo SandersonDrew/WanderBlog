@@ -79,7 +79,7 @@ if ($connection->connect_error) {
 
                     <li id="logged-in">
                         <?php if($_SESSION['login_user']!= null){
-                            echo "<p> . $name . </p>";
+                            echo $name;
                         }else{
                             require_once("loginpopup.php");
                         }
