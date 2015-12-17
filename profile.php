@@ -1,5 +1,6 @@
 <?php
 include('session.php');
+
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
     $value = $result->fetch_array(MYSQLI_NUM);
@@ -70,12 +71,16 @@ if ($connection->connect_error) {
                 <?php
                 if($_SESSION['login_user']!= null){
                     $name = "Logged in as " . $_SESSION['displayName'];
-                }else{
-                    $name = "Log In";
+
                 }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><?php require_once("loginpopup.php"); ?></li>
+
+                    <li><?php if($_SESSION['login_user']!= null){
+                            echo $name;
+                        }
+                        else{require_once("loginpopup.php");}
+                         ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
