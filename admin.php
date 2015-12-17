@@ -107,7 +107,7 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
             <form action="updateSettings.php" method="post">
                 <h6>Display Name: </h6><input type="text" name="name" value="<?php echo $displayName;?>">
                 <h6>Email: </h6><input type="text" name="email" value="<?php echo $email; ?>">
-                <h6>Bio: </h6><input type="text" name="bio" value="Bacon">
+                <h6>Bio: </h6><input type="text" name="bio" placeholder="Please enter a bio">
                 <input type="submit" value="submit">
             </form>
             <br>
@@ -141,7 +141,7 @@ function genDivs(){
                 <input type="submit" name="username" value="'.$row[0].'" />
             </form>
         </div>
-        <div class="col-md-1" style="border:1px solid #000;">
+        <div class="col-md-1" style="height: 62px; border:1px solid #000;">
         <form action="verifyUser.php" method="post">
             <input type="hidden" name="submit" value="submit"/>
             <input type="image" src="http://placehold.it/60x60?text=Verify+User" name="username" value="'.$row[0].'"/>
