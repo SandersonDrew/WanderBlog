@@ -1,6 +1,6 @@
 .popup-position{
     display:none;
-    position :fixed;
+    position :center;
     top:0; left:0;
     background-color:rgba(0,0,0,0.7);
     width:100%;
