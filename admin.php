@@ -109,7 +109,7 @@ echo $bio;
             <form action="updateSettings.php" method="post">
                 <h6>Display Name: </h6><input type="text" name="name" value="<?php echo $displayName;?>">
                 <h6>Email: </h6><input type="text" name="email" value="<?php echo $email; ?>">
-                <h6>Bio: </h6><input type="text" name="bio" value="Bacon">
+                <h6>Bio: </h6><input type="text" name="bio" placeholder="Please Type a bio">
                 <input type="submit" value="submit">
             </form>
             <br>
