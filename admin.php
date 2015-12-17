@@ -30,17 +30,6 @@ echo $bio;
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <style type="text/css">
-        div#submitForm input {
-            background: url("http://placehold.it/60x60") no-repeat scroll 0 0 transparent;
-            color: #000000;
-            cursor: pointer;
-            font-weight: bold;
-            height: 20px;
-            padding-bottom: 2px;
-            width: 75px;
-        }
-    </style>
 </head>
 
 <body>
