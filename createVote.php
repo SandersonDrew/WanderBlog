@@ -16,9 +16,4 @@ echo $swing;
 
 mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES($userID, $adventureID, $swing)");
 
-if ($connection->query($sql) == TRUE) {
-    echo "New records created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error .mysql_error();
-}
-?>
+header('location: adventure.php/?'.$adventureID);
