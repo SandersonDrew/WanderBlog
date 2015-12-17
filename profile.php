@@ -189,7 +189,7 @@ $sea= $_SESSION[userid];
             echo "description: " ;
             echo '</th>';
             echo '<th>';
-            echo "location " ;
+            echo "locatikon " ;
             echo '</th>';
             echo '<th>';
             echo "userisd" ;
