@@ -144,7 +144,7 @@ function genDivs(){
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60">
         </div>
-        <div class="col-md-5" style="height: 62px; border:1px solid #000;">
+        <div class="col-md-6" style="height: 62px; border:1px solid #000;">
             <form action="profile.php" method="get">
                 <input type="submit" name="username" value="'.$row[0].'" />
             </form>
@@ -152,11 +152,8 @@ function genDivs(){
         <div class="col-md-1" style="border:1px solid #000;">
         <form action="verifyUser.php" method="post">
             <input type="hidden" name="submit" value="submit"/>
-            <input type="image" src="http://placehold.it/60x60" name="username" value="'.$row[0].'"/>
+            <input type="image" src="http://placehold.it/60x60?text=Verify+User" name="username" value="'.$row[0].'"/>
         </form>
-        </div>
-        <div class="col-md-1" style="border:1px solid #000;">
-            <img src="http://placehold.it/60x60" alt="No">
         </div>
         <div class="col-md-2"></div>
     </div>
