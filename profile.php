@@ -21,7 +21,6 @@ if($_GET['username'] == null){
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="</css" href="css/navbar.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -40,16 +39,12 @@ if($_GET['username'] == null){
 </head>
 
 <body>
-
-
-
 <?php
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 ?>
-
 
 <nav id="navbar">
     <nav class="navbar navbar-inverse">
@@ -86,7 +81,6 @@ if ($connection->connect_error) {
         </div><!-- /.container-fluid -->
     </nav>
 </nav>
-
 
 <div class="container">
     <div class="row">
