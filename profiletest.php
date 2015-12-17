@@ -30,10 +30,9 @@ if($_SESSION['permLevel'] == 0){
 
     <b id="profile"><a href="profile.php">Click here to go to your profile page</a></b>
     <b id="logout"><a href="logout.php">Log Out</a></b>
-    <b id="brian"><a href="brianslonelypage.php">All by myself</a></b>
-    <form action="profile.php" method="get">
-        <h6>Text: </h6> <input type="text" name="userid" placeholder="Adventure Text">
-        <h6>Location: </h6><input type="text" name="displayName" placeholder="Location">
+    <b id="brian"><a href="adventure.php">All by myself</a></b>
+    <form action="adventure.php" method="get">
+        <h6>Text: </h6> <input type="text" name="adventureid" placeholder="Adventure Text">
         <input type="submit" name="submit" value="submit">
     </form>
     <?php

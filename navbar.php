@@ -66,11 +66,11 @@ if ($connection->connect_error) {
                     <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
                 <?php
-                    if($_SESSION['login_user']!= null){
-                        $name = "Logged in as " . $_SESSION['displayName'];
-                    }else{
-                        $name = "Log In";
-                    }
+                if($_SESSION['login_user']!= null){
+                    $name = "Logged in as " . $_SESSION['displayName'];
+                }else{
+                    $name = "Log In";
+                }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="index.php"><?php
@@ -82,87 +82,7 @@ if ($connection->connect_error) {
     </nav>
 </nav>
 
-<div class="container">
-    <div class="row">
-        <div class="span4"></div>
-        <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
-        <div class="span4"></div>
-    </div>
-</div>
 
-<div id="desc" class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-                <h1 id="userName">
-                    <?php
-                    $sql_query = "SELECT displayName FROM users WHERE userid='$userid'";
-                    $result = $connection->query($sql_query);
-                    while($row = $result->fetch_assoc()){
-                        echo $row['displayName'];
-                    }
-                ?></h1>
-        </div>
-        <div class="col-md-2"></div>
-    </div>
-</div>
-
-<div id="desc" class="container">
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <p style="text-align: center">
-                <?php
-                $sql_query = "SELECT bio FROM users WHERE userid='$userid'";
-                $result = $connection->query($sql_query);
-                while($row = $result->fetch_assoc()){
-                    echo $row['bio'];
-                }
-                ?> </p>
-        </div>
-        <div class="col-md-2"></div>
-        sa
-    </div>
-</div>
-
-<?php
-genDivs();
-function genDivs()
-{
-    if($_GET['username'] == null){
-        $userid = $_SESSION['userid'];
-        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    } else{
-        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-        $temp = $_GET['username'];
-        $userid = getval($connection,"SELECT userid FROM users WHERE username = '$temp'");
-    }
-
-    if ($connection->connect_error) {
-        die("Connection failed: " . $connection->connect_error);
-    }else{
-        $sql_query = "SELECT description,adventureid FROM adventures WHERE userid='$userid'";
-        $result = $connection->query($sql_query);
-        while ($row = $result->fetch_assoc()) {
-            echo '
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                        <h6> ' . $row['description']. ' </h6>
-                        <form action="adventure.php" method="get">
-                            <input type="hidden" name="adventureid" value="'.$row['adventureid'].'"/>
-                            <input type="submit" name="submit" value="Go To Adventure Page"/>
-                        </form>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
-            </div>';
-        }
-    }
-}
-?>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->

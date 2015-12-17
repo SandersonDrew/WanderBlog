@@ -1,13 +1,10 @@
 <?php
 include('session.php');
-echo "Hello World";
 if (isset($_POST['submit'])) {
     if (empty($_POST['Text']) || empty($_POST['Location'])) {
         $error = "Text or Location is empty";
         echo $error;
     } else {
-
-        echo "Hi Again";
         // Define $text
         $text = $_POST['Text'];
         $location = $_POST['Location'];
