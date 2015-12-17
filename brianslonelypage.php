@@ -1,11 +1,24 @@
 <?php
-if(isset($_SESSION['login_user'])){
-    header("location: profiletest.php");
+include('session.php');
+if (isset($_GET['submit'])) {
+    $adventureid = $_GET['adventureid'];
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
+    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
+    $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
+    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
+    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
+}
+function getval($mysqli, $sql) {
+    $result = $mysqli->query($sql);
+    $value = $result->fetch_array(MYSQLI_NUM);
+    return is_array($value) ? $value[0] : "";
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,32 +40,24 @@ if(isset($_SESSION['login_user'])){
 
     <title>Welcome to WanderBlog</title>
     <style type="text/css">
-
-        .text{
-            width: 800px;
-            text-align: justify;
-            margin: 30px auto;
-            height: -webkit-fit-content;
-            height: -moz-fit-content;
+        .adventure p{
+        	display: inline-block;
+        	margin-left: auto;
+            margin-right:auto;
+            bottom: 10px;
+            margin-left: auto;
+            margin-right:auto;
         }
 		.adventure{
-			width: 900px;
-			height: 600px;
-            margin: 30px auto;
-            border: 1px solid black;
             text-align: center;
+            overflow: auto;
 		}
-
         .adventure img{
             display: inline-block;
             width: 60px;
             height: 60px;
-            bottom: 10px;
-            margin-left: auto;
-            margin-right:auto;
-            border: 1px solid black;
-        }
 
+        }
 		.slider{
 			width: 800px;
 			height: 350px;
@@ -61,14 +66,12 @@ if(isset($_SESSION['login_user'])){
             top: 10px;
             border: 1px solid black;
 		}
-
 		.slider img{
 			width:800px;
 			height:350px;
 			display: none;
             border: 1px solid black;
 		}
-
 		</style>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
@@ -83,18 +86,14 @@ if(isset($_SESSION['login_user'])){
                     alert("downvote");
                 });
             });
-
 			function Slider(){
 				$(".slider #1").show("fade", 500);
 				$(".slider #1").delay(5500).hide("slide", {direction: 'left'},500);
-
 				var sc = $(".slider img").size();
 				var count = 2;
-
 				setInterval(function(){
 					$(".slider #"+count).show("slide",{direction: 'right'},500);
 					$(".slider #"+count).delay(5500).hide("slide",{direction: 'left'},500);
-
 					if(count == sc){
 						count = 1;
 					}
@@ -106,24 +105,37 @@ if(isset($_SESSION['login_user'])){
 		</script>
 </head>
 <body onload="Slider();">
-<div id="main">
-    <div class = "adventure">
-    	<div class = "slider">
-
-			<img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-			<img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-			<img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-			<img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class = "adventure">
+                <h1><?php echo $advname?></h1>
+                <div class = "slider">
+                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
+                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
+                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
+                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
+                </div>
+                <div class="info">
+                    <p><?php echo $authname?></p>
+                    <p><?php echo $advdate?></p>
+                    <p>Upvotes: </p>
+                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+                    <p>Downvotes: </p>
+                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+                </div>
+                <div class = "adventure">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <p><?php echo $text?></p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
         </div>
-        <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-        <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-<div class ="text">
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus commodo lacus ornare massa finibus, vitae hendrerit ex luctus. Nullam mattis purus mi, sagittis euismod nisi ultrices sit amet. Phasellus sed diam feugiat, dictum arcu sed, scelerisque odio. Ut convallis purus eget placerat ullamcorper. Fusce ultricies venenatis magna, vel malesuada neque laoreet eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sed nisi ac diam laoreet fermentum a id velit. Sed vitae vestibulum lectus. Maecenas sit amet egestas ante. Suspendisse varius mauris id leo vestibulum congue. Donec facilisis nisi sit amet tellus ullamcorper, sed commodo tellus placerat. Donec congue pharetra risus sed maximus.
-
-            Nam et turpis non ante interdum mattis eu a lacus. Nam luctus, libero sed scelerisque accumsan, nibh justo sodales urna, maximus lobortis tellus ipsum et metus. Pellentesque in velit sit amet odio ultricies consequat. Sed cursus non neque vehicula imperdiet. Donec scelerisque tellus sollicitudin massa semper tempus sed et ligula. Fusce tempor dignissim accumsan. Sed nec mollis nisi. Nunc tortor ex, consequat id varius eu, feugiat vitae metus. Duis volutpat ut turpis vitae placerat. Duis efficitur molestie velit, eget porttitor nisl lobortis eu. Etiam auctor bibendum maximus. Duis nisi eros, rhoncus non leo at, ultricies placerat lorem. Suspendisse malesuada magna eget ipsum auctor, ut lobortis nibh volutpat. Aenean at tempor diam, vitae lobortis est. Quisque varius neque at rutrum auctor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </p>
+        <div class="col-md-1"></div>
     </div>
-	</div>
-</div>
 </div>
 </body>
 </html>

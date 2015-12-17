@@ -1,5 +1,9 @@
 <?php
 include('session.php');
+if($_SESSION['permLevel'] == 0){
+    echo $_SESSION['permLevel'];
+    header('location: index.php');
+}
 ?>
 <!DOCTYPE html>
 <head>
@@ -26,12 +30,21 @@ include('session.php');
 
     <b id="profile"><a href="profile.php">Click here to go to your profile page</a></b>
     <b id="logout"><a href="logout.php">Log Out</a></b>
-    <b id="brian"><a href="brianslonelypage.php">All by myself</a></b>
+    <b id="brian"><a href="adventure.php">All by myself</a></b>
+    <form action="adventure.php" method="get">
+        <h6>Text: </h6> <input type="text" name="adventureid" placeholder="Adventure Text">
+        <input type="submit" name="submit" value="submit">
+    </form>
     <?php
-    echo $_SESSION['permLevel'];
+    if($_SESSION['permLevel'] == 1){
+        echo '<b id="admin"><a href="admin.php">Click here to go to your admin page</a></b>';
+    } else{
         if($_SESSION['permLevel'] > 1){
-            showNewAdventure();
-        }
+        showNewAdventure();
+    }
+    }
+
+
     function showNewAdventure(){
         echo '
         <b id="admin"><a href="admin.php">Click here to go to your admin page</a></b>
@@ -43,7 +56,7 @@ include('session.php');
             <form action="createNewAdventure.php" method="post">
                 <h6>Text: </h6> <input type="text" name="Text" placeholder="Adventure Text">
                 <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
-                <input type="submit" value="submit">
+                <input type="submit" name="submit" value="submit">
             </form>
             <br>
         </div>

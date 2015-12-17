@@ -1,5 +1,8 @@
 <?php
 include('session.php');
+if($_SESSION['permLevel'] == 0){
+    header('location: index.php');
+}
 $displayName = $_SESSION['displayName'];
 $email = $_SESSION['email'];
 ?>
@@ -26,6 +29,44 @@ $email = $_SESSION['email'];
 </head>
 
 <body>
+<nav id="navbar">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.php"><img  src="\Photos\logoback.png" height="40" width="80" alt="Logo" ></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Upload</a></li>
+                    <li><a href="profile.php">Profile</a></li>
+                    <li><a href="admin.php">Settings</a></li>
+                    <li><a href="newAdventure.php">Create New Adventure</a></li>
+                </ul>
+                <?php
+                if($_SESSION['login_user']!= null){
+
+                    $name = "Logged in as " . $_SESSION['displayName'];
+                }else{
+                    $name = "Log In";
+                }
+                ?>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.php"><?php
+                            echo $name;
+                            ?></a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</nav>
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
@@ -74,19 +115,18 @@ $email = $_SESSION['email'];
 </div>
 <b id="logout"><a href="logout.php">Log Out</a></b>
 <?php
-if($_SESSION['permLevel'] == 3){
+if($_SESSION['permLevel'] > 2){
     genDivs();
 }
 ?>
 
 <?php
-function genDivs()
-{
+function genDivs(){
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
-    $row = mysqli_fetch_array($query, MYSQLI_NUM);
     for ($i = 0; $i < $result; $i++) {
+        $row = mysqli_fetch_array($query, MYSQLI_NUM);
         echo '<div class="container">
         <div class="row">
         <div class="col-md-2"></div>
@@ -94,10 +134,15 @@ function genDivs()
             <img src="http://placehold.it/60x60">
         </div>
         <div class="col-md-5" style="height: 62px; border:1px solid #000;">
-            <h6> ' .$row[$i] . ' </h6>
+            <form action="profile.php" method="get">
+                <input type="submit" name="username" value="'.$row[0].'" />
+            </form>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
-            <img src="http://placehold.it/60x60" alt="Yes">
+        <form action="verifyUser.php" method="post">
+            <input type="hidden" name="username" value="'.$row[0].'">
+            <input type="submit" name="submit" style="background:url(http://placehold.it/60x60) no-repeat;" />
+        </form>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="No">
