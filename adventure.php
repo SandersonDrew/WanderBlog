@@ -149,12 +149,12 @@ function getval($mysqli, $sql) {
         <div class="col-md-10">
             <div class = "adventure">
                 <h1><?php echo $advname?></h1>
-                <div class = "slider">
+                <!--<div class = "slider">
                     <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
                     <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
                     <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
                     <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                </div>
+                </div>-->
                 <div class="info">
                     <p><?php echo $authname?></p>
                     <p><?php echo $advdate?></p>
