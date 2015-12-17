@@ -26,9 +26,9 @@ if (isset($_POST['submit'])) {
             $known = getval($connection,"SELECT password FROM users WHERE username='$username'");
             if(hash_equals($known,$password)){
                 $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
-                $displayName = getval($connection,"SELECT displayName FROM users WHERE userid='$userid'");
-                $email = getval($connection,"SELECT email FROM users WHERE userid='$userid'");
-                $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
+                $displayName = getval($connection,"SELECT displayName FROM users WHERE userid=$userid");
+                $email = getval($connection,"SELECT email FROM users WHERE userid=$userid");
+                $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid=$userid");
                 $_SESSION['login_user']=$username; // Initializing Session
                 $_SESSION['userid'] = $userid;
                 $_SESSION['email'] = $email;
