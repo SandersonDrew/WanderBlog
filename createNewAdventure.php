@@ -1,7 +1,7 @@
 <?php
 include('session.php');
 if (isset($_POST['submit'])) {
-    if (empty($_POST['Text']) || empty($_POST['Location'])) {
+    if (empty($_POST['Text']) || empty($_POST['Location']) || empty($_POST['advname']) || empty($_POST['date'])) {
         $error = "Text or Location is empty";
         echo $error;
     } else {
