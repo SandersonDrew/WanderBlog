@@ -45,7 +45,7 @@ if ($connection->connect_error) {
 }
 ?>
 <nav id="navbar">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -55,7 +55,7 @@ if ($connection->connect_error) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img  src="/Photos/wlogo.png" height="40" width="80" alt="Logo" ></a>
+                <a class="navbar-brand" href="index.php"><img  src="/Photos/logoback.png" height="40" width="80" alt="Logo" ></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
