@@ -27,7 +27,7 @@ include('session.php');
         <p><h4>Create New Adventure</h4>
         <form action="createNewAdventure.php" method="post">
             <h6>Text: </h6> <input type="text" name="Text" placeholder="Adventure Text">
-            <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
+            <h6>location: </h6><input type="text" name="location" placeholder="location">
             <input type="submit" name="submit" value="submit">
         </form>
         <br>
