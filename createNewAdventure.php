@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
         $date = $_POST['date'];
         $userid = $_SESSION['userid'];
         // Establishing Connection with Server
-        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "        2d0628d7", "wb1306507");
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
         echo "Test";
         // To protect MySQL injection for Security purpose
         $text = stripslashes($text);
