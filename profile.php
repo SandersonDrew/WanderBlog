@@ -192,7 +192,7 @@ $sea= $_SESSION[userid];
             echo "location " ;
             echo '</th>';
             echo '<th>';
-            echo "userid" ;
+            echo "userisd" ;
             echo '</th>';
             echo '</tr>';
             while ($row = $result->fetch_assoc()) {
