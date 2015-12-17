@@ -8,7 +8,9 @@ if (isset($_GET['submit'])) {
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
     $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
     $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
+    $votes = getval($connection, "SELECT swing FROM votes WHERE adventureid='$adventureid'");
 }
+
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
     $value = $result->fetch_array(MYSQLI_NUM);
@@ -105,6 +107,134 @@ function getval($mysqli, $sql) {
 		</script>
 </head>
 <body onload="Slider();">
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class = "adventure">
+                <h1><?php echo $advname?></h1>
+                <div class = "slider">
+                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
+                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
+                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
+                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
+                </div>
+                <div class="info">
+                    <p><?php echo $authname?></p>
+                    <p><?php echo $advdate?></p>
+                    <p>Upvotes: </p>
+                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+                    <p>Downvotes: </p>
+                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+                </div>
+                <div class = "adventure">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <p><?php echo $text?></p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class = "adventure">
+                <h1><?php echo $advname?></h1>
+                <div class = "slider">
+                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
+                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
+                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
+                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
+                </div>
+                <div class="info">
+                    <p><?php echo $authname?></p>
+                    <p><?php echo $advdate?></p>
+                    <p>Upvotes: </p>
+                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+                    <p>Downvotes: </p>
+                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+                </div>
+                <div class = "adventure">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <p><?php echo $text?></p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class = "adventure">
+                <h1><?php echo $advname?></h1>
+                <div class = "slider">
+                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
+                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
+                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
+                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
+                </div>
+                <div class="info">
+                    <p><?php echo $authname?></p>
+                    <p><?php echo $advdate?></p>
+                    <p>Upvotes: </p>
+                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+                    <p>Downvotes: </p>
+                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+                </div>
+                <div class = "adventure">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <p><?php echo $text?></p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <div class = "adventure">
+                <h1><?php echo $advname?></h1>
+                <div class = "slider">
+                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
+                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
+                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
+                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
+                </div>
+                <div class="info">
+                    <p><?php echo $authname?></p>
+                    <p><?php echo $advdate?></p>
+                    <p>Upvotes: </p>
+                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+                    <p>Downvotes: </p>
+                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+                </div>
+                <div class = "adventure">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <p><?php echo $text?></p>
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-1"></div>
