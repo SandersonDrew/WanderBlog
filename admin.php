@@ -140,6 +140,7 @@ function genDivs(){
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
+
     for ($i = 0; $i < $result; $i++) {
         $row = mysqli_fetch_array($query, MYSQLI_NUM);
         echo '<div class="container">
