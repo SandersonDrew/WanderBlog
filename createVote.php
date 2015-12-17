@@ -16,4 +16,4 @@ echo $swing;
 
 mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES($userID, $adventureID, $swing)");
 
-header('location: adventure.php/?'.$adventureID);
+header('location: adventure.php/?adventureid='.$adventureID.'&submit=submit');
