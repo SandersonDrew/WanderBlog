@@ -11,6 +11,8 @@ if (isset($_GET['submit'])) {
     $votes = getval($connection, "SELECT swing FROM votes WHERE adventureid='$adventureid'");
 }
 
+
+
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
     $value = $result->fetch_array(MYSQLI_NUM);
@@ -100,6 +102,13 @@ function getval($mysqli, $sql) {
 </head>
 <body onload="Slider();">
 <div class="container">
+
+<php?
+    $sql_query = "SELECT TOP 5 * FROM votes WHERE' ORDER BY swing DESC";
+    $result = $connection->query($sql_query);
+    while ($row = $result->fetch_assoc()) {
+    echo '<h6> ' . $row['adventureid']. ' </h6>
+    ?>
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
