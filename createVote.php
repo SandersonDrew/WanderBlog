@@ -14,11 +14,11 @@ echo $adventureID;
 echo $swing;
 
 
-$sql = mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES('1242', '22', '$swing')");
+$sql = mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES('$userID', '$adventureID', $swing)");
 
 if ($connection->query($sql) === TRUE) {
     echo "New records created successfully";
 } else {
-    echo "Errosr: " . $sql . "<br>" . $conn->error .mysql_error();
+    echo "Error: " . $sql . "<br>" . $conn->error .mysql_error();
 }
 ?>
