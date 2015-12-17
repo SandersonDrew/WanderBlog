@@ -24,6 +24,7 @@ if($_GET['username'] == null){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/loginpopup.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Profile</title>
 
@@ -80,7 +81,9 @@ if ($connection->connect_error) {
                         <?php if($_SESSION['login_user']!= null){
                             echo $name;
                         }else{
+
                             require_once("loginpopup.php");
+
                         }
                          ?></li>
                 </ul>
