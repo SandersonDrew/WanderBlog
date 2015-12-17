@@ -9,16 +9,6 @@ if (isset($_POST['submit'])) {
         $comment = stripslashes($comment);
         mysqli_query($connection, "INSERT INTO comments(userid,adventureid,text) VALUES($userid,'$adventureid','$comment') ");
         $connection->close(); // Closing Connection
-        echo'<div class="container">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <form action="adventure.php" method="get">
-                        <input type="hidden" name="adventureid" value="'.$adventureid.'"/>
-                        <input type="submit" name="submit" value="Post Comment"/>
-                    </div>
-                    <div class="col-md-2"></div>
-                </div>
-            </div>';
+        header('location: adventure.php?adventureid='.$adventureid.'&submit=Post+Comment');
     }
 }
