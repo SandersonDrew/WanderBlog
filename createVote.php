@@ -5,6 +5,10 @@ $userID = $_POST['userid'];
 $adventureID = $_POST['advid'];
 $swing = $_POST['swing'];
 
+if ($connection->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 $sql = mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES('$userID', '$adventureID', '$swing')");
 
 if ($connection->query($sql) === TRUE) {
