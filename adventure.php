@@ -2,6 +2,7 @@
 include('session.php');
 if (isset($_GET['submit'])) {
     $adventureid = $_GET['adventureid'];
+    $userid = $_SESSION['userid'];
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
     $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
@@ -157,12 +158,22 @@ function getval($mysqli, $sql) {
                 <div class="info">
                     <p><?php echo $authname?></p>
                     <p><?php echo $advdate?></p>
-                    <form action = 'createVote.php' method = 'GET' >
-                    <p>Upvotes: </p>
-                        <input type = hidden name = 'search' value = '0' >
-                    <img id="up" onClick="value=1" onClick="location.href='createVote.php'" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <p>Downvotes: </p>
-                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
+                    <form action = 'createVote.php' method = "POST" >
+                        <p>Upvotes: </p>
+                        <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
+                        <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
+                        <input type = "hidden" name = "swing" value = "1" >
+                        <input type = "image" src="http://i68.tinypic.com/dh7giv.jpg" name="submit" value="submit">
+                    </form>
+                    <form action = 'createVote.php' method = "POST" >
+                        <<p>Downvotes: </p>
+                        <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
+                        <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
+                        <input type = "hidden" name = "swing" value = "-1" >
+                        <input type = "image" src="http://i68.tinypic.com/2r6pq1g.jpg" name="submit" value="submit">
+                    </form>
+
+
                 </div>
                 <div class = "adventure">
                     <div class="col-md-1"></div>
