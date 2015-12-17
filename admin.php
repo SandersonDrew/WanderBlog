@@ -5,6 +5,8 @@ if($_SESSION['permLevel'] == 0){
 }
 $displayName = $_SESSION['displayName'];
 $email = $_SESSION['email'];
+$username = $_SESSION['login_user'];
+$connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +32,7 @@ $email = $_SESSION['email'];
 
 <body>
 <nav id="navbar">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -40,7 +42,7 @@ $email = $_SESSION['email'];
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img  src="/Photos/wlogo.png" height="40" width="80" alt="Logo" ></a>
+                <a class="navbar-brand" href="index.php"><img id="sitelogo" src="/Photos/logoback.png" height="50" width="90" alt="Logo" ></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -52,16 +54,17 @@ $email = $_SESSION['email'];
                 </ul>
                 <?php
                 if($_SESSION['login_user']!= null){
-
                     $name = "Logged in as " . $_SESSION['displayName'];
-                }else{
-                    $name = "Log In";
+
                 }
                 ?>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php"><?php
+                <ul id = "name" class="nav navbar-nav navbar-right">
+
+                    <li id="name"><?php if($_SESSION['login_user']!= null){
                             echo $name;
-                            ?></a></li>
+                        }
+                        else{require_once("loginpopup.php");}
+                        ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -102,10 +105,10 @@ $email = $_SESSION['email'];
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
             <p><h4>Update Settings</h4>
-
             <form action="updateSettings.php" method="post">
-                <h6>Display Name: </h6> <input type="text" name="name" value="<?php echo $displayName;?>">
-                <h6>Email: </h6><input type="text" name="email" value="<?php echo $email ?>">
+                <h6>Display Name: </h6><input type="text" name="name" value="<?php echo $displayName;?>">
+                <h6>Email: </h6><input type="text" name="email" value="<?php echo $email; ?>">
+                <h6>Bio: </h6><input type="text" name="bio" placeholder="Please enter a bio">
                 <input type="submit" value="submit">
             </form>
             <br>
@@ -125,6 +128,7 @@ function genDivs(){
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
+
     for ($i = 0; $i < $result; $i++) {
         $row = mysqli_fetch_array($query, MYSQLI_NUM);
         echo '<div class="container">
@@ -133,19 +137,16 @@ function genDivs(){
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60">
         </div>
-        <div class="col-md-5" style="height: 62px; border:1px solid #000;">
+        <div class="col-md-6" style="height: 62px; border:1px solid #000;">
             <form action="profile.php" method="get">
                 <input type="submit" name="username" value="'.$row[0].'" />
             </form>
         </div>
-        <div class="col-md-1" style="border:1px solid #000;">
+        <div class="col-md-1" style="height: 62px; border:1px solid #000;">
         <form action="verifyUser.php" method="post">
-            <input type="hidden" name="username" value="'.$row[0].'">
-            <input type="submit" name="submit" style="background:url(http://placehold.it/60x60) no-repeat;" />
+            <input type="hidden" name="submit" value="submit"/>
+            <input type="image" src="http://placehold.it/60x60?text=Verify+User" name="username" value="'.$row[0].'"/>
         </form>
-        </div>
-        <div class="col-md-1" style="border:1px solid #000;">
-            <img src="http://placehold.it/60x60" alt="No">
         </div>
         <div class="col-md-2"></div>
     </div>
