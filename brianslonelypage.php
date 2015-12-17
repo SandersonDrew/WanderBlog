@@ -7,8 +7,6 @@
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Profile</title>
-
     <!-- Bootstrap -->
     <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
@@ -24,12 +22,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Welcome</title>
-
     <!-- Bootstrap -->
     <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
-
 
     <title>Welcome to WanderBlog</title>
     <style type="text/css">
@@ -98,13 +93,6 @@
 		</script>
 </head>
 <body onload="Slider();">
-
-<?php
-$connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
-?>
 
 <nav id="navbar">
     <nav class="navbar navbar-inverse">
