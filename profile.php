@@ -1,5 +1,6 @@
 <?php
 include('session.php');
+
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
     $value = $result->fetch_array(MYSQLI_NUM);
@@ -22,6 +23,7 @@ if($_GET['username'] == null){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Profile</title>
 
@@ -44,8 +46,9 @@ if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
 }
 ?>
+
 <nav id="navbar">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -55,7 +58,7 @@ if ($connection->connect_error) {
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img  src="/Photos/wlogo.png" height="40" width="80" alt="Logo" ></a>
+                <a class="navbar-brand" href="index.php"><img id="sitelogo" src="/Photos/logoback.png" height="50" width="90" alt="Logo" ></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -65,17 +68,21 @@ if ($connection->connect_error) {
                     <li><a href="admin.php">Settings</a></li>
                     <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
+
                 <?php
-                    if($_SESSION['login_user']!= null){
-                        $name = "Logged in as " . $_SESSION['displayName'];
-                    }else{
-                        $name = "Log In";
-                    }
+                if($_SESSION['login_user']!= null){
+                    $name = "Logged in as " . $_SESSION['displayName'];
+                }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php"><?php
+
+                    <li id="logged-in">
+                        <?php if($_SESSION['login_user']!= null){
                             echo $name;
-                            ?></a></li>
+                        }else{
+                            require_once("loginpopup.php");
+                        }
+                         ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -85,7 +92,7 @@ if ($connection->connect_error) {
 <div class="container">
     <div class="row">
         <div class="span4"></div>
-        <div class="span4"><img class="center-block img-circle" src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" ></div>
+        <div class="span4"><img class="center-block img-circle" src="/Photos/Profile_Photos/122.jpg"  alt="Profile-Photo" ></div>
         <div class="span4"></div>
     </div>
 </div>
