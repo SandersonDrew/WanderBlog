@@ -151,7 +151,7 @@ function genDivs(){
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
         <form action="verifyUser.php" method="post">
-            <input typ="hidden" name="submit" value="submit"/>
+            <input type="hidden" name="submit" value="submit"/>
             <input type="image" src="http://placehold.it/60x60" name="username" value="'.$row[0].'"/>
         </form>
         </div>
