@@ -26,6 +26,17 @@ $email = $_SESSION['email'];
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+        div#submitForm input {
+            background: url("http://placehold.it/60x60") no-repeat scroll 0 0 transparent;
+            color: #000000;
+            cursor: pointer;
+            font-weight: bold;
+            height: 20px;
+            padding-bottom: 2px;
+            width: 75px;
+        }
+    </style>
 </head>
 
 <body>
@@ -139,10 +150,13 @@ function genDivs(){
             </form>
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
+        <div id="submitForm">
         <form action="verifyUser.php" method="post">
             <input type="hidden" name="username" value="'.$row[0].'">
             <input type="submit" name="submit" style="background:url(http://placehold.it/60x60) no-repeat;" />
         </form>
+        </div>
+
         </div>
         <div class="col-md-1" style="border:1px solid #000;">
             <img src="http://placehold.it/60x60" alt="No">
