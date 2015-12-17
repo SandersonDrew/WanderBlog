@@ -36,7 +36,7 @@ if(isset($_SESSION['login_user'])){
                             <input id="name" name="username" placeholder="username" type="text">
                             <br>
                             <label>Password :</label>
-                            <input id="password" name="password" placeholder="**********" type="password">
+                            <input id="password" name="password" placeholder="*********" type="password">
                             <br>
                             <input name="submit" type="submit" value=" Login ">
                             <span><?php echo $error; ?></span>
