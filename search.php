@@ -24,7 +24,7 @@ if( !$button ){
         $result = mysqli_query($conn, "SELECT * FROM users WHERE displayName LIKE'%$search%' ORDER BY username");
 
         if ($result->num_rows > 0) {
-            echo '<table width="200" border="1">';
+            echo '<table width="60%" border="1">';
             echo '<tr>';
             echo '<th>';
             echo "User Name: " ;
