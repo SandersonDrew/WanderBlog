@@ -5,4 +5,10 @@ $userID = $_POST['userid'];
 $adventureID = $_POST['advid'];
 $swing = $_POST['swing'];
 
-mysqli_query($connection, "INSERT INTO users(userID, adventureID, swing) VALUES('$userID', '$adventureID', '$swing')");
+$sql = mysqli_query($connection, "INSERT INTO users(userID, adventureID, swing) VALUES('$userID', '$adventureID', '$swing')");
+
+if ($connection->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
