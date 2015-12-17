@@ -1,7 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: 1306507
- * Date: 17/12/2015
- * Time: 13:17
- */
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "myDB";
+
+$userid = $_POST['userid'];
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+
+mysqli_query($connection, "INSERT INTO votes()
