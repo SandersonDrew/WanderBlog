@@ -77,7 +77,7 @@ if ($connection->connect_error) {
                 ?>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li>
+                    <li id="logged-in">
                         <?php if($_SESSION['login_user']!= null){
                             echo "<p> . $name . </p>";
                         }else{
