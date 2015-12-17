@@ -77,9 +77,11 @@ if ($connection->connect_error) {
                 <ul class="nav navbar-nav navbar-right">
 
                     <li id="logged-in">
-                        <?php if($_SESSION['login_user']!= null){
+                        <?php
+                        if($_SESSION['login_user']!= null){
                             echo $name;
-                        }else{
+                        }
+                        else{
 
                             require_once("loginpopup.php");
 
