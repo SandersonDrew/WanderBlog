@@ -2,11 +2,10 @@
 <html>
 <head>
     <title>WanderBlog Login</title>
-    <link href="style.css" rel="stylesheet" type="text/css">
     <link href="css/loginpopup.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript">
-        <!--
+
         function toggle_visibility(id) {
             var e = document.getElementById(id);
             if(e.style.display == 'block')
@@ -14,7 +13,7 @@
             else
                 e.style.display = 'block';
         }
-        //-->
+
     </script>
 
 </head>
@@ -46,7 +45,7 @@
                             <input id="name" name="username" placeholder="username" type="text">
                             <br>
                             <label>Password :</label>
-                            <input id="password" name="password" placeholder="**********" type="password">
+                            <input id="password" name="password" placeholder="*********" type="password">
                             <br>
                             <label>Email :</label>
                             <input id="email" name="email" placeholder="email" type="text">
