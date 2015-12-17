@@ -5,7 +5,7 @@ $userID = $_POST['userid'];
 $adventureID = $_POST['advid'];
 $swing = $_POST['swing'];
 
-$sql = mysqli_query($connection, "INSERT INTO users(userID, adventureID, swing) VALUES('$userID', '$adventureID', '$swing')");
+$sql = mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES('$userID', '$adventureID', '$swing')");
 
 if ($connection->query($sql) === TRUE) {
     echo "New record created successfully";
