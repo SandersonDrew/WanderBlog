@@ -1,38 +1,3 @@
-<?php
-include('session.php');
-
-
-function getval($mysqli, $sql) {
-    $result = $mysqli->query($sql);
-    $value = $result->fetch_array(MYSQLI_NUM);
-    return is_array($value) ? $value[0] : "";
-}
-if($_GET['username'] == null){
-    $userid = $_SESSION['userid'];
-} else{
-    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $temp = $_GET['username'];
-    $userid = getval($connection,"SELECT userid FROM users WHERE username = '$temp'");
-}
-if (isset($_GET['submit'])) {
-    $adventureid = $_GET['adventureid'];
-    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
-    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
-    $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
-    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
-    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
-    $votes = getval($connection, "SELECT swing FROM votes WHERE adventureid='$adventureid'");
-}
-
-
-
-function getval($mysqli, $sql) {
-    $result = $mysqli->query($sql);
-    $value = $result->fetch_array(MYSQLI_NUM);
-    return is_array($value) ? $value[0] : "";
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -269,12 +234,12 @@ function genDivs()
 <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 <div class="container">
 
-<php?
+<!--<php?
     $sql_query = "SELECT TOP 5 * FROM votes WHERE' ORDER BY swing DESC";
     $result = $connection->query($sql_query);
     while ($row = $result->fetch_assoc()) {
     echo '<h6> ' . $row['adventureid']. ' </h6>
-    ?>
+    ?>-->
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
