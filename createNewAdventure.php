@@ -1,8 +1,7 @@
 <?php
 include('session.php');
 if (isset($_POST['submit'])) {
-    if (empty($_POST['Text']) || empty($_POST['Location']) || empty($_POST['advname']) || empty($_POST['date'])) {
-        echo $_POST['Text'];
+    if (empty($_POST['Text']) || empty($_POST['Location'])) {
         $error = "Text or Location is empty";
         echo $error;
     } else {
@@ -14,6 +13,7 @@ if (isset($_POST['submit'])) {
         $userid = $_SESSION['userid'];
         // Establishing Connection with Server
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "        2d0628d7", "wb1306507");
+        echo "Test";
         // To protect MySQL injection for Security purpose
         $text = stripslashes($text);
         $location = stripslashes($location);

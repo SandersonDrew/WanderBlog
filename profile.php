@@ -42,6 +42,8 @@ if($_GET['username'] == null){
 
 <body>
 <?php
+
+echo TEST;
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 if ($connection->connect_error) {
     die("Connection failed: " . $connection->connect_error);
@@ -171,8 +173,56 @@ function genDivs()
             </div>';
         }
     }
-}
+
+
+$sea= $_SESSION[userid];
+
+
+    $conn = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+        $result = mysqli_query($conn, "SELECT * FROM adventures WHERE userid LIKE'%2%'");
+
+        if ($result->num_rows > 0) {
+            echo '<table width="60%" border="1">';
+            echo '<tr>';
+            echo '<th>';
+            echo "adventurekname" ;
+            echo '</th>';
+            echo '<th>';
+            echo "description: " ;
+            echo '</th>';
+            echo '<th>';
+            echo "locatikon " ;
+            echo '</th>';
+            echo '<th>';
+            echo "userisd" ;
+            echo '</th>';
+            echo '</tr>';
+            while ($row = $result->fetch_assoc()) {
+                echo '<tr>';
+                echo '<td>';
+                echo $row["adventurename"];
+                echo '</td>';
+                echo '<td>';
+                echo $row["description"];
+                echo '</td>';
+                echo '<td>';
+                echo $row["location"] ;
+                echo '</td>';
+                echo '<td>';
+                echo $row["userid"] ;
+                echo '</td>';
+                echo '</tr>';
+            }
+            echo '</table>';
+
+        } else {
+            echo "0 result";
+        }
+        $conn->close();
+    }
+
 ?>
+
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
