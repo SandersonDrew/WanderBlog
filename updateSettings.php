@@ -9,7 +9,8 @@ $userid = $_SESSION['userid'];
     }
     $newUsername = $_POST['name'];
     $email = $_POST['email'];
-    $query = "UPDATE users SET displayName='$newUsername', email = '$email' WHERE userid = $userid";
+    $bio = $_POST['bio'];
+    $query = "UPDATE users SET displayName='$newUsername', email = '$email', bio='$bio' WHERE userid = $userid";
     $connection->query($query);
     $_SESSION['displayName']=$newUsername; // Initializing Session
     header("location: admin.php"); // Redirecting To Other Page
