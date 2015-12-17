@@ -75,9 +75,7 @@ if ($connection->connect_error) {
                 }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php"><?php
-                            echo $name;
-                            ?></a></li>
+                    <li><?php require_once("loginpopup.php"); ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
