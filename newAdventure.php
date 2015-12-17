@@ -22,7 +22,6 @@ include('session.php');
     <![endif]-->
 </head>
 <body>
-TEST
 <nav id="navbar">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
