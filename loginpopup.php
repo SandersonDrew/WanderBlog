@@ -49,11 +49,15 @@ if(isset($_SESSION['login_user'])){
                         <form action="createNewUser.php" method="post">
                             <label>UserName :</label>
                             <input id="name" name="username" placeholder="username" type="text">
+                            <br>
                             <label>Email :</label>
                             <input id="email" name="email" placeholder="email" type="text">
+                            <br>
                             <label>Password :</label>
                             <input id="password" name="password" placeholder="**********" type="password">
+                            <br>
                             <input name="submit" type="submit" value=" Login ">
+                            <br>
                             <span><?php echo $error; ?></span>
                         </form>
                     </div>
