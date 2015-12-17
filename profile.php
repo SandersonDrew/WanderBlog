@@ -71,8 +71,7 @@ if ($connection->connect_error) {
 
                 <?php
                 if($_SESSION['login_user']!= null){
-                    $name = "Logged in as" . $_SESSION['displayName'];
-
+                    $name = "Logged in as " . $_SESSION['displayName'];
                 }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
