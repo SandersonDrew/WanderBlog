@@ -1,6 +1,6 @@
 <?php
 if(isset($_SESSION['login_user'])){
-    header("location: profiletest.php");
+    header("location: profile.php");
 }
 ?>
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ if(isset($_SESSION['login_user'])){
 
                 </div>
 
-                <p><a href="javascript:void(0)" onclick="toggle_visibility('login-popup');">Close</a> </p>
+                <p id = "close-button"><a href="javascript:void(0)" onclick="toggle_visibility('login-popup');">Close</a> </p>
             </div>
         </div>
     </div>
