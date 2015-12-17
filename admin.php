@@ -32,7 +32,7 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 
 <body>
 <nav id="navbar">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -42,7 +42,7 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img  src="\Photos\logoback.png" height="40" width="80" alt="Logo" ></a>
+                <a class="navbar-brand" href="index.php"><img id="sitelogo" src="/Photos/logoback.png" height="50" width="90" alt="Logo" ></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -54,16 +54,17 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
                 </ul>
                 <?php
                 if($_SESSION['login_user']!= null){
-
                     $name = "Logged in as " . $_SESSION['displayName'];
-                }else{
-                    $name = "Log In";
+
                 }
                 ?>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.php"><?php
+                <ul id = "name" class="nav navbar-nav navbar-right">
+
+                    <li id="name"><?php if($_SESSION['login_user']!= null){
                             echo $name;
-                            ?></a></li>
+                        }
+                        else{require_once("loginpopup.php");}
+                        ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
