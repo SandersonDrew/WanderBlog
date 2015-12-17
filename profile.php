@@ -90,7 +90,7 @@ if ($connection->connect_error) {
 </nav>
 
 <?php
-    $pphotopath = "\Photos\Profile Photos" . $userid . ".jpeg";
+    $pphotopath = "\Photos\Profile Photos\' .$userid. '.jpeg";
 ?>
 
 <div class="container">
