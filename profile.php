@@ -70,16 +70,18 @@ if ($connection->connect_error) {
                 </ul>
                 <?php
                 if($_SESSION['login_user']!= null){
-                    $name = "Logged in as " . $_SESSION['displayName'];
+                    $name = "<font-color:white;>Logged in as </font>" . $_SESSION['displayName'];
 
                 }
                 ?>
-                <ul id = "name" class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
 
-                    <li id="name"><?php if($_SESSION['login_user']!= null){
+                    <li id="name">
+                        <?php if($_SESSION['login_user']!= null){
                             echo $name;
+                        }else{
+                            require_once("loginpopup.php");
                         }
-                        else{require_once("loginpopup.php");}
                          ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
