@@ -157,8 +157,10 @@ function getval($mysqli, $sql) {
                 <div class="info">
                     <p><?php echo $authname?></p>
                     <p><?php echo $advdate?></p>
+                    <form action = 'createVote.php' method = 'GET' >
                     <p>Upvotes: </p>
-                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
+                        <input type = hidden name = 'search' value = '0' >
+                    <img id="up" onClick="value=1" onClick="location.href='createVote.php'" src = "http://i68.tinypic.com/dh7giv.jpg">
                     <p>Downvotes: </p>
                     <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                 </div>
