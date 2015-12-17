@@ -69,7 +69,7 @@ include('session.php');
             <h6>Adventure Name:</h6> <input type="text" name="advname" placeholder="Adventure Name">
             <h6>Describe Your Adventure: </h6> <input type="text" name="Text" placeholder="Adventure Text">
             <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
-            <h6>Date Of Adventure:</h6><input type="date" name="date">
+            <h6>Date Of Adventure:</h6><input type="text" name="date">
             <input type="submit" name="submit" value="submit">
         </form>
         <br>
