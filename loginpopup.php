@@ -5,7 +5,7 @@
     <link href="css/loginpopup.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript">
-        <!--
+
         function toggle_visibility(id) {
             var e = document.getElementById(id);
             if(e.style.display == 'block')
@@ -13,7 +13,7 @@
             else
                 e.style.display = 'block';
         }
-        //-->
+
     </script>
 
 </head>
