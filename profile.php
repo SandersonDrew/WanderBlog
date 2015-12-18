@@ -111,7 +111,7 @@ if ($connection->connect_error) {
 <div class="container">
     <div class="row">
         <div class="span4"></div>
-        <div class="span4"><img class="center-block img-circle" src="<?php echo $photopath?>"  alt="Profile-Photo" ></div>
+        <div class="span4"><img class="center-block img-circle" src="$photopath"  alt="Profile-Photo" ></div>
         <div class="span4"></div>
     </div>
 </div>
