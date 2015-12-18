@@ -174,7 +174,7 @@ function genDivs()
 
         while ($row = $result->fetch_assoc()) {
             echo '
-            <div class="col-md-2"></div>
+
                     <div class="col-md-6">
                         <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                         <h6> ' . $row['description'] . ' </h6>
