@@ -30,7 +30,6 @@
                             <input id="password" name="password" placeholder="*********" type="password">
                             <br>
                             <input name="submit" type="submit" value=" Login ">
-                            <span><?php echo $error; ?></span>
                         </form>
                     </div>
                 </div>
@@ -49,7 +48,6 @@
                             <br>
                             <input name="submit" type="submit" value=" Login ">
                             <br>
-                            <span><?php echo $error; ?></span>
                         </form>
                     </div>
 
