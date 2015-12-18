@@ -182,8 +182,7 @@ function genDivs()
                             <input type="hidden" name="adventureid" value="' . $row['adventureid'] . '"/>
                             <input type="submit" name="submit" value="Go To Adventure Page"/>
                         </form>
-                    </div>
-            <div class="col-md-2"></div>';
+                    </div>';
 
         }
         echo '
