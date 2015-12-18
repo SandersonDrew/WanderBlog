@@ -6,6 +6,7 @@ if($_SESSION['permLevel'] == 0){
 $displayName = $_SESSION['displayName'];
 $email = $_SESSION['email'];
 $username = $_SESSION['login_user'];
+$permLevel = $_SESSION['permLevel'];
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 ?>
 
@@ -123,7 +124,7 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 </div>
 <b id="logout"><a href="logout.php">Log Out</a></b>
 <?php
-if($_SESSION['permLevel'] > 2){
+if($permLevel > 2){
     genDivs();
 }
 ?>
@@ -131,7 +132,7 @@ if($_SESSION['permLevel'] > 2){
 <?php
 function genDivs(){
 
-    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wbgroupc");
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
 
