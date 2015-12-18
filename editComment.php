@@ -74,10 +74,9 @@ include('session.php');
 // Establishing Connection with Server
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 $advid = $_POST['advid'];
-$advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid=".$advid);
-$text = getval($connection,"SELECT description FROM adventures WHERE adventureid=".$advid);
-$location = getval($connection,"SELECT location FROM adventures WHERE adventureid=".$advid);
-$advdate = getval($connection,"SELECT advdate FROM adventures WHERE adventureid=".$advid);
+$userid = $_SESSION['userid'];
+$cid = getval($connection,"SELECT commentid FROM comments WHERE adventureid = '$advid' AND userid='$userid'");
+$text = getval($connection,"SELECT text FROM comments WHERE commentid = '$cid'");
 $connection->close(); // Closing Connection
 
 function getval($mysqli, $sql) {
@@ -90,13 +89,10 @@ function getval($mysqli, $sql) {
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8" style="border:1px solid #000;">
-        <p><h4>Edit Your Adventure</h4>
+        <p><h4>Edit Your Comment</h4>
         <form action="editAdventureHelper.php" method="post">
             <input type="hidden" name="advid" value="<?php echo $advid ?>"
-            <h6>Adventure Name:</h6><input type="text" name="advname" value="<?php echo $advname ?>">
             <h6>Describe Your Adventure: </h6> <input type="text" name="Text" value="<?php echo $text ?>">
-            <h6>Location: </h6><input type="text" name="Location" value="<?php echo $location ?>">
-            <h6>Date: </h6><input type="text" name="date" value="<?php echo $advdate ?>">
             <input type="submit" name="submit" value="submit">
         </form>
         <br>

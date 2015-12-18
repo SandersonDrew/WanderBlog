@@ -159,11 +159,23 @@ function genDivs()
             <div class="container">
                 <div class="row">
                     <div class="col-md-2"></div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <form action="postComment.php" method="post">
                         <input type="hidden" name="userid" value="'.$userid.'"/>
                         <input type="hidden" name="adventureid" value="'.$adventureid.'"/>
                         <input type="text" name="comment" placeholder="Please type a comment"/>
+                        <input type="submit" name="submit" value="Post Comment"/>
+                    </div>
+                    <div class="col-md-1">
+                        <form action="editComment.php" method="post">
+                        <input type="hidden" name="userid" value="'.$userid.'"/>
+                        <input type="hidden" name="adventureid" value="'.$adventureid.'"/>
+                        <input type="submit" name="submit" value="Post Comment"/>
+                    </div>
+                    <div class="col-md-1">
+                        <form action="deleteCommenta.php" method="post">
+                        <input type="hidden" name="userid" value="'.$userid.'"/>
+                        <input type="hidden" name="adventureid" value="'.$adventureid.'"/>
                         <input type="submit" name="submit" value="Post Comment"/>
                     </div>
                     <div class="col-md-2"></div>
