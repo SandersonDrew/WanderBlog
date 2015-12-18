@@ -94,8 +94,8 @@ function getval($mysqli, $sql) {
 
 <div class="container">
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
             <h1><?php echo $advname?></h1>
             <h2><p><?php echo $authname?></p></h2>
             <h2><p><?php echo $advdate?></p></h2>
@@ -113,13 +113,13 @@ function getval($mysqli, $sql) {
                 <input type = "hidden" name = "swing" value = "-1" >
                 <input type = "image" src="http://i68.tinypic.com/2r6pq1g.jpg" name="submit" value="submit">
             </form>
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
                 <p><?php echo $text?></p>
             </div>
-            <div class="col-md-1"></div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 
