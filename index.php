@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Bootstrap -->
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,8 +23,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Bootstrap -->
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
 
     <title>Welcome to WanderBlog</title>
     <style type="text/css">
@@ -46,51 +46,9 @@
             height: 60px;
 
         }
-        .slider{
-            width: 800px;
-            height: 350px;
-            overflow: hidden;
-            margin: 30px auto;
-            top: 10px;
-            border: 1px solid black;
-        }
-        .slider img{
-            width:800px;
-            height:350px;
-            display: none;
-            border: 1px solid black;
-        }
     </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // This will add a vote eventually.
-            $(".adventure #up").click(function() {
-                alert("upvote");
-            });
-            // this will remove a vote.
-            $(".adventure #down").click(function() {
-                alert("downvote");
-            });
-        });
-        function Slider(){
-            $(".slider #1").show("fade", 500);
-            $(".slider #1").delay(5500).hide("slide", {direction: 'left'},500);
-            var sc = $(".slider img").size();
-            var count = 2;
-            setInterval(function(){
-                $(".slider #"+count).show("slide",{direction: 'right'},500);
-                $(".slider #"+count).delay(5500).hide("slide",{direction: 'left'},500);
-                if(count == sc){
-                    count = 1;
-                }
-                else{
-                    count = count + 1;
-                }
-            }, 6500);
-        }
-    </script>
 </head>
 <body onload="Slider();">
 
@@ -111,7 +69,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="newAdventure.php">Upload</a></li>
-                    <li><a href="profile.php">Profil</a></li>
+                    <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
                 </ul>
 
@@ -141,32 +99,33 @@
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
-<div class="container">
+<script src="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<?php
+genDivs();
+function genDivs(){
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+    $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
+    $advname = "Test";
+    $authname = "John Cena";
+    $advdate = "11/11/2011";
 
-    <!--<php?
-        $sql_query = "SELECT TOP 5 * FROM votes WHERE' ORDER BY swing DESC";
-        $result = $connection->query($sql_query);
-        while ($row = $result->fetch_assoc()) {
-        echo '<h6> ' . $row['adventureid']. ' </h6>
-        ?>-->
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+    for ($i = 0; $i < 5; $i++) {
+        //$row = mysqli_fetch_array($query, MYSQLI_NUM);
+        echo '<div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
             <div class = "adventure">
-                <h1><?php echo $advname?></h1>
-                <div class = "slider">
+                <h1>'.$advname.'</h1>
                     <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
                     <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
                     <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
                     <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                </div>
                 <div class="info">
-                    <p><?php echo $authname?></p>
-                    <p><?php echo $advdate?></p>
-                    <p>Upvotes: </p>
+                    <p>'.$authname.'</p>
+                    <p>'.$advdate.'</p>
+                    <p>Click Here to Upvote: </p>
                     <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <p>Downvotes: </p>
+                    <p>Click Here to Downvote: </p>
                     <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                 </div>
                 <div class = "adventure">
@@ -178,136 +137,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-1"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class = "adventure">
-                <h1><?php echo $advname?></h1>
-                <div class = "slider">
-                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                </div>
-                <div class="info">
-                    <p><?php echo $authname?></p>
-                    <p><?php echo $advdate?></p>
-                    <p>Upvotes: </p>
-                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <p>Downvotes: </p>
-                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-                </div>
-                <div class = "adventure">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <p><?php echo $text?></p>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class = "adventure">
-                <h1><?php echo $advname?></h1>
-                <div class = "slider">
-                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                </div>
-                <div class="info">
-                    <p><?php echo $authname?></p>
-                    <p><?php echo $advdate?></p>
-                    <p>Upvotes: </p>
-                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <p>Downvotes: </p>
-                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-                </div>
-                <div class = "adventure">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <p><?php echo $text?></p>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class = "adventure">
-                <h1><?php echo $advname?></h1>
-                <div class = "slider">
-                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                </div>
-                <div class="info">
-                    <p><?php echo $authname?></p>
-                    <p><?php echo $advdate?></p>
-                    <p>Upvotes: </p>
-                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <p>Downvotes: </p>
-                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-                </div>
-                <div class = "adventure">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <p><?php echo $text?></p>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class = "adventure">
-                <h1><?php echo $advname?></h1>
-                <div class = "slider">
-                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                </div>
-                <div class="info">
-                    <p><?php echo $authname?></p>
-                    <p><?php echo $advdate?></p>
-                    <p>Upvotes: </p>
-                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <p>Downvotes: </p>
-                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-                </div>
-                <div class = "adventure">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <p><?php echo $text?></p>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-1"></div>
-    </div>
-</div>
+        <div class="col-md-2"></div>
+    </div>';
+    }
+}
+?>
 </body>
 </html>

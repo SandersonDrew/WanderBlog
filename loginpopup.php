@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>WanderBlog Login</title>
+
     <link href="css/loginpopup.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript">
@@ -16,9 +13,9 @@
 
     </script>
 
-</head>
 
-<body>
+
+
     <div id="login-popup" class = "popup-position">
         <div id="popup-wrapper">
             <div id="popup-container">
@@ -33,7 +30,6 @@
                             <input id="password" name="password" placeholder="*********" type="password">
                             <br>
                             <input name="submit" type="submit" value=" Login ">
-                            <span><?php echo $error; ?></span>
                         </form>
                     </div>
                 </div>
@@ -52,12 +48,10 @@
                             <br>
                             <input name="submit" type="submit" value=" Login ">
                             <br>
-                            <span><?php echo $error; ?></span>
                         </form>
                     </div>
 
                 </div>
-
                 <p id = "close-button"><a href="javascript:void(0)" onclick="toggle_visibility('login-popup');">Close</a> </p>
             </div>
         </div>
@@ -66,7 +60,3 @@
     <div id="wrapper">
         <p><a href="javascript:void(0)" onclick="toggle_visibility('login-popup');">Log In</a></p>
     </div>
-
-
-</body>
-</html>

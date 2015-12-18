@@ -6,6 +6,7 @@ if($_SESSION['permLevel'] == 0){
 $displayName = $_SESSION['displayName'];
 $email = $_SESSION['email'];
 $username = $_SESSION['login_user'];
+$permLevel = $_SESSION['permLevel'];
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 ?>
 
@@ -19,8 +20,9 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
     <title>Settings Page</title>
 
     <!-- Bootstrap -->
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,29 +49,38 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Upload</a></li>
+                    <li><a href="newAdventure.php">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
-                    <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
                 <?php
                 if($_SESSION['login_user']!= null){
                     $name = "Logged in as " . $_SESSION['displayName'];
-
                 }
                 ?>
-                <ul id = "name" class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
 
-                    <li id="name"><?php if($_SESSION['login_user']!= null){
-                            echo $name;
+                    <li>
+                        <?php
+                        if($_SESSION['login_user']!= null){
+                            echo "<p id=logged-in>$name</p>";
+                            ?>
+                            <button type="button" class="btn btn-info"><a href="logout.php">Log Out</a></button>
+                            <?php
                         }
-                        else{require_once("loginpopup.php");}
-                        ?></li>
+                        else{
+
+                            require_once("loginpopup.php");
+
+                        }
+                        ?>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </nav>
+
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
@@ -118,13 +129,14 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 </div>
 <b id="logout"><a href="logout.php">Log Out</a></b>
 <?php
-if($_SESSION['permLevel'] > 2){
+if($permLevel > 2){
     genDivs();
 }
 ?>
 
 <?php
 function genDivs(){
+
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
     $result = mysqli_num_rows($query);
@@ -158,7 +170,7 @@ function genDivs(){
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<script src="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>

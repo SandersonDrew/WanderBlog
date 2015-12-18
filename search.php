@@ -15,7 +15,7 @@ $button = $_GET [ 'submit' ];
 $search = $_GET [ 'search' ];
 
 if( !$button ){
-    echo "you disdn't submit a keyword";
+    echo "you didn't submit a keyword";
 } else {
     if (strlen($search) <= 1) {
         echo "Search term too short";

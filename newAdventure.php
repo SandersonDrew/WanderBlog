@@ -12,13 +12,14 @@ include('session.php');
     <title>Profile</title>
 
     <!-- Bootstrap -->
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+
     <![endif]-->
 </head>
 <body>
@@ -41,9 +42,7 @@ include('session.php');
                     <li><a href="newAdventure.php">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
-                    <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
-
                 <?php
                 if($_SESSION['login_user']!= null){
                     $name = "Logged in as " . $_SESSION['displayName'];
@@ -51,13 +50,21 @@ include('session.php');
                 ?>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li id="logged-in">
-                        <?php if($_SESSION['login_user']!= null){
-                            echo $name;
-                        }else{
-                            require_once("loginpopup.php");
+                    <li>
+                        <?php
+                        if($_SESSION['login_user']!= null){
+                            echo "<p id=logged-in>$name</p>";
+                            ?>
+                            <button type="button" class="btn btn-info"><a href="logout.php">Log Out</a></button>
+                            <?php
                         }
-                        ?></li>
+                        else{
+
+                            require_once("loginpopup.php");
+
+                        }
+                        ?>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

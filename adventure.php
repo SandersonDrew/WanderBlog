@@ -1,14 +1,21 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include('session.php');
 if (isset($_GET['submit'])) {
     $adventureid = $_GET['adventureid'];
     $userid = $_SESSION['userid'];
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
-    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
-    $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
-    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
-    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
+    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid=".$adventureid);
+    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid=".$adventureid);
+    $authname= getval($connection,"SELECT displayName FROM users WHERE userid=".$authid);
+    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid=".$adventureid);
+    $advdate = getval($connection,"SELECT advdate FROM adventures WHERE adventureid=".$adventureid);
+    $numVotes = getval($connection, "SELECT SUM(swing) FROM votes WHERE adventureid = $adventureid");
+}
+else{
+    header("location: profile.php");
 }
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
@@ -27,8 +34,9 @@ function getval($mysqli, $sql) {
     <title>Welcome</title>
 
     <!-- Bootstrap -->
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/navbar.css">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,36 +51,8 @@ function getval($mysqli, $sql) {
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // This will add a vote eventually.
-            $(".adventure #up").click(function() {
-                alert("upvote");
-            });
-            // this will remove a vote.
-            $(".adventure #down").click(function() {
-                alert("downvote");
-            });
-        });
-        function Slider(){
-            $(".slider #1").show("fade", 500);
-            $(".slider #1").delay(5500).hide("slide", {direction: 'left'},500);
-            var sc = $(".slider img").size();
-            var count = 2;
-            setInterval(function(){
-                $(".slider #"+count).show("slide",{direction: 'right'},500);
-                $(".slider #"+count).delay(5500).hide("slide",{direction: 'left'},500);
-                if(count == sc){
-                    count = 1;
-                }
-                else{
-                    count = count + 1;
-                }
-            }, 6500);
-        }
-    </script>
 </head>
-<body onload="Slider();">
+<body>
 <nav id="navbar">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -89,24 +69,32 @@ function getval($mysqli, $sql) {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Upload</a></li>
+                    <li><a href="newAdventure.php">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
-                    <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
                 <?php
                 if($_SESSION['login_user']!= null){
                     $name = "Logged in as " . $_SESSION['displayName'];
-
                 }
                 ?>
-                <ul id = "name" class="nav navbar-nav navbar-right">
+                <ul class="nav navbar-nav navbar-right">
 
-                    <li id="name"><?php if($_SESSION['login_user']!= null){
-                            echo $name;
+                    <li>
+                        <?php
+                        if($_SESSION['login_user']!= null){
+                            echo "<p id=logged-in>$name</p>";
+                            ?>
+                            <button type="button" class="btn btn-info"><a href="logout.php">Log Out</a></button>
+                            <?php
                         }
-                        else{require_once("loginpopup.php");}
-                        ?></li>
+                        else{
+
+                            require_once("loginpopup.php");
+
+                        }
+                        ?>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
@@ -115,48 +103,52 @@ function getval($mysqli, $sql) {
 
 <div class="container">
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            <div class = "adventure">
-                <h1><?php echo $advname?></h1>
-                <!--<div class = "slider">
-                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                </div>-->
-                <div class="info">
-                    <p><?php echo $authname?></p>
-                    <p><?php echo $advdate?></p>
-                    <form action = 'createVote.php' method = "POST" >
-                        <p>Upvotes: </p>
-                        <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
-                        <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
-                        <input type = "hidden" name = "swing" value = "1" >
-                        <input type = "image" src="http://i68.tinypic.com/dh7giv.jpg" name="submit" value="submit">
-                    </form>
-                    <form action = 'createVote.php' method = "POST" >
-                        <<p>Downvotes: </p>
-                        <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
-                        <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
-                        <input type = "hidden" name = "swing" value = "-1" >
-                        <input type = "image" src="http://i68.tinypic.com/2r6pq1g.jpg" name="submit" value="submit">
-                    </form>
-                </div>
-                <div class = "adventure">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <p><?php echo $text?></p>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1><?php echo $advname?></h1>
+            <h2><p><?php echo $authname?></p></h2>
+            <h2><p><?php echo $advdate?></p></h2>
+            <h2><p>Votes: <?php echo $numVotes ?></p></h2>
+            <form action = 'createVote.php' method = "POST" >
+                <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
+                <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
+                <input type = "hidden" name = "swing" value = "1" >
+                <input type = "submit" name="submit" value="Upvote">
+            </form>
+            <form action = 'createVote.php' method = "POST" >
+                <p>Downvotes: </p>
+                <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
+                <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
+                <input type = "hidden" name = "swing" value = "-1" >
+                <input type = "submit" name="submit" value="Downvote">
+            </form>
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <p><?php echo $text?></p>
             </div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 
 <?php
+if($userid == $authid){
+    echo '
+    <form action = "editAdventure.php" method = "POST" >
+        <input type = "hidden" name = "userid" value = "'.$userid.'" >
+        <input type = "hidden" name = "advid" value = "'.$adventureid.'" >
+        <input type = "submit" name="submit" value="Edit Adventure">
+    </form>
+    ';
+    echo '
+    <form action = "deleteAdventure.php" method = "POST" >
+        <input type = "hidden" name = "userid" value = "'.$userid.'" >
+        <input type = "hidden" name = "advid" value = "'.$adventureid.'" >
+        <input type = "submit" name="submit" value="Delete Adventure">
+    </form>
+    ';
+}
 genDivs();
 function genDivs()
 {
@@ -205,6 +197,6 @@ function genDivs()
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+<script src="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 </body>
 </html>

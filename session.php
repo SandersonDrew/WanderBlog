@@ -16,6 +16,6 @@ if($user_check == null){
 
 if(!isset($login_session)){
     $connection->close(); // Closing Connection
-    header('Location: index.php'); // Redirecting To Home Page
+    header('Location: profile.php'); // Redirecting To Home Page
 }
 ?>
