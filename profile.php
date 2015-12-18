@@ -7,7 +7,11 @@ function getval($mysqli, $sql) {
     return is_array($value) ? $value[0] : "";
 }
 if($_GET['username'] == null){
-    $userid = $_SESSION['userid'];
+    if($_SESSION['permLevel'] == 0){
+        header('location: index.php');
+    } else{
+        $userid = $_SESSION['userid'];
+    }
 } else{
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $temp = $_GET['username'];
@@ -176,7 +180,7 @@ function genDivs()
             echo '
 
                     <div class="col-md-2">
-                        <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
+                        <img class = "adventure-photo" src="\Photos\Profile_Photos\22.jpg"  alt="adventure photo" >
                         <h6> ' . $row['description'] . ' </h6>
                         <form action="adventure.php" method="get">
                             <input type="hidden" name="adventureid" value="' . $row['adventureid'] . '"/>

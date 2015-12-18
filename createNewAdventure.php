@@ -22,9 +22,7 @@ if (isset($_POST['submit'])) {
         // SQL query to insert new user details into database and log them in
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$advname','$date') ");
 
-        if($_get['username']==null){
-            $userid = $_getSession['userid'];
-        }
+
 
 
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -35,7 +33,12 @@ if (isset($_POST['submit'])) {
                 echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
-                echo "File is not an image.";
+                echo $target_file;
+                echo $target_dir;
+                echo " ";
+                echo $imageFileType;
+                echo " ";
+                echo "File is not an imagez.";
                 $uploadOk = 0;
             }
         }
@@ -46,8 +49,8 @@ if (isset($_POST['submit'])) {
         }
 // Check fil
 // Allow certain file formats
-        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-            && $imageFileType != "gif" ) {
+        if($imageFileType != "jpg" || $imageFileType || "png" && $imageFileType || "jpeg"
+            || $imageFileType != "gif" ) {
             echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             $uploadOk = 0;
         }
