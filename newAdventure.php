@@ -82,7 +82,6 @@ include('session.php');
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" name="submit" value="submit">
         </form>
-        </form>
         <br>
     </div>
     <div class="col-md-2"></div>
