@@ -4,6 +4,7 @@ $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "Username or Password is empty";
+        echo "Hi";
         echo $error;
     }
     else
