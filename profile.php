@@ -174,7 +174,7 @@ function genDivs()
             <div class="container">
                 <div class="row">
                     <div class="col-md-2"></div>
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                         <h6> ' . $row['description'] . ' </h6>
                         <form action="adventure.php" method="get">
