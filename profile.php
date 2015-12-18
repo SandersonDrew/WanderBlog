@@ -173,7 +173,7 @@ function genDivs()
             echo '
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2"></div>
+                    <div class="col-md-2">
                     <div class="col-md-6">
                         <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                         <h6> ' . $row['description'] . ' </h6>
@@ -181,6 +181,7 @@ function genDivs()
                             <input type="hidden" name="adventureid" value="' . $row['adventureid'] . '"/>
                             <input type="submit" name="submit" value="Go To Adventure Page"/>
                         </form>
+                    </div>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
