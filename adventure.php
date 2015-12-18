@@ -132,6 +132,22 @@ function getval($mysqli, $sql) {
 </div>
 
 <?php
+if($userid == $authid){
+    echo '
+    <form action = "editAdventure.php" method = "POST" >
+        <input type = "hidden" name = "userid" value = "'.$userid.'" >
+        <input type = "hidden" name = "advid" value = "'.$adventureid.'" >
+        <input type = "submit" name="submit" value="Edit Adventure">
+    </form>
+    ';
+    echo '
+    <form action = "deleteAdventure.php" method = "POST" >
+        <input type = "hidden" name = "userid" value = "'.$userid.'" >
+        <input type = "hidden" name = "advid" value = "'.$adventureid.'" >
+        <input type = "submit" name="submit" value="Delete Adventure">
+    </form>
+    ';
+}
 genDivs();
 function genDivs()
 {
