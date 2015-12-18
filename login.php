@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 session_start(); // Starting Session
 $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
@@ -28,7 +31,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_num_rows($query);
         if ($result == 1) {
             $known = getval($connection,"SELECT password FROM users WHERE username='$username'");
-            if(hash_equals($known,$password)){
+            if($known == $password){
                 $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
                 $displayName = getval($connection,"SELECT displayname FROM users WHERE username='$username'");
                 $email = getval($connection,"SELECT email FROM users WHERE username='$username'");
