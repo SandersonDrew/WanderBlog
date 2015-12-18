@@ -4,7 +4,7 @@ if($_get['username']==null){
     $userid = $_getSession['userid'];
 }
 include('session.php');
-$target_dir = getcwd()."/photos/".userid."//";
+$target_dir = getcwd()."/photos/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
