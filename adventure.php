@@ -9,6 +9,7 @@ if (isset($_GET['submit'])) {
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
     $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
     $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
+    $numVotes = getval($connection, "SUM(swing) FROM votes WHERE adventureid = '$adventureid'");
 }
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
@@ -43,36 +44,8 @@ function getval($mysqli, $sql) {
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            // This will add a vote eventually.
-            $(".adventure #up").click(function() {
-                alert("upvote");
-            });
-            // this will remove a vote.
-            $(".adventure #down").click(function() {
-                alert("downvote");
-            });
-        });
-        function Slider(){
-            $(".slider #1").show("fade", 500);
-            $(".slider #1").delay(5500).hide("slide", {direction: 'left'},500);
-            var sc = $(".slider img").size();
-            var count = 2;
-            setInterval(function(){
-                $(".slider #"+count).show("slide",{direction: 'right'},500);
-                $(".slider #"+count).delay(5500).hide("slide",{direction: 'left'},500);
-                if(count == sc){
-                    count = 1;
-                }
-                else{
-                    count = count + 1;
-                }
-            }, 6500);
-        }
-    </script>
 </head>
-<body onload="Slider();">
+<body>
 <nav id="navbar">
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
@@ -107,9 +80,7 @@ function getval($mysqli, $sql) {
                             echo $name;
                         }
                         else{
-
                             require_once("loginpopup.php");
-
                         }
                         ?></li>
                 </ul>
@@ -122,40 +93,28 @@ function getval($mysqli, $sql) {
     <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
-            <div class = "adventure">
-                <h1><?php echo $advname?></h1>
-                <!--<div class = "slider">
-                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                </div>-->
-                <div class="info">
-                    <p><?php echo $authname?></p>
-                    <p><?php echo $advdate?></p>
-                    <form action = 'createVote.php' method = "POST" >
-                        <p>Upvotes: </p>
-                        <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
-                        <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
-                        <input type = "hidden" name = "swing" value = "1" >
-                        <input type = "image" src="http://i68.tinypic.com/dh7giv.jpg" name="submit" value="submit">
-                    </form>
-                    <form action = 'createVote.php' method = "POST" >
-                        <<p>Downvotes: </p>
-                        <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
-                        <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
-                        <input type = "hidden" name = "swing" value = "-1" >
-                        <input type = "image" src="http://i68.tinypic.com/2r6pq1g.jpg" name="submit" value="submit">
-                    </form>
-                </div>
-                <div class = "adventure">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <p><?php echo $text?></p>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
+            <h1><?php echo $advname?></h1>
+            <h2><p><?php echo $authname?></p></h2>
+            <h2><p><?php echo $advdate?></p></h2>
+            <h2><p>Votes: <?php echo $numVotes ?></p></h2>
+            <form action = 'createVote.php' method = "POST" >
+                <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
+                <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
+                <input type = "hidden" name = "swing" value = "1" >
+                <input type = "image" src="http://i68.tinypic.com/dh7giv.jpg" name="submit" value="submit">
+            </form>
+            <form action = 'createVote.php' method = "POST" >
+                <p>Downvotes: </p>
+                <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
+                <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
+                <input type = "hidden" name = "swing" value = "-1" >
+                <input type = "image" src="http://i68.tinypic.com/2r6pq1g.jpg" name="submit" value="submit">
+            </form>
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <p><?php echo $text?></p>
             </div>
+            <div class="col-md-1"></div>
         </div>
         <div class="col-md-1"></div>
     </div>
