@@ -170,22 +170,23 @@ function genDivs()
         $sql_query = "SELECT description,adventureid FROM adventures WHERE userid='$userid'";
         $result = $connection->query($sql_query);
         echo '<div class="container">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-6">';
+                <div class="row">';
+
         while ($row = $result->fetch_assoc()) {
             echo '
-
+            <div class="col-md-2"></div>
+                    <div class="col-md-6">
                         <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
                         <h6> ' . $row['description'] . ' </h6>
                         <form action="adventure.php" method="get">
                             <input type="hidden" name="adventureid" value="' . $row['adventureid'] . '"/>
                             <input type="submit" name="submit" value="Go To Adventure Page"/>
-                        </form>';
+                        </form>
+                    </div>
+            <div class="col-md-2"></div>';
 
         }
-        echo '</div>
-                    <div class="col-md-2"></div>
+        echo '
                 </div>
             </div>';
     }
