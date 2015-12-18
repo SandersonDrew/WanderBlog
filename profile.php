@@ -105,7 +105,7 @@ if ($connection->connect_error) {
         $photopath = "/Photos/Profile_Photos/" . $userid . ".jpg"; #path = /photos/profile_photos/userid.jpeg
     }
     else{
-            $photopath = "http://placehold.it/150x50&text=Logo";
+                $photopath = "http://www.h1club.co.uk/images/bits/profile-placeholder.gif";
     }
 ?>
 
