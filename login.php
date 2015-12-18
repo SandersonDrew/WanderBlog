@@ -32,6 +32,7 @@ if (isset($_POST['submit'])) {
         echo $result;
         if ($result == 1) {
             $known = getval($connection,"SELECT password FROM users WHERE username='$username'");
+            echo strcasecmp($known, $password);
             if(strcasecmp($known, $password)==0){
                 $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
                 $displayName = getval($connection,"SELECT displayname FROM users WHERE username='$username'");
