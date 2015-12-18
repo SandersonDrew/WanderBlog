@@ -7,8 +7,6 @@ $error=''; // Variable To Store Error Message
 if (isset($_POST['submit'])) {
     if (empty($_POST['username']) || empty($_POST['password'])) {
         $error = "Username or Password is empty";
-        echo "Hi";
-        echo $error;
     }
     else
     {
@@ -35,13 +33,9 @@ if (isset($_POST['submit'])) {
             echo strcasecmp($known, $password);
             if(strcasecmp($known, $password)==0){
                 $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
-                echo $userid;
                 $displayName = getval($connection,"SELECT displayname FROM users WHERE username='$username'");
-                echo $displayName;
                 $email = getval($connection,"SELECT email FROM users WHERE username='$username'");
-                echo $email;
                 $permLevel= getval($connection,"SELECT permissionlevel FROM users WHERE username='$username'");
-                echo $permLevel;
                 $connection->close();
                 $_SESSION['login_user']=$username; // Initializing Session
                 $_SESSION['userid'] = $userid;
@@ -55,9 +49,6 @@ if (isset($_POST['submit'])) {
         }
         $connection->close(); // Closing Connection
     }
-}
-else{
-    echo "Hi";
 }
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);

@@ -11,6 +11,9 @@ if (isset($_POST['submit'])) {
         $location = $_POST['Location'];
         $date = $_POST['date'];
         $userid = $_SESSION['userid'];
+        $target_dir = getcwd()."/photos/";
+        $target_file = $target_dir . basename($_POST["fileToUpload"]["name"]);
+        $uploadOk = 1;
         // Establishing Connection with Server
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
         // To protect MySQL injection for Security purpose
@@ -23,9 +26,7 @@ if (isset($_POST['submit'])) {
             $userid = $_getSession['userid'];
         }
 
-        $target_dir = getcwd()."/photos/";
-        $target_file = $target_dir . basename($_POST["fileToUpload"]["name"]);
-        $uploadOk = 1;
+
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
 // Check if image file is a actual image or fake image
         if(isset($_POST["submit"])) {
