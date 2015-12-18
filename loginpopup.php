@@ -30,7 +30,6 @@
                             <input id="password" name="password" placeholder="*********" type="password">
                             <br>
                             <input name="submit" type="submit" value=" Login ">
-                            Test
                         </form>
                     </div>
                 </div>
