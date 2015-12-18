@@ -3,7 +3,7 @@ include('session.php');
 if (isset($_GET['submit'])) {
     $adventureid = $_GET['adventureid'];
     $userid = $_SESSION['userid'];
-    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wbgroupc");
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
     $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
@@ -144,9 +144,9 @@ function genDivs()
                     <div class="col-md-2"></div>
                 </div>
             </div>';
-        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wbgroupc");
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     } else{
-        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wbgroupc");
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     }
 
     if ($connection->connect_error) {
