@@ -106,7 +106,14 @@ function getval($mysqli, $sql) {
             <form action = 'createVote.php' method = "POST" >
                 <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
                 <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
+                <input type = "hidden" name = "swing" value = "1" >
                 <input type = "submit" name="submit" value="Upvote">
+            </form>
+            <form action = 'createVote.php' method = "POST" >
+                <p>Downvotes: </p>
+                <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
+                <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
+                <input type = "hidden" name = "swing" value = "-1" >
                 <input type = "submit" name="submit" value="Downvote">
             </form>
             <div class="col-md-2"></div>

@@ -4,13 +4,7 @@ if(isset($_POST['submit'])){
 
     $userID = $_POST['userid'];
     $adventureID = $_POST['advid'];
-    if($_POST['submit'] == "Upvote"){
-        $swing = 1;
-    }
-    else{
-        $swing = -1;
-    }
-
+    $swing = $_POST['swing'];
 
     if ($connection->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -23,5 +17,5 @@ if(isset($_POST['submit'])){
 
     mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES($userID, $adventureID, $swing)");
 
-    header('location: adventure.php/?adventureid='.$adventureID.'&submit=submit');
+    header('location: adventure.php?adventureid='.$adventureID.'&submit=submit');
 }
