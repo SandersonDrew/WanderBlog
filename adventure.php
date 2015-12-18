@@ -1,6 +1,7 @@
 <?php
 include('session.php');
 if (isset($_GET['submit'])) {
+    echo $_GET['submit'];
     $adventureid = $_GET['adventureid'];
     $userid = $_SESSION['userid'];
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
