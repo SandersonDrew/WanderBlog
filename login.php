@@ -31,7 +31,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_num_rows($query);
         if ($result == 1) {
             $known = getval($connection,"SELECT password FROM users WHERE username='$username'");
-            if($known == $password){
+            if(strcasecmp($known, $password)==0){
                 $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
                 $displayName = getval($connection,"SELECT displayname FROM users WHERE username='$username'");
                 $email = getval($connection,"SELECT email FROM users WHERE username='$username'");
