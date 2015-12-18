@@ -83,12 +83,12 @@ if ($connection->connect_error) {
                         <?php
                         if($_SESSION['login_user']!= null){
                             echo $name;
-                            require_once("logout.php");
+                            require("logout.php");
 
                         }
                         else{
 
-                            require_once("loginpopup.php");
+                            require("loginpopup.php");
 
                         }
                          ?></li>
