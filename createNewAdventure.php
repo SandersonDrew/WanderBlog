@@ -22,9 +22,7 @@ if (isset($_POST['submit'])) {
         // SQL query to insert new user details into database and log them in
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$advname','$date') ");
 
-        if($_get['username']==null){
-            $userid = $_getSession['userid'];
-        }
+
 
 
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -38,7 +36,7 @@ if (isset($_POST['submit'])) {
                 echo $target_file;
                 echo $target_dir;
                 echo $imageFileType;
-                echo "File is not an image.";
+                echo "File is not an imagez.";
                 $uploadOk = 0;
             }
         }
