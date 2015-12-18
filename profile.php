@@ -74,7 +74,7 @@ if ($connection->connect_error) {
 
                 <?php
                 if($_SESSION['login_user']!= null){
-                    $name = "Logged in as " . $_SESSION['displayName'];
+                    $name = "Logged in as " . $_SESSION['displayName'] . "Log out?";
                 }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
@@ -83,6 +83,7 @@ if ($connection->connect_error) {
                         <?php
                         if($_SESSION['login_user']!= null){
                             echo $name;
+                            require_once("logout.php");
                         }
                         else{
 
@@ -95,6 +96,10 @@ if ($connection->connect_error) {
         </div><!-- /.container-fluid -->
     </nav>
 </nav>
+
+<?php
+    $photopath = $userid
+?>
 
 <div class="container">
     <div class="row">

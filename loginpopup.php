@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>WanderBlog Login</title>
+
     <link href="css/loginpopup.css" rel="stylesheet" type="text/css">
 
     <script type="text/javascript">
@@ -16,9 +13,9 @@
 
     </script>
 
-</head>
 
-<body>
+
+
     <div id="login-popup" class = "popup-position">
         <div id="popup-wrapper">
             <div id="popup-container">
@@ -57,7 +54,6 @@
                     </div>
 
                 </div>
-
                 <p id = "close-button"><a href="javascript:void(0)" onclick="toggle_visibility('login-popup');">Close</a> </p>
             </div>
         </div>
@@ -66,7 +62,3 @@
     <div id="wrapper">
         <p><a href="javascript:void(0)" onclick="toggle_visibility('login-popup');">Log In</a></p>
     </div>
-
-
-</body>
-</html>
