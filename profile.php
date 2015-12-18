@@ -75,7 +75,7 @@ if ($connection->connect_error) {
 
                 <?php
                 if($_SESSION['login_user']!= null){
-                    $name = "Logged in as " . $_SESSION['displayName'] . ".  Log out?";
+                    $name = "Logged in as " . $_SESSION['displayName'];
                 }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
@@ -84,7 +84,7 @@ if ($connection->connect_error) {
                         <?php
                         if($_SESSION['login_user']!= null){
                             echo $name;?>
-                            <button type="button" class="btn btn-info">Log Out</button>
+                            <button type="button" class="btn btn-info"><a href="logout.php">Log Out</a></button>
                         <?php
                             }
                             else{
