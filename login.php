@@ -43,6 +43,9 @@ if (isset($_POST['submit'])) {
         $connection->close(); // Closing Connection
     }
 }
+else{
+    echo "Hi";
+}
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
     $value = $result->fetch_array(MYSQLI_NUM);
