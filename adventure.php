@@ -4,12 +4,12 @@ if (isset($_GET['submit'])) {
     $adventureid = $_GET['adventureid'];
     $userid = $_SESSION['userid'];
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
-    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
-    $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
-    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
-    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
-    $numVotes = getval($connection, "SELECT SUM(swing) FROM votes WHERE adventureid = '$adventureid'");
+    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid=$adventureid");
+    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid=$adventureid");
+    $authname= getval($connection,"SELECT displayName FROM users WHERE userid=$authid");
+    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid=$adventureid");
+    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid=$adventureid");
+    $numVotes = getval($connection, "SELECT SUM(swing) FROM votes WHERE adventureid = $adventureid");
 }
 else{
     header("location: profile.php");
