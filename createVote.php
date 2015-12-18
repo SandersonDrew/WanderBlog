@@ -4,7 +4,13 @@ if(isset($_POST['submit'])){
 
     $userID = $_POST['userid'];
     $adventureID = $_POST['advid'];
-    $swing = $_POST['swing'];
+    if($_POST['submit'] == "Upvote"){
+        $swing = 1;
+    }
+    else{
+        $swing = -1;
+    }
+
 
     if ($connection->connect_error) {
         die("Connection failed: " . $conn->connect_error);

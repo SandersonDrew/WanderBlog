@@ -1,15 +1,18 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include('session.php');
 if (isset($_GET['submit'])) {
     $adventureid = $_GET['adventureid'];
     $userid = $_SESSION['userid'];
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
-    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
-    $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
-    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
-    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
-    $numVotes = getval($connection, "SELECT SUM(swing) FROM votes WHERE adventureid = '$adventureid'");
+    $text = getval($connection,"SELECT description FROM adventures WHERE adventureid=".$adventureid);
+    $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid=".$adventureid);
+    $authname= getval($connection,"SELECT displayName FROM users WHERE userid=".$authid);
+    $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid=".$adventureid);
+    $advdate = getval($connection,"SELECT advdate FROM adventures WHERE adventureid=".$adventureid);
+    $numVotes = getval($connection, "SELECT SUM(swing) FROM votes WHERE adventureid = $adventureid");
 }
 else{
     header("location: profile.php");
@@ -103,15 +106,8 @@ function getval($mysqli, $sql) {
             <form action = 'createVote.php' method = "POST" >
                 <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
                 <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
-                <input type = "hidden" name = "swing" value = "1" >
-                <input type = "image" src="http://i68.tinypic.com/dh7giv.jpg" name="submit" value="submit">
-            </form>
-            <form action = 'createVote.php' method = "POST" >
-                <p>Downvotes: </p>
-                <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
-                <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
-                <input type = "hidden" name = "swing" value = "-1" >
-                <input type = "image" src="http://i68.tinypic.com/2r6pq1g.jpg" name="submit" value="submit">
+                <input type = "submit" name="submit" value="Upvote">
+                <input type = "submit" name="submit" value="Downvote">
             </form>
             <div class="col-md-2"></div>
             <div class="col-md-8">
