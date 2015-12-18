@@ -18,8 +18,7 @@ if (isset($_POST['submit'])) {
         $location = stripslashes($location);
         // SQL query to insert new user details into database and log them in
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$advname','$date') ");
-        $connection->close(); // Closing Connection
-        header("location: profile.php");
+
         if($_get['username']==null){
             $userid = $_getSession['userid'];
         }
