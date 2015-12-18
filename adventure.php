@@ -1,10 +1,9 @@
 <?php
 include('session.php');
 if (isset($_GET['submit'])) {
-    echo $_GET['submit'];
     $adventureid = $_GET['adventureid'];
     $userid = $_SESSION['userid'];
-    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wbgroupc");
+    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $text = getval($connection,"SELECT description FROM adventures WHERE adventureid='$adventureid'");
     $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid='$adventureid'");
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
@@ -95,8 +94,8 @@ function getval($mysqli, $sql) {
 
 <div class="container">
     <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
             <h1><?php echo $advname?></h1>
             <h2><p><?php echo $authname?></p></h2>
             <h2><p><?php echo $advdate?></p></h2>
@@ -114,13 +113,13 @@ function getval($mysqli, $sql) {
                 <input type = "hidden" name = "swing" value = "-1" >
                 <input type = "image" src="http://i68.tinypic.com/2r6pq1g.jpg" name="submit" value="submit">
             </form>
-            <div class="col-md-1"></div>
-            <div class="col-md-10">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
                 <p><?php echo $text?></p>
             </div>
-            <div class="col-md-1"></div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="col-md-1"></div>
+        <div class="col-md-2"></div>
     </div>
 </div>
 
@@ -145,9 +144,9 @@ function genDivs()
                     <div class="col-md-2"></div>
                 </div>
             </div>';
-        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wbgroupc");
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     } else{
-        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wbgroupc");
+        $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     }
 
     if ($connection->connect_error) {
