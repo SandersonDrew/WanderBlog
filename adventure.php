@@ -105,7 +105,7 @@ function getval($mysqli, $sql) {
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-            <h1><?php echo $advname?></h1>
+            <h1><p><?php echo $advname?></p></h1>
             <h2><p><?php echo $authname?></p></h2>
             <h2><p><?php echo $advdate?></p></h2>
             <h2><p>Votes: <?php echo $numVotes ?></p></h2>
