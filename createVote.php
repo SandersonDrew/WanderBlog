@@ -17,5 +17,5 @@ if(isset($_POST['submit'])){
 
     mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES($userID, $adventureID, $swing)");
 
-    header('location: adventure.php/?adventureid='.$adventureID.'&submit=submit');
+    header('location: adventure.php?adventureid='.$adventureID.'&submit=submit');
 }
