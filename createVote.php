@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
         mysqli_query($connection, "UPDATE votes SET swing=".$swing."WHERE userid=".$userID."AND adventureid=".$adventureID);
         echo "Updated!";
     }else{
-        mysqli_query($connection, "INSERT INTO votes(userID, adventureid, swing) VALUES($userID, $adventureID, $swing)");
+        mysqli_query($connection, "INSERT INTO votes(userid, adventureid, swing) VALUES($userID, $adventureID, $swing)");
         echo "Inserted!";
     }
 
