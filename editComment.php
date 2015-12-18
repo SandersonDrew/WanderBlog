@@ -93,7 +93,7 @@ function getval($mysqli, $sql) {
         <form action="editCommentHelper.php" method="post">
             <input type="hidden" name="cid" value="<?php echo $cid ?>">
             <input type="hidden" name="advid" value="<?php echo $advid ?>">
-            <h6>Describe Your Adventure: </h6> <input type="text" name="Text" value="<?php echo $text ?>">
+            <input type="text" name="Text" value="<?php echo $text ?>">
             <input type="submit" name="submit" value="submit">
         </form>
         <br>
