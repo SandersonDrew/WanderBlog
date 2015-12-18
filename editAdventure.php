@@ -79,7 +79,6 @@ $text = getval($connection,"SELECT description FROM adventures WHERE adventureid
 $location = getval($connection,"SELECT location FROM adventures WHERE adventureid=".$advid);
 $advdate = getval($connection,"SELECT advdate FROM adventures WHERE adventureid=".$advid);
 $connection->close(); // Closing Connection
-header("location: profile.php");
 
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
