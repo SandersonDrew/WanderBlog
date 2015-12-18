@@ -79,9 +79,8 @@ include('session.php');
             <h6>Describe Your Adventure: </h6> <input type="text" name="Text" placeholder="Adventure Text">
             <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
             <h6>Date: </h6><input type="text" name="date" placeholder="Date">
-            <input type="submit" name="submit" value="submit">
             <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
+            <input type="submit" name="submit" value="submit">
         </form>
         </form>
         <br>
