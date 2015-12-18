@@ -82,8 +82,9 @@ if ($connection->connect_error) {
 
                     <li id="logged-in">
                         <?php
-                        if($_SESSION['login_user']!= null){
-                            echo $name;?>
+                            if($_SESSION['login_user']!= null){
+                            echo $name;
+                        ?>
                             <button type="button" class="btn btn-info"><a href="logout.php">Log Out</a></button>
                         <?php
                             }
@@ -92,7 +93,8 @@ if ($connection->connect_error) {
                                 require_once("loginpopup.php");
 
                             }
-                         ?></li>
+                        ?>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
