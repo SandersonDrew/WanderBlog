@@ -85,7 +85,7 @@ if ($connection->connect_error) {
                         }
                         else{
 
-                            require("loginpopup.php");//else have login button
+                            include("loginpopup.php");//else have login button
 
                         }
                          ?></li>
