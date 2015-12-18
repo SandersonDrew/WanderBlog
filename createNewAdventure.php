@@ -35,7 +35,9 @@ if (isset($_POST['submit'])) {
             } else {
                 echo $target_file;
                 echo $target_dir;
+                echo " ";
                 echo $imageFileType;
+                echo " ";
                 echo "File is not an imagez.";
                 $uploadOk = 0;
             }
