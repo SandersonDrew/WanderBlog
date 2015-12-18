@@ -2,7 +2,9 @@
 include('session.php');
 ?>
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -80,7 +82,7 @@ include('session.php');
             <h6>Location: </h6><input type="text" name="Location" placeholder="Location">
             <h6>Date: </h6><input type="text" name="date" placeholder="Date">
             <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" name="submit" value="submit">
+            <input type="submit" name="submit" value="Upload Image">
         </form>
         <br>
     </div>

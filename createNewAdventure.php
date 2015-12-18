@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
         echo $error;
     } else {
         // Define values
+
         $name = $_POST['advname'];
         $text = $_POST['Text'];
         $location = $_POST['Location'];
@@ -13,6 +14,7 @@ if (isset($_POST['submit'])) {
         $userid = $_SESSION['userid'];
         $target_dir = getcwd()."/photos/";
         $target_file = $target_dir . basename($_POST["fileToUpload"]["name"]);
+        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
         $uploadOk = 1;
         // Establishing Connection with Server
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
@@ -22,12 +24,7 @@ if (isset($_POST['submit'])) {
         // SQL query to insert new user details into database and log them in
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$advname','$date') ");
 
-
-
-
-        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-        if(isset($_POST["submit"])) {
+// Check if image file is a actual image or fake image]
             $check = getimagesize($_POST["fileToUpload"]["tmp_name"]);
             if($check !== false) {
                 echo "File is an image - " . $check["mime"] . ".";
@@ -67,4 +64,3 @@ if (isset($_POST['submit'])) {
             }
         }
     }
-}
