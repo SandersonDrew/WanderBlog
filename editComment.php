@@ -90,7 +90,7 @@ function getval($mysqli, $sql) {
     <div class="col-md-2"></div>
     <div class="col-md-8" style="border:1px solid #000;">
         <p><h4>Edit Your Comment</h4>
-        <form action="editAdventureHelper.php" method="post">
+        <form action="editCommentHelper.php" method="post">
             <input type="hidden" name="cid" value="<?php echo $cid ?>">
             <input type="hidden" name="advid" value="<?php echo $advid ?>">
             <h6>Describe Your Adventure: </h6> <input type="text" name="Text" value="<?php echo $text ?>">
