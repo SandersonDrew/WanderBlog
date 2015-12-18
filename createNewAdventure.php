@@ -37,6 +37,7 @@ if (isset($_POST['submit'])) {
             } else {
                 echo $target_file;
                 echo $target_dir;
+                echo $imageFileType;
                 echo "File is not an image.";
                 $uploadOk = 0;
             }
