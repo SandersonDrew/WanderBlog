@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
 // SQL query to fetch information of registered users and finds user match.
         $query = mysqli_query($connection,"SELECT * FROM users WHERE username='$username'");
         $result = mysqli_num_rows($query);
+        echo $result;
         if ($result == 1) {
             $known = getval($connection,"SELECT password FROM users WHERE username='$username'");
             if(strcasecmp($known, $password)==0){
@@ -41,10 +42,11 @@ if (isset($_POST['submit'])) {
                 $_SESSION['email'] = $email;
                 $_SESSION['displayName'] = $displayName;
                 $_SESSION['permLevel'] = $permLevel;
+
                 header("location: profile.php"); // Redirecting To Other Page
             }
         } else {
-            header("location:index.php");
+            //header("location:index.php");
         }
         $connection->close(); // Closing Connection
     }
