@@ -42,16 +42,16 @@ if (isset($_POST['submit'])) {
                 echo $email;
                 $permLevel= getval($connection,"SELECT permissionlevel FROM users WHERE username='$username'");
                 echo $permLevel;
+                $connection->close();
                 $_SESSION['login_user']=$username; // Initializing Session
                 $_SESSION['userid'] = $userid;
                 $_SESSION['email'] = $email;
                 $_SESSION['displayName'] = $displayName;
                 $_SESSION['permLevel'] = $permLevel;
-
-                //header("location: profile.php"); // Redirecting To Other Page
+                header("location: profile.php"); // Redirecting To Other Page
             }
         } else {
-            header("location:index.php");
+            header("location:profile.php");
         }
         $connection->close(); // Closing Connection
     }
