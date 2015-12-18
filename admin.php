@@ -51,7 +51,6 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
                 </ul>
-
                 <?php
                 if($_SESSION['login_user']!= null){
                     $name = "Logged in as " . $_SESSION['displayName'];
@@ -59,22 +58,27 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
                 ?>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li id="logged-in">
+                    <li>
                         <?php
                         if($_SESSION['login_user']!= null){
-                            echo $name;
+                            echo "<p id=logged-in>$name</p>";
+                            ?>
+                            <button type="button" class="btn btn-info"><a href="logout.php">Log Out</a></button>
+                            <?php
                         }
                         else{
 
                             require_once("loginpopup.php");
 
                         }
-                        ?></li>
+                        ?>
+                    </li>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
     </nav>
 </nav>
+
 <div class="container">
     <div class="row">
         <div class="col-md-2"></div>
