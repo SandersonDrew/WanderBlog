@@ -11,6 +11,7 @@ if (isset($_POST['submit'])) {
         $username=$_POST['username'];
         $password=$_POST['password'];
         $email = $_POST['email'];
+
 // Establishing Connection with Server by passing server_name, user_id and password as a parameter
 // Selecting Database
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
@@ -25,7 +26,7 @@ if (isset($_POST['submit'])) {
         $query = mysqli_query($connection,"SELECT * FROM users WHERE username='$username'");
         $result = mysqli_num_rows($query);
         if ($result == 0) {
-            mysqli_query($connection, "INSERT INTO users(username,password,permissionLevel,verified,email,displayname,bio) VALUES('$username', '$password', 1,0,'$email','$username','') ");
+            mysqli_query($connection, "INSERT INTO users(username,password,permissionlevel,verified,email,displayname,bio) VALUES('$username', '$password', 1,0,'$email','$username','') ");
             $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
             $permLevel= getval($connection,"SELECT permissionLevel FROM users WHERE userid='$userid'");
             $_SESSION['login_user']=$username; // Initializing Session

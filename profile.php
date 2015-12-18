@@ -24,9 +24,13 @@ if($_GET['username'] == null){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
     <link rel="stylesheet" type="text/css" href="css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="css/loginpopup.css">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Profile</title>
-
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
     <!-- Bootstrap -->
     <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/css/extra.css" rel="stylesheet">
@@ -63,10 +67,9 @@ if ($connection->connect_error) {
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Upload</a></li>
+                    <li><a href="newAdventure.php">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
-                    <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
 
                 <?php
@@ -77,10 +80,14 @@ if ($connection->connect_error) {
                 <ul class="nav navbar-nav navbar-right">
 
                     <li id="logged-in">
-                        <?php if($_SESSION['login_user']!= null){
+                        <?php
+                        if($_SESSION['login_user']!= null){
                             echo $name;
-                        }else{
+                        }
+                        else{
+
                             require_once("loginpopup.php");
+
                         }
                          ?></li>
                 </ul>
@@ -139,18 +146,18 @@ if ($connection->connect_error) {
 genDivs();
 function genDivs()
 {
-    if($_GET['username'] == null){
+    if ($_GET['username'] == null) {
         $userid = $_SESSION['userid'];
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    } else{
+    } else {
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
         $temp = $_GET['username'];
-        $userid = getval($connection,"SELECT userid FROM users WHERE username = '$temp'");
+        $userid = getval($connection, "SELECT userid FROM users WHERE username = '$temp'");
     }
 
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
-    }else{
+    } else {
         $sql_query = "SELECT description,adventureid FROM adventures WHERE userid='$userid'";
         $result = $connection->query($sql_query);
         while ($row = $result->fetch_assoc()) {
@@ -160,9 +167,9 @@ function genDivs()
                     <div class="col-md-2"></div>
                     <div class="col-md-8">
                         <img  src="http://placehold.it/150x50&text=Logo"  alt="Profile-Photo" >
-                        <h6> ' . $row['description']. ' </h6>
+                        <h6> ' . $row['description'] . ' </h6>
                         <form action="adventure.php" method="get">
-                            <input type="hidden" name="adventureid" value="'.$row['adventureid'].'"/>
+                            <input type="hidden" name="adventureid" value="' . $row['adventureid'] . '"/>
                             <input type="submit" name="submit" value="Go To Adventure Page"/>
                         </form>
                     </div>
@@ -173,9 +180,7 @@ function genDivs()
     }
 }
 ?>
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://wb1306507.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
