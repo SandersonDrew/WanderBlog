@@ -75,7 +75,7 @@ if ($connection->connect_error) {
 
                 <?php
                 if($_SESSION['login_user']!= null){
-                    $name = "Logged in as " . $_SESSION['displayName'] . "Log out?";
+                    $name = "Logged in as " . $_SESSION['displayName'];
                 }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
@@ -83,15 +83,15 @@ if ($connection->connect_error) {
                     <li id="logged-in">
                         <?php
                         if($_SESSION['login_user']!= null){
-                            echo $name;
+                            echo $name;?>
+                            <button type="button" class="btn btn-info"><a href="logout.php">Log Out</a></button>
+                        <?php
+                            }
+                            else{
 
+                                require_once("loginpopup.php");
 
-                        }
-                        else{
-
-                            require_once("loginpopup.php");
-
-                        }
+                            }
                          ?></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -101,7 +101,7 @@ if ($connection->connect_error) {
 
 <?php
     if($_SESSION['login_user']!= null) { #if logged in
-        $photopath = "/Photos/Profile_Photos" . $userid . ".jpg"; #path = /photos/profile_photos/userid.jpeg
+        $photopath = "/Photos/Profile_Photos/" . $userid . ".jpg"; #path = /photos/profile_photos/userid.jpeg
     }
     else{
             $photopath = "http://placehold.it/150x50&text=Logo";
@@ -111,7 +111,7 @@ if ($connection->connect_error) {
 <div class="container">
     <div class="row">
         <div class="span4"></div>
-        <div class="span4"><img class="center-block img-circle" src="<?php $photopath?>"  alt="Profile-Photo" ></div>
+        <div class="span4"><img class="center-block img-circle" src="<?php echo $photopath?>"  alt="Profile-Photo" ></div>
         <div class="span4"></div>
     </div>
 </div>
