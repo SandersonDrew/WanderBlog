@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 include('session.php');
 if (isset($_POST['submit'])) {
     if (!empty($_POST['Text']) && !empty($_POST['Location']) && !empty($_POST['advname']) && !empty($_POST['date'])) {
