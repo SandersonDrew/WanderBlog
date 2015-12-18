@@ -94,9 +94,9 @@ function getval($mysqli, $sql) {
         <form action="editAdventureHelper.php" method="post">
             <input type="hidden" name="advid" value="<?php echo $advid ?>"
             <h6>Adventure Name:</h6><input type="text" name="advname" value="<?php echo $advname ?>">
-            <h6>Describe Your Adventure: </h6> <input type="text" name="Text" placeholder="<?php echo $text ?>">
-            <h6>Location: </h6><input type="text" name="Location" placeholder="<?php echo $location ?>">
-            <h6>Date: </h6><input type="text" name="date" placeholder="<?php echo $advdate ?>">
+            <h6>Describe Your Adventure: </h6> <input type="text" name="Text" value="<?php echo $text ?>">
+            <h6>Location: </h6><input type="text" name="Location" value="<?php echo $location ?>">
+            <h6>Date: </h6><input type="text" name="date" value="<?php echo $advdate ?>">
             <input type="submit" name="submit" value="submit">
         </form>
         <br>
