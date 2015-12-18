@@ -9,7 +9,7 @@ if (isset($_GET['submit'])) {
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid='$authid'");
     $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid='$adventureid'");
     $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
-    $numVotes = getval($connection, "SUM(swing) FROM votes WHERE adventureid = '$adventureid'");
+    $numVotes = getval($connection, "SELECT SUM(swing) FROM votes WHERE adventureid = '$adventureid'");
 }
 else{
     header("location: profile.php");
