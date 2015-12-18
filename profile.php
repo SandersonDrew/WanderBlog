@@ -98,13 +98,18 @@ if ($connection->connect_error) {
 </nav>
 
 <?php
-    $photopath = $userid
+    if($_SESSION['login_user']!= null) {
+        $photopath = "/Photos/Profile_Photos" . $userid . ".jpeg";
+    }
+    else{
+            $photopath = "http://placehold.it/150x50&text=Logo";
+    }
 ?>
 
 <div class="container">
     <div class="row">
         <div class="span4"></div>
-        <div class="span4"><img class="center-block img-circle" src="/Photos/Profile_Photos/122.jpg"  alt="Profile-Photo" ></div>
+        <div class="span4"><img class="center-block img-circle" src="<?php $photopath?>"  alt="Profile-Photo" ></div>
         <div class="span4"></div>
     </div>
 </div>
