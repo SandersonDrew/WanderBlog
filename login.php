@@ -43,10 +43,10 @@ if (isset($_POST['submit'])) {
                 $_SESSION['displayName'] = $displayName;
                 $_SESSION['permLevel'] = $permLevel;
 
-                header("location: profile.php"); // Redirecting To Other Page
+                //header("location: profile.php"); // Redirecting To Other Page
             }
         } else {
-            //header("location:index.php");
+            header("location:index.php");
         }
         $connection->close(); // Closing Connection
     }
