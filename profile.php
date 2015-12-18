@@ -79,10 +79,10 @@ if ($connection->connect_error) {
                 ?>
                 <ul class="nav navbar-nav navbar-right">
 
-                    <li id="logged-in">
+                    <li>
                         <?php
                             if($_SESSION['login_user']!= null){
-                            echo $name;
+                            echo "<p id=logged-in> .  $name . </p>";
                         ?>
                             <button type="button" class="btn btn-info"><a href="logout.php">Log Out</a></button>
                         <?php
