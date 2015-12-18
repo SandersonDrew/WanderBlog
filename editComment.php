@@ -76,9 +76,9 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
 $advid = $_POST['advid'];
 echo $advid;
 $userid = $_SESSION['userid'];
-$cid = getval($connection,"SELECT commentid FROM comments WHERE adventureid = '$advid' AND userid='$userid'");
+$cid = getval($connection,"SELECT commentid FROM comments WHERE adventureid = $advid AND userid=$userid");
 echo $cid;
-$text = getval($connection,"SELECT text FROM comments WHERE commentid = '$cid'");
+$text = getval($connection,"SELECT text FROM comments WHERE commentid = $cid");
 $connection->close(); // Closing Connection
 
 function getval($mysqli, $sql) {
