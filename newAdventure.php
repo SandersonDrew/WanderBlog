@@ -41,7 +41,6 @@ include('session.php');
                     <li><a href="newAdventure.php">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
-                    <li><a href="newAdventure.php">Create New Adventure</a></li>
                 </ul>
 
                 <?php
@@ -52,10 +51,14 @@ include('session.php');
                 <ul class="nav navbar-nav navbar-right">
 
                     <li id="logged-in">
-                        <?php if($_SESSION['login_user']!= null){
+                        <?php
+                        if($_SESSION['login_user']!= null){
                             echo $name;
-                        }else{
+                        }
+                        else{
+
                             require_once("loginpopup.php");
+
                         }
                         ?></li>
                 </ul>
