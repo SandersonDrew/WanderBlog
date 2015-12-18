@@ -127,7 +127,6 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
         <div class="col-md-2"></div>
     </div>
 </div>
-<b id="logout"><a href="logout.php">Log Out</a></b>
 <?php
 if($permLevel > 2){
     genDivs();
