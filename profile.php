@@ -75,7 +75,7 @@ if ($connection->connect_error) {
 
                 <?php
                 if($_SESSION['login_user']!= null){
-                    $name = "Logged in as " . $_SESSION['displayName'] . "Log out?";
+                    $name = "Logged in as " . $_SESSION['displayName'] . ".  Log out?";
                 }
                 ?>
                 <ul class="nav navbar-nav navbar-right">
@@ -111,7 +111,7 @@ if ($connection->connect_error) {
 <div class="container">
     <div class="row">
         <div class="span4"></div>
-        <div class="span4"><img class="center-block img-circle" src="<?php $photopath?>"  alt="Profile-Photo" ></div>
+        <div class="span4"><img class="center-block img-circle" src="<?php echo $photopath?>"  alt="Profile-Photo" ></div>
         <div class="span4"></div>
     </div>
 </div>
