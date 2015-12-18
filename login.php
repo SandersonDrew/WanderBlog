@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
                 header("location: profile.php"); // Redirecting To Other Page
             }
         } else {
-            //header("location:index.php");
+            header("location:index.php");
         }
         $connection->close(); // Closing Connection
     }
