@@ -74,8 +74,10 @@ include('session.php');
 // Establishing Connection with Server
 $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
 $advid = $_POST['advid'];
+echo $advid;
 $userid = $_SESSION['userid'];
 $cid = getval($connection,"SELECT commentid FROM comments WHERE adventureid = '$advid' AND userid='$userid'");
+echo $cid;
 $text = getval($connection,"SELECT text FROM comments WHERE commentid = '$cid'");
 $connection->close(); // Closing Connection
 
