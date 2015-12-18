@@ -83,7 +83,7 @@ if ($connection->connect_error) {
                         <?php
                         if($_SESSION['login_user']!= null){
                             echo $name;
-                            require_once("logout.php");
+
                         }
                         else{
 
@@ -98,8 +98,8 @@ if ($connection->connect_error) {
 </nav>
 
 <?php
-    if($_SESSION['login_user']!= null) {
-        $photopath = "/Photos/Profile_Photos" . $userid . ".jpeg";
+    if($_SESSION['login_user']!= null) { #if logged in
+        $photopath = "/Photos/Profile_Photos" . $userid . ".jpg"; #path = /photos/profile_photos/userid.jpeg
     }
     else{
             $photopath = "http://placehold.it/150x50&text=Logo";
