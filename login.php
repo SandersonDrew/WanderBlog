@@ -35,9 +35,13 @@ if (isset($_POST['submit'])) {
             echo strcasecmp($known, $password);
             if(strcasecmp($known, $password)==0){
                 $userid = getval($connection,"SELECT userid FROM users WHERE username='$username'");
+                echo $userid;
                 $displayName = getval($connection,"SELECT displayname FROM users WHERE username='$username'");
+                echo $displayName;
                 $email = getval($connection,"SELECT email FROM users WHERE username='$username'");
+                echo $email;
                 $permLevel= getval($connection,"SELECT permissionlevel FROM users WHERE username='$username'");
+                echo $permLevel;
                 $_SESSION['login_user']=$username; // Initializing Session
                 $_SESSION['userid'] = $userid;
                 $_SESSION['email'] = $email;
