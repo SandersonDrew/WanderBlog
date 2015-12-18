@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
         $userid = $_SESSION['userid'];
         // Establishing Connection with Server
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-        mysqli_query($connection, "UPDATE adventures SET adventurename=" . $name . " ,description=" . $text . " ,advdate=" . $date . " ,location=" . $location . "WHERE adventureid=$advid");
-        //header("location: adventure.php?adventureid=".$advid."&submit=Go+To+Adventure+Page");
+        mysqli_query($connection, "UPDATE adventures SET description='$text', location = '$location', advdate='$date', adventurename='$name' WHERE adventureid = $advid");
+        header("location: adventure.php?adventureid=".$advid."&submit=Go+To+Adventure+Page");
     }
 }
