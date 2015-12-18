@@ -10,16 +10,14 @@ if(isset($_POST['submit'])){
         die("Connection failed: " . $conn->connect_error);
     }
 
-    echo $userID;
-    echo $adventureID;
-    echo $swing;
-
     $query = mysqli_query($connection, "SELECT * FROM votes WHERE userid =".$userID."AND adventureid =".$adventureID);
     $result = mysqli_num_rows($query);
     if($result !=0){
         mysqli_query($connection, "UPDATE votes SET swing=".$swing."WHERE userid=".$userID."AND adventureid=".$adventureID);
+        echo "Updated!";
     }else{
         mysqli_query($connection, "INSERT INTO votes(userID, adventureid, swing) VALUES($userID, $adventureID, $swing)");
+        echo "Inserted!";
     }
 
     //header('location: adventure.php?adventureid='.$adventureID.'&submit=submit');
