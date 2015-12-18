@@ -133,6 +133,8 @@ function getval($mysqli, $sql) {
 </div>
 
 <?php
+echo $userid;
+echo $authid;
 if($userid == $authid){
     echo '
     <form action = "editAdventure.php" method = "POST" >
