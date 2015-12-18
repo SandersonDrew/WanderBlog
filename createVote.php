@@ -14,8 +14,13 @@ if(isset($_POST['submit'])){
     echo $adventureID;
     echo $swing;
 
+    $query = mysqli_query($connection, "SELECT * FROM votes WHERE userid =".$userID."AND adventureid =".$adventureID);
+    $result = mysqli_num_rows($query);
+    if($result !=0){
+        mysqli_query($connection, "UPDATE votes SET swing=".$swing."WHERE userid=".$userID."AND adventureid=".$adventureID);
+    }else{
+        mysqli_query($connection, "INSERT INTO votes(userID, adventureid, swing) VALUES($userID, $adventureID, $swing)");
+    }
 
-    mysqli_query($connection, "INSERT INTO votes(userID, adventureID, swing) VALUES($userID, $adventureID, $swing)");
-
-    header('location: adventure.php?adventureid='.$adventureID.'&submit=submit');
+    //header('location: adventure.php?adventureid='.$adventureID.'&submit=submit');
 }
