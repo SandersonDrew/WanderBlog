@@ -7,7 +7,11 @@ function getval($mysqli, $sql) {
     return is_array($value) ? $value[0] : "";
 }
 if($_GET['username'] == null){
-    $userid = $_SESSION['userid'];
+    if($_SESSION['permLevel'] == 0){
+        header('location: index.php');
+    } else{
+        $userid = $_SESSION['userid'];
+    }
 } else{
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $temp = $_GET['username'];
