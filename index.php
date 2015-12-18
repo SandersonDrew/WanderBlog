@@ -105,7 +105,9 @@ genDivs();
 function genDivs(){
     $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
-    $result = mysqli_num_rows($query);
+    $advname = "Test";
+    $authname = "John Cena";
+    $advdate = "11/11/2011";
 
     for ($i = 0; $i < 5; $i++) {
         //$row = mysqli_fetch_array($query, MYSQLI_NUM);
@@ -113,17 +115,17 @@ function genDivs(){
         <div class="col-md-2"></div>
         <div class="col-md-8">
             <div class = "adventure">
-                <h1><?php echo $advname?></h1>
+                <h1>'.$advname.'</h1>
                     <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
                     <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
                     <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
                     <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
                 <div class="info">
-                    <p><?php echo $authname?></p>
-                    <p><?php echo $advdate?></p>
-                    <p>Upvotes: </p>
+                    <p>'.$authname.'</p>
+                    <p>'.$advdate.'</p>
+                    <p>Click Here to Upvote: </p>
                     <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <p>Downvotes: </p>
+                    <p>Click Here to Downvote: </p>
                     <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
                 </div>
                 <div class = "adventure">
