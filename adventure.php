@@ -105,6 +105,7 @@ function getval($mysqli, $sql) {
             <h1><p><?php echo $advname?></p></h1>
             <h2><p><?php echo $authname?></p></h2>
             <h2><p><?php echo $advdate?></p></h2>
+            <h2><p><?php echo $location?></p></h2>
             <h2><p>Votes: <?php echo $numVotes ?></p></h2>
             <form action = 'createVote.php' method = "POST" >
                 <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
