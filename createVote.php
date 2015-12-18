@@ -8,7 +8,7 @@ if(isset($_POST['submit'])){
         $swing = 1;
     }
     else{
-        $swing = 0;
+        $swing = -1;
     }
 
 
