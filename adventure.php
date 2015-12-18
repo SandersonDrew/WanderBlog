@@ -191,13 +191,13 @@ function genDivs()
                         <form action="editComment.php" method="post">
                         <input type="hidden" name="userid" value="'.$userid.'"/>
                         <input type="hidden" name="adventureid" value="'.$adventureid.'"/>
-                        <input type="submit" name="submit" value="Post Comment"/>
+                        <input type="submit" name="submit" value="Edit Comment"/>
                     </div>
                     <div class="col-md-1">
                         <form action="deleteComment.php" method="post">
                         <input type="hidden" name="userid" value="'.$userid.'"/>
                         <input type="hidden" name="adventureid" value="'.$adventureid.'"/>
-                        <input type="submit" name="submit" value="Post Comment"/>
+                        <input type="submit" name="submit" value="Delete Comment"/>
                     </div>
                     <div class="col-md-2"></div>
                 </div>
