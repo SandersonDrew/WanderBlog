@@ -31,7 +31,7 @@ function getval($mysqli, $sql) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Welcome</title>
+    <title><?php echo $advname ?></title>
 
     <!-- Bootstrap -->
     <link href="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/css/bootstrap.min.css" rel="stylesheet">
