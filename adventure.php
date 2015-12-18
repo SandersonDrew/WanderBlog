@@ -11,6 +11,9 @@ if (isset($_GET['submit'])) {
     $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid='$adventureid'");
     $numVotes = getval($connection, "SUM(swing) FROM votes WHERE adventureid = '$adventureid'");
 }
+else{
+    header("location: profile.php");
+}
 function getval($mysqli, $sql) {
     $result = $mysqli->query($sql);
     $value = $result->fetch_array(MYSQLI_NUM);
