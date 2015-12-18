@@ -11,7 +11,7 @@ if (isset($_GET['submit'])) {
     $authid = getval($connection,"SELECT userid FROM adventures WHERE adventureid=".$adventureid);
     $authname= getval($connection,"SELECT displayName FROM users WHERE userid=".$authid);
     $advname = getval($connection,"SELECT adventurename FROM adventures WHERE adventureid=".$adventureid);
-    $advdate = getval($connection,"SELECT date FROM adventures WHERE adventureid=".$adventureid);
+    $advdate = getval($connection,"SELECT advdate FROM adventures WHERE adventureid=".$adventureid);
     //$numVotes = getval($connection, "SELECT SUM(swing) FROM votes WHERE adventureid = $adventureid");
 }
 else{
