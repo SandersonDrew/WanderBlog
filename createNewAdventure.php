@@ -19,6 +19,7 @@ if (isset($_POST['submit'])) {
         // To protect MySQL injection for Security purpose
         $text = stripslashes($text);
         $location = stripslashes($location);
+
         // SQL query to insert new user details into database and log them in
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$name','$date') ");
 
