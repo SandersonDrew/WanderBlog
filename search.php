@@ -114,6 +114,9 @@ if( !$button ){
             echo '<th>';
             echo "Votes: " ;
             echo '</th>';
+            echo '<th>';
+            echo "Profile Link: " ;
+            echo '</th>';
             echo '</tr>';
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
@@ -130,7 +133,7 @@ if( !$button ){
                 echo "0 " ;
                 echo '</td>';
                 echo '<td>';
-                echo '<a href="http://wbgroupc.azurewebsites.net/profile.php?username=".$row["username"]>Profile Linkh</a>';
+                echo '<a href="http://wbgroupc.azurewebsites.net/profile.php?username=".$row["username"]>Profile Link</a>';
                 echo '</td>';
                 echo '</tr>';
             }
