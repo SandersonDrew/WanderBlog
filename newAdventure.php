@@ -44,6 +44,7 @@ include('session.php');
                     <li><a href="newAdventure.php">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
+                    <li><a href="searchIndex.php">Search</a></li>
                 </ul>
                 <?php
                 if($_SESSION['login_user']!= null){
