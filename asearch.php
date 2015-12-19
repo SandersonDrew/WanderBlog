@@ -128,7 +128,7 @@ if( !$button ){
                 echo $row["location"] ;
                 echo '</td>';
                 echo '<td>';
-                echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid='.$row['adventureid'].'&submit=Go+To+Adventure+Page">Profile Link</a>';
+                echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid='.$row['adventureid'].'&submit=Go+To+Adventure+Page">Adventure Link</a>';
                 echo '</tr>';
             }
             echo '</table>';
