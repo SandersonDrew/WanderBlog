@@ -125,12 +125,10 @@ if( !$button ){
                 echo $row["description"];
                 echo '</td>';
                 echo '<td>';
-                echo $row["userid"] ;
+                echo $row["location"] ;
                 echo '</td>';
                 echo '<td>';
-                echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid=\<?=$$row["adventureid"]?>\&submit=Go+To+Adventure+Page\";
-<src="http://maps.google<?=$city?>rest_of_the_link">
-                echo \'</td>\';>Profile Link</a>';
+                echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid='.$row['adventureid'].'&submit=Go+To+Adventure+Page">Profile Link</a>';
                 echo '</tr>';
             }
             echo '</table>';
