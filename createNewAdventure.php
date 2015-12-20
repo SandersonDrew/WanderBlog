@@ -32,11 +32,7 @@ if (isset($_POST['submit'])) {
                 echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
             } else {
-                echo $target_file;
-                echo $target_dir;
-                echo " ";
                 echo $imageFileType;
-                echo " ";
                 echo "File is not an imagez.";
                 $uploadOk = 0;
             }
