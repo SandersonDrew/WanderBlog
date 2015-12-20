@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
             mkdir(getcwd() . "/photos/".$dir);
             "File don't exists";
         } else {
-            echo "File exists";
+            echo "File exist";
             echo $dir;
         }
 
