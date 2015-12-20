@@ -27,7 +27,7 @@ if (isset($_POST['submit'])) {
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$name','$date') ");
 
 // Check if image file is a actual image or fake image]
-            $check = getimagesize($_POST["fileToUpload"]["tmp_name"]);
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
             if($check !== false) {
                 echo "File is an image - " . $check["mime"] . ".";
                 $uploadOk = 1;
