@@ -20,9 +20,11 @@ if (isset($_POST['submit'])) {
         $text = stripslashes($text);
         $location = stripslashes($location);
 
-        // SQL query to insert new user details into database and log them in
+            // SQL query to insert new user details into database and log them in
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$name','$date') ");
-        $target_dir = getcwd() . "/photos/";
+        $dir = mysqli_query($connection, "SELECT LAST adventureid FROM adventures");
+        mkdir(getcwd() . "/photos/".$dir);
+        $target_dir = getcwd() . "/photos/".$dir;
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
