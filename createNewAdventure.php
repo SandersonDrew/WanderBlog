@@ -22,7 +22,8 @@ if (isset($_POST['submit'])) {
 
             // SQL query to insert new user details into database and log them in
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$name','$date') ");
-        $dir = mysqli_query($connection, "SELECT LAST * FROM adventures");
+        $path = mysqli_query($connection, "SELECT adventureid FROM adventures ORDRE BY adventureid ASC");
+        $dir = $path[0];
         if (!file_exists(getcwd() . "/photos/".$dir)) {
             mkdir(getcwd() . "/photos/".$dir);
             "File don't exists";
