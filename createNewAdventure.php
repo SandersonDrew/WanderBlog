@@ -14,7 +14,7 @@ if (isset($_POST['submit'])) {
         $date = $_POST['date'];
         $userid = $_SESSION['userid'];
         $target_dir = getcwd()."/photos/";
-        $target_file = $target_dir . basename($_POST["fileToUpload"]["name"]);
+        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
         $uploadOk = 1;
         // Establishing Connection with Server
