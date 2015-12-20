@@ -24,16 +24,16 @@ if (isset($_POST['submit'])) {
         mysqli_query($connection, "INSERT INTO adventures(userid,description,location,adventurename,advdate) VALUES($userid,'$text','$location','$name','$date') ");
 
             $dir= mysqli_insert_id($connection);
+        $path = getcwd() . "/photos/".$dir."/";
 
-        if (!file_exists(getcwd() . "/photos/".$dir)) {
-            mkdir(getcwd() . "/photos/".$dir);
-            "File don't exists";
+        if (!file_exists($path)) {
+            mkdir($path);
+            "File don't exist";
         } else {
-            echo "File exist";
-            echo $dir;
+            echo "File exists";
         }
 
-        $target_dir = getcwd() . "/photos/".$dir;
+        $target_dir = $path;
         $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
         $uploadOk = 1;
         $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
