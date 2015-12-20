@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
             "File don't exists";
         } else {
             echo "File exists";
-            echo $dir[advetureid];
+            echo $dir['advetureid'];
         }
 
         $target_dir = getcwd() . "/photos/".$dir;
