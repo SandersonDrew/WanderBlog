@@ -1,8 +1,10 @@
 <?php
+// Checking that the user is logged in, if not it will show the 'login' page.
 include('session.php');
 if($_SESSION['permLevel'] == 0){
     header('location: index.php');
 }
+// Displaying the logged in users information
 $displayName = $_SESSION['displayName'];
 $email = $_SESSION['email'];
 $username = $_SESSION['login_user'];
@@ -49,12 +51,14 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
+                    <!-- Navbar links-->
                     <li><a href="newAdventure.php">Upload</a></li>
                     <li><a href="profile.php">Profile</a></li>
                     <li><a href="admin.php">Settings</a></li>
                     <li><a href="searchIndex.php">Search</a></li>
                 </ul>
                 <?php
+                // Display user's information if they are logged in. 
                 if($_SESSION['login_user']!= null){
                     $name = "Logged in as " . $_SESSION['displayName'];
                 }
@@ -87,6 +91,7 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
         <div class="col-md-2"></div>
         <div class="col-md-8" style="border:1px solid #000;">
             <div>
+                <!-- placeholder image, will be replaced by user -->
                 <img src="http://placehold.it/150x150" style="max-width: 100%; max-height: 100%; display:block; margin:auto;" alt="ProfilePic"/>
             </div>
         </div>
@@ -129,6 +134,7 @@ $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", 
     </div>
 </div>
 <?php
+// Show additional information if the user is an author or admin
 if($permLevel > 2){
     genDivs();
 }
