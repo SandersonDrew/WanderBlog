@@ -182,7 +182,7 @@ function genDivs()
 echo '
     <form action="upvote.php" method="POST">
      <input type="hidden" name="adventureid" value="\'.$adventureid.\'"/>
-   <input type="image" name="upvote" src="http://i68.tinypic.com/dh7giv.jpg" value="Submit" />
+   <input type="image" name="upvote" src="http://i68.tinypic.com/dh7giv.jpg width=75 height=75" value="Submit" />
 </form>';
 
     if ($connection->connect_error) {
