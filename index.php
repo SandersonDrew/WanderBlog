@@ -129,7 +129,7 @@ if ($result->num_rows > 0) {
     echo "Adventure Link: " ;
     echo '</th>';
     echo '<th>';
-    echo "Cover Photo: " ;
+    echo "Cover Photos: " ;
     echo '</th>';
     echo '</tr>';
 
