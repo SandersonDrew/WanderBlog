@@ -143,6 +143,7 @@ if ($result->num_rows > 0) {
     if (count($images) > 0) { // make sure at least one image exists
         $img = $images[0]; // first image
         echo $search_dir;
+        echo $img;
     } else {
         echo $search_dir;
     }
