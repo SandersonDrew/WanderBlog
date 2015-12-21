@@ -116,7 +116,7 @@ function genDivs(){
     $authname = "John Cena";
     $advdate = "11/11/2011";
 
-    $result = mysqli_query($connection, "SELECT * FROM users ORDER BY username");
+    $result = mysqli_query($connection, "SELECT * FROM adventures ORDER BY adventureid");
 
     if ($result->num_rows > 0) {
         $i=0;
