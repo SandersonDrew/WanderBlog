@@ -138,7 +138,7 @@ function genDivs(){
         echo "Profile Link: " ;
         echo '</th>';
         echo '</tr>';
-        while ($row = $result->fetch_assoc()&& $i<5) {
+        while ($row = $result->fetch_assoc()) {
             echo '<tr>';
             echo '<td>';
             echo $row["username"];
@@ -157,6 +157,9 @@ function genDivs(){
             echo '</td>';
             echo '</tr>';
             $i++;
+            if($i<5){
+                mysqli_close($connection);
+            }
         }
         echo '</table>';
 
