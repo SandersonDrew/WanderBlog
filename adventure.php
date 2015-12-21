@@ -108,13 +108,13 @@ function getval($mysqli, $sql) {
             <h2><p><?php echo $advdate?></p></h2>
             <h2><p><?php echo $location?></p></h2>
             <h2><p>Votes: <?php echo $numVotes ?></p></h2>
-            <form action = 'createVote.php' method = "POST" >
+            <form action = 'upvote.php' method = "POST" >
                 <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
                 <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
                 <input type = "hidden" name = "swing" value = "1" >
                 <input type = "submit" name="submit" value="Upvote">
             </form>
-            <form action = 'createVote.php' method = "POST" >
+            <form action = 'upvote.php' method = "POST" >
                 <p>Downvotes: </p>
                 <input type = "hidden" name = "userid" value = "<?php echo $userid ?>" >
                 <input type = "hidden" name = "advid" value = "<?php echo $adventureid ?>" >
@@ -173,6 +173,11 @@ function genDivs()
     } else{
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     }
+echo '
+    <form action="upvote.php" method="POST">
+     <input type="hidden" name="adventureid" value="\'.$adventureid.\'"/>
+   <input type="image" name="upvote" src="http://i68.tinypic.com/dh7giv.jpg" value="Submit" />
+</form>';
 
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
