@@ -119,6 +119,7 @@ function genDivs(){
     $result = mysqli_query($connection, "SELECT * FROM users ORDER BY username");
 
     if ($result->num_rows > 0) {
+        $i=0;
         echo '<table width="60%" border="1">';
         echo '<tr>';
         echo '<th>';
@@ -137,7 +138,7 @@ function genDivs(){
         echo "Profile Link: " ;
         echo '</th>';
         echo '</tr>';
-        while ($row = $result->fetch_assoc()) {
+        while ($row = $result->fetch_assoc()&& $i<5) {
             echo '<tr>';
             echo '<td>';
             echo $row["username"];
@@ -155,6 +156,7 @@ function genDivs(){
             echo '<a href="http://wbgroupc.azurewebsites.net/profile.php?username=".$row["username"]>Profile Link</a>';
             echo '</td>';
             echo '</tr>';
+            $i++;
         }
         echo '</table>';
 
