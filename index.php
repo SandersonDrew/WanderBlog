@@ -108,62 +108,54 @@ include('session.php');
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="http://wbgroupc.azurewebsites.net/bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
 <?php
-genDivs();
-function genDivs(){
-    $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
-    $query = mysqli_query($connection,"SELECT username FROM users WHERE verified=0");
-    $advname = "Test";
-    $authname = "John Cena";
-    $advdate = "11/11/2011";
 
-    $result = mysqli_query($connection, "SELECT * FROM adventures ORDER BY adventureid");
+$connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
+$result = mysqli_query($connection, "SELECT * FROM adventures ORDER BY adventureid");
 
 
-    $result = mysqli_query($connection, "SELECT * FROM adventures ORDER BY adventurename");
-
-    if ($result->num_rows > 0) {
-        echo '<table width="60%" border="1">';
-        echo '<tr>';
-        echo '<th>';
-        echo "Aventure Name: " ;
-        echo '</th>';
-        echo '<th>';
-        echo "Description: " ;
-        echo '</th>';
-        echo '<th>';
-        echo "Location: " ;
-        echo '</th>';
-        echo '<th>';
-        echo "Adventure Link: " ;
-        echo '</th>';
-        echo '</tr>';
-        $i=0;
-        while ($row = $result->fetch_assoc()) {
-            if ($i<5){
-                $row=null;
-            }else {
-                $i++;
-            }
-            echo '<tr>';
-            echo '<td>';
-            echo $row["adventurename"];
-            echo '</td>';
-            echo '<td>';
-            echo $row["description"];
-            echo '</td>';
-            echo '<td>';
-            echo $row["location"] ;
-            echo '</td>';
-            echo '<td>';
-            echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid='.$row['adventureid'].'&submit=Go+To+Adventure+Page">Adventure Link</a>';
-            echo '</tr>';
+if ($result->num_rows > 0) {
+    echo '<table width="60%" border="1">';
+    echo '<tr>';
+    echo '<th>';
+    echo "Aventure Name: " ;
+    echo '</th>';
+    echo '<th>';
+    echo "Description: " ;
+    echo '</th>';
+    echo '<th>';
+    echo "Location: " ;
+    echo '</th>';
+    echo '<th>';
+    echo "Adventure Link: " ;
+    echo '</th>';
+    echo '</tr>';
+    $i=0;
+    while ($row = $result->fetch_assoc()) {
+        if ($i<5){
+            $row=null;
+        }else {
+            $i++;
         }
-        echo '</table>';
-
-    } else {
-        echo "0 results";
+        echo '<tr>';
+        echo '<td>';
+        echo $row["adventurename"];
+        echo '</td>';
+        echo '<td>';
+        echo $row["description"];
+        echo '</td>';
+        echo '<td>';
+        echo $row["location"] ;
+        echo '</td>';
+        echo '<td>';
+        echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid='.$row['adventureid'].'&submit=Go+To+Adventure+Page">Adventure Link</a>';
+        echo '</tr>';
     }
+    echo '</table>';
+
+} else {
+    echo "0 results";
 }
+
 ?>
 </body>
 </html>
