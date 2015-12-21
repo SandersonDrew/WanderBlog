@@ -181,7 +181,8 @@ function genDivs()
     }
 echo '
     <form action="upvote.php" method="POST">
-     <input type="hidden" name="adventureid" value="\'.$adventureid.\'"/>
+     <input type="hidden" name="adventureid" value=$adventureid>
+      <input type="hidden" name="swing" value=1>
    <input type="image" name="upvote" src="http://i68.tinypic.com/dh7giv.jpg width=75 height=75" value="Submit" />
 </form>';
 
