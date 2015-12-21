@@ -160,7 +160,7 @@ if ($result->num_rows > 0) {
         echo '<td>';
         echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid='.$row['adventureid'].'&submit=Go+To+Adventure+Page">Adventure Link</a>';
         echo '<td>';
-        echo "<img src='$img' height='150' width='150' /> ";
+        echo "<img src='$img'/>";
         echo '</td>';
         echo '</tr>';
     }
