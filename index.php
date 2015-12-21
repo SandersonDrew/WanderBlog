@@ -116,36 +116,50 @@ function genDivs(){
     $authname = "John Cena";
     $advdate = "11/11/2011";
 
-    for ($i = 0; $i < 5; $i++) {
-        //$row = mysqli_fetch_array($query, MYSQLI_NUM);
-        echo '<div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-            <div class = "adventure">
-                <h1>'.$advname.'</h1>
-                    <img id="1" src ="http://www.cats.org.uk/uploads/branches/211/5507692-cat-m.jpg" border="0" alt = "test">
-                    <img id="2" src ="http://www.cats.org.uk/uploads/images/cats/110585_0.png" border="0" alt = "test">
-                    <img id="3" src ="http://www.cats.org.uk/uploads/branches/211/adoption%20fee.png" border="0" alt = "test">
-                    <img id="4" src ="http://www.aaj.tv/wp-content/uploads/2015/08/bullet_cat1.jpg" border="0" alt = "test">
-                <div class="info">
-                    <p>'.$authname.'</p>
-                    <p>'.$advdate.'</p>
-                    <p>Click Here to Upvote: </p>
-                    <img id="up" src = "http://i68.tinypic.com/dh7giv.jpg">
-                    <p>Click Here to Downvote: </p>
-                    <img id="down" src = "http://i68.tinypic.com/2r6pq1g.jpg">
-                </div>
-                <div class = "adventure">
-                    <div class="col-md-1"></div>
-                    <div class="col-md-10">
-                        <p><?php echo $text?></p>
-                    </div>
-                    <div class="col-md-1"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-2"></div>
-    </div>';
+    $result = mysqli_query($connection, "SELECT * FROM users ORDER BY username");
+
+    if ($result->num_rows > 0) {
+        echo '<table width="60%" border="1">';
+        echo '<tr>';
+        echo '<th>';
+        echo "User Name: " ;
+        echo '</th>';
+        echo '<th>';
+        echo "Display Name: " ;
+        echo '</th>';
+        echo '<th>';
+        echo "User ID: " ;
+        echo '</th>';
+        echo '<th>';
+        echo "Votes: " ;
+        echo '</th>';
+        echo '<th>';
+        echo "Profile Link: " ;
+        echo '</th>';
+        echo '</tr>';
+        while ($row = $result->fetch_assoc()) {
+            echo '<tr>';
+            echo '<td>';
+            echo $row["username"];
+            echo '</td>';
+            echo '<td>';
+            echo $row["displayName"];
+            echo '</td>';
+            echo '<td>';
+            echo $row["userid"] ;
+            echo '</td>';
+            echo '<td>';
+            echo "0 " ;
+            echo '</td>';
+            echo '<td>';
+            echo '<a href="http://wbgroupc.azurewebsites.net/profile.php?username=".$row["username"]>Profile Link</a>';
+            echo '</td>';
+            echo '</tr>';
+        }
+        echo '</table>';
+
+    } else {
+        echo "0 results";
     }
 }
 ?>
