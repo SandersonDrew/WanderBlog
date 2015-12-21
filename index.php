@@ -134,7 +134,7 @@ if ($result->num_rows > 0) {
     echo '</tr>';
 
     while ($row = $result->fetch_assoc()) {
-    $search_dir = getcwd()."/photos/".$row{'adventureid'};
+    $search_dir = getcwd()."/photos/".$row{'adventureid'}."/";
     $images = glob("$search_dir/*.jpg");
     sort($images);
 
@@ -144,7 +144,7 @@ if ($result->num_rows > 0) {
     if (count($images) > 0) { // make sure at least one image exists
         $img = $images[0]; // first image
     } else {
-        echo "False";
+        echo $search_dir;
     }
         echo '<tr>';
         echo '<td>';
