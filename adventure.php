@@ -180,7 +180,7 @@ function genDivs()
         $connection = new mysqli("eu-cdbr-azure-west-c.cloudapp.net", "b0b05a48637b3e", "2d0628d7", "wb1306507");
     }
 echo '
-    <form action="upvote.php" method="POST">
+    <form action="upvote.php" method="post">
      <input type="hidden" name="adventureid" value=$adventureid>
       <input type="hidden" name="swing" value=1>
    <input type="image" name="upvote" src="http://i68.tinypic.com/dh7giv.jpg width=75 height=75" value="Submit" />
