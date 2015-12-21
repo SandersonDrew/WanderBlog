@@ -128,9 +128,24 @@ if ($result->num_rows > 0) {
     echo '<th>';
     echo "Adventure Link: " ;
     echo '</th>';
+    echo '<th>';
+    echo "Cover Photo: " ;
+    echo '</th>';
     echo '</tr>';
 
     while ($row = $result->fetch_assoc()) {
+    $search_dir = getcwd()."/photos/".$row{'adventureid'};
+    $images = glob("$search_dir/*.jpg");
+    sort($images);
+
+    // Image selection and display:
+
+    //display first image
+    if (count($images) > 0) { // make sure at least one image exists
+        $img = $images[0]; // first image
+    } else {
+        // possibly display a placeholder image?
+    }
         echo '<tr>';
         echo '<td>';
         echo $row["adventurename"];
@@ -143,6 +158,9 @@ if ($result->num_rows > 0) {
         echo '</td>';
         echo '<td>';
         echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid='.$row['adventureid'].'&submit=Go+To+Adventure+Page">Adventure Link</a>';
+        echo '<td>';
+        echo "<img src='$img' height='150' width='150' /> ";
+        echo '</td>';
         echo '</tr>';
     }
     echo '</table>';
