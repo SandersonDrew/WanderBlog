@@ -144,7 +144,7 @@ if ($result->num_rows > 0) {
     if (count($images) > 0) { // make sure at least one image exists
         $img = $images[0]; // first image
     } else {
-        // possibly display a placeholder image?
+        echo "False";
     }
         echo '<tr>';
         echo '<td>';
