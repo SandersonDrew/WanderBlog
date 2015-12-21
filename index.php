@@ -142,10 +142,8 @@ if ($result->num_rows > 0) {
     //display first image
     if (count($images) > 0) { // make sure at least one image exists
         $img = $images[0]; // first image
-        echo $search_dir;
         echo $img;
     } else {
-        echo $search_dir;
     }
         echo '<tr>';
         echo '<td>';
@@ -160,7 +158,7 @@ if ($result->num_rows > 0) {
         echo '<td>';
         echo '<a href="http://wbgroupc.azurewebsites.net/adventure.php?adventureid='.$row['adventureid'].'&submit=Go+To+Adventure+Page">Adventure Link</a>';
         echo '<td>';
-        echo "<<img id=\"img\" src='$img' height=\"50\" width=\"90\" alt=\"Logo\" >";
+        echo "<img src='$img'/>";
         echo '</td>';
         echo '</tr>';
     }
