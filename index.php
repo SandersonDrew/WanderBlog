@@ -129,13 +129,8 @@ if ($result->num_rows > 0) {
     echo "Adventure Link: " ;
     echo '</th>';
     echo '</tr>';
-    $i=0;
+
     while ($row = $result->fetch_assoc()) {
-        if ($i<5){
-            $row=null;
-        }else {
-            $i++;
-        }
         echo '<tr>';
         echo '<td>';
         echo $row["adventurename"];
