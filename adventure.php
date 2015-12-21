@@ -1,4 +1,6 @@
 <?php
+
+// Gets the relevant information about adventures from the adventures database. 
 include('session.php');
 if (isset($_GET['submit'])) {
     $adventureid = $_GET['adventureid'];
@@ -103,6 +105,7 @@ function getval($mysqli, $sql) {
     <div class="row">
         <div class="col-md-2"></div>
         <div class="col-md-8">
+            <!-- place the relevant data from the database in the html, title, author, date, etc...-->
             <h1><p><?php echo $advname?></p></h1>
             <h2><p><?php echo $authname?></p></h2>
             <h2><p><?php echo $advdate?></p></h2>
@@ -123,6 +126,7 @@ function getval($mysqli, $sql) {
             </form>
             <div class="col-md-2"></div>
             <div class="col-md-8">
+                <!-- The main text for the adventure-->
                 <p><?php echo $text?></p>
             </div>
             <div class="col-md-2"></div>
@@ -132,6 +136,8 @@ function getval($mysqli, $sql) {
 </div>
 
 <?php
+
+// If the user logged on is also the author of the adventures, they can edit or delete it.
 if($userid == $authid){
     echo '
     <form action = "editAdventure.php" method = "POST" >
@@ -182,6 +188,8 @@ echo '
     if ($connection->connect_error) {
         die("Connection failed: " . $connection->connect_error);
     }else{
+        
+        // Display the comments on the adventure.
         $sql_query = "SELECT text FROM comments WHERE adventureid='$adventureid'";
         $result = $connection->query($sql_query);
         while ($row = $result->fetch_assoc()) {

@@ -24,7 +24,7 @@ if (file_exists($target_file)) {
     echo "Sorry, files already exists.";
     $uploadOk = 0;
 }
-// Check fil
+// Check file
 // Allow certain file formats
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
